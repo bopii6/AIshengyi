@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI应用工坊 - 专业AI应用供应商，提供10+成品AI应用，拿来即用，直接变现">
+    <meta name="keywords" content="AI应用,AI工具,AI副业,AI产品,数字化转型">
+    <title>AI应用工坊 - 拿来即用的AI应用供应商</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">AI应用工坊</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#products" class="nav-link">产品中心</a>
+                <a href="#tutorial" class="nav-link">教程课程</a>
+                <a href="#pricing" class="nav-link">价格方案</a>
+                <a href="#contact" class="nav-link nav-link-cta">联系咨询</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero区域 -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                AI时代的应用供应商
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">成品AI应用</span>
+                <span class="title-highlight">拿来即用，直接变现</span>
+            </h1>
+            <p class="hero-description">
+                10+ 精选AI应用，覆盖职业照、数字人、AI助手等热门赛道<br>
+                无需技术背景，交付即可销售，开启你的AI副业之旅
+            </p>
+            <div class="hero-actions">
+                <a href="#products" class="btn btn-primary">
+                    <span>查看全部产品</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">立即咨询</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">成品应用</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">¥5980</span>
+                    <span class="stat-label">全包价格</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">技术门槛</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 价值主张区 -->
+    <section class="value-props">
+        <div class="container">
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>拿来即用</h3>
+                    <p>成品交付，开箱即可运营销售</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>无需技术</h3>
+                    <p>完整部署文档，小白也能上手</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💰</div>
+                    <h3>直接变现</h3>
+                    <p>已验证商业模式，快速回本</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔄</div>
+                    <h3>持续更新</h3>
+                    <p>紧跟AI前沿，产品持续迭代</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品展示区 -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">产品中心</span>
+                <h2 class="section-title">精选AI应用</h2>
+                <p class="section-desc">覆盖图像生成、数字人、AI助手等热门赛道，每款都可独立销售</p>
+            </div>
+            
+            <div class="products-filter">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="image">图像生成</button>
+                <button class="filter-btn" data-filter="digital-human">数字人</button>
+                <button class="filter-btn" data-filter="assistant">AI助手</button>
+                <button class="filter-btn" data-filter="education">教育学习</button>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- 产品卡片由JS动态渲染 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 教程产品区 -->
+    <section class="tutorial" id="tutorial">
+        <div class="container">
+            <div class="tutorial-content">
+                <div class="tutorial-info">
+                    <span class="section-tag">进阶学习</span>
+                    <h2 class="section-title">AI应用开发教程</h2>
+                    <p class="tutorial-desc">
+                        不仅提供成品，还教你如何从0到1开发这些AI应用。
+                        掌握AI时代的编程技能，打造属于自己的产品矩阵。
+                    </p>
+                    <ul class="tutorial-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>10+ 完整项目实战教程</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>从需求分析到部署上线全流程</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>使用Cursor、v0等AI工具加速开发</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>现代技术栈：Next.js / React / Node.js</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">
+                        <span>了解教程详情</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="tutorial-visual">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span class="code-title">ai-photo-generator.js</span>
+                        </div>
+                        <div class="code-body">
+                            <pre><code><span class="code-keyword">async function</span> <span class="code-function">generatePhoto</span>(image) {
+  <span class="code-keyword">const</span> result = <span class="code-keyword">await</span> ai.process({
+    input: image,
+    style: <span class="code-string">"professional"</span>,
+    background: <span class="code-string">"blue"</span>
+  });
+  
+  <span class="code-keyword">return</span> result.output;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 价格方案区 -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">价格方案</span>
+                <h2 class="section-title">灵活的购买方式</h2>
+                <p class="section-desc">按需购买单品，或选择全包套餐享受超值优惠</p>
+            </div>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>单品购买</h3>
+                        <p class="pricing-desc">按需选择感兴趣的产品</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">¥</span>
+                        <span class="price-amount">200</span>
+                        <span class="price-suffix">- 5000/个</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>完整源代码交付</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>部署上线文档</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>商业授权</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>基础售后支持</span>
+                        </li>
+                    </ul>
+                    <a href="#products" class="btn btn-secondary btn-full">浏览产品</a>
+                </div>
+                
+                <div class="pricing-card pricing-featured">
+                    <div class="pricing-badge">性价比之选</div>
+                    <div class="pricing-header">
+                        <h3>全包套餐</h3>
+                        <p class="pricing-desc">一次拥有所有产品 + 教程</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">¥</span>
+                        <span class="price-amount">5980</span>
+                        <span class="price-suffix">/全部</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>全部10+产品</strong></span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span><strong>完整开发教程</strong></span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>未来新品免费获取</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>VIP专属答疑群</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>优先技术支持</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-full">立即咨询</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ区域 -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">常见问题</span>
+                <h2 class="section-title">你可能想知道</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>购买后如何交付？</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>付款后，我会通过微信发送产品下载链接，包含完整源代码和部署文档。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>需要什么技术基础？</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>基本不需要技术基础。每个产品都配备详细的部署文档，按步骤操作即可上线。如果你想深入学习开发，可以选择包含教程的套餐。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>可以用于商业运营吗？</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>可以。购买即获得商业授权，你可以用于自己的业务运营、销售给客户，或在小红书等平台推广销售。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>后续有更新吗？</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>会持续更新迭代。全包套餐用户可免费获取未来所有新品；单品用户如需新版本，需单独购买。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系区域 -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <span class="section-tag">联系咨询</span>
+                    <h2 class="section-title">开启你的AI副业</h2>
+                    <p class="contact-desc">
+                        添加微信，获取产品演示、答疑解惑、定制需求沟通
+                    </p>
+                    <div class="wechat-box">
+                        <div class="wechat-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.045c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.49.49 0 0 1 .176-.553C23.097 18.443 24 16.809 24 14.991c0-3.14-2.94-5.79-7.062-6.133zm-2.18 2.927c.535 0 .969.44.969.983a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.983.97-.983zm4.844 0c.535 0 .969.44.969.983a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.983.969-.983z"/>
+                            </svg>
+                        </div>
+                        <div class="wechat-info">
+                            <span class="wechat-label">添加微信咨询</span>
+                            <span class="wechat-id" id="wechatId">your_wechat_id</span>
+                        </div>
+                        <button class="copy-btn" id="copyBtn" onclick="copyWechat()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span>复制</span>
+                        </button>
+                    </div>
+                    <p class="contact-note">通常在24小时内回复</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">AI应用工坊</span>
+                    </a>
+                    <p>AI时代的应用供应商</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#products">产品中心</a>
+                    <a href="#tutorial">教程课程</a>
+                    <a href="#pricing">价格方案</a>
+                    <a href="#contact">联系我们</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI应用工坊. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 产品详情模态框 -->
+    <div class="modal" id="productModal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- 模态框内容由JS动态填充 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 复制成功提示 -->
+    <div class="toast" id="toast">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span>微信号已复制</span>
+    </div>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
