@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你是哪一类人？</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1400px;
+            text-align: center;
+        }
+
+        .top-question {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .top-question .highlight {
+            background: linear-gradient(90deg, #ff6b6b, #ffa500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .audience-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .audience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00d4ff, #7b68ee);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .audience-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .audience-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+            box-shadow: 0 30px 60px rgba(0, 212, 255, 0.15);
+        }
+
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .pain-points {
+            text-align: left;
+        }
+
+        .pain-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .pain-point .icon {
+            color: #ff6b6b;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .solution {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .solution-text {
+            color: #00d4ff;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .bottom-cta {
+            font-size: 1.8rem;
+            color: #ffa500;
+            font-weight: 700;
+        }
+
+        .corner-badge {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: #00d4ff;
+            color: #0a0a0a;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="corner-badge">🔴 直播专属</div>
+    <div class="slide">
+        <h1 class="top-question">
+            直播间的朋友，<span class="highlight">你是哪一类人？</span>
+        </h1>
+
+        <div class="audience-grid">
+            <!-- 老师 -->
+            <div class="audience-card">
+                <div class="card-icon">👩‍🏫</div>
+                <div class="card-title">老师 / 教育从业者</div>
+                <div class="pain-points">
+                    <div class="pain-point">
+                        <span class="icon">😫</span>
+                        <span>想做一套英语学习工具招生引流</span>
+                    </div>
+                    <div class="pain-point">
+                        <span class="icon">💸</span>
+                        <span>找外包开发至少2万，还要等2-3个月</span>
+                    </div>
+                    <div class="pain-point">
+                        <span class="icon">🎯</span>
+                        <span>你最懂学生的痛点，但不会技术</span>
+                    </div>
+                </div>
+                <div class="solution">
+                    <div class="solution-text">✅ 30天自己做，省2万+</div>
+                </div>
+            </div>
+
+            <!-- 自媒体 -->
+            <div class="audience-card">
+                <div class="card-icon">📱</div>
+                <div class="card-title">抖音 / 视频号创作者</div>
+                <div class="pain-points">
+                    <div class="pain-point">
+                        <span class="icon">😫</span>
+                        <span>每条视频都要自己拍，太累了</span>
+                    </div>
+                    <div class="pain-point">
+                        <span class="icon">💸</span>
+                        <span>蝉镜数字人2000/月，一年2.4万</span>
+                    </div>
+                    <div class="pain-point">
+                        <span class="icon">🔄</span>
+                        <span>想矩阵分发，但没有自动化工具</span>
+                    </div>
+                </div>
+                <div class="solution">
+                    <div class="solution-text">✅ 自己做数字人，终身0月费</div>
+                </div>
+            </div>
+
+            <!-- 家长 -->
+            <div class="audience-card">
+                <div class="card-icon">👨‍👩‍👧</div>
+                <div class="card-title">家长</div>
+                <div class="pain-points">
+                    <div class="pain-point">
+                        <span class="icon">😫</span>
+                        <span>编程班/兴趣班太贵太低效</span>
+                    </div>
+                    <div class="pain-point">
+                        <span class="icon">🤔</span>
+                        <span>不想让孩子输在AI起跑线上</span>
+                    </div>
+                    <div class="pain-point">
+                        <span class="icon">🎮</span>
+                        <span>与其让孩子玩游戏，不如做游戏</span>
+                    </div>
+                </div>
+                <div class="solution">
+                    <div class="solution-text">✅ 和孩子一起用AI创造</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-cta">
+            👆 看看自己是哪一类，公屏扣个数字！
+        </div>
+    </div>
+    <script src="slide-nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>价格对比</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 50px 40px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .price-card.featured {
+            border-color: #ffa500;
+            background: linear-gradient(145deg, rgba(255, 165, 0, 0.1), rgba(255, 107, 107, 0.05));
+        }
+
+        .price-card.featured::before {
+            content: '🔥 最受欢迎';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .card-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .price-value {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #00d4ff;
+            margin-bottom: 30px;
+        }
+
+        .price-value .currency {
+            font-size: 2rem;
+            vertical-align: super;
+        }
+
+        .featured .price-value {
+            color: #ffa500;
+        }
+
+        .feature-list {
+            text-align: left;
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li .icon {
+            font-size: 1.3rem;
+        }
+
+        .check {
+            color: #43e97b;
+        }
+
+        .cross {
+            color: #ff6b6b;
+            opacity: 0.5;
+        }
+
+        .bottom-note {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .note-icon {
+            font-size: 2rem;
+        }
+
+        .note-text {
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .note-text .highlight {
+            color: #00d4ff;
+            font-weight: 700;
+        }
+
+        .corner-badge {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: #00d4ff;
+            color: #0a0a0a;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="corner-badge">🔴 直播专属</div>
+    <div class="slide">
+        <h1 class="main-title">两种选择，按需上车 🚀</h1>
+
+        <div class="pricing-grid">
+            <!-- 入门课 -->
+            <div class="price-card">
+                <div class="card-title">入门体验课</div>
+                <div class="card-subtitle">试试水，1天上手</div>
+                <div class="price-value"><span class="currency">¥</span>169</div>
+                <ul class="feature-list">
+                    <li><span class="icon check">✓</span>环境配置全流程</li>
+                    <li><span class="icon check">✓</span>第一个项目跑通</li>
+                    <li><span class="icon check">✓</span>个人网站上线</li>
+                    <li><span class="icon check">✓</span>入门社群答疑</li>
+                    <li><span class="icon cross">✗</span>数字人项目</li>
+                    <li><span class="icon cross">✗</span>英语系统项目</li>
+                    <li><span class="icon cross">✗</span>1对1指导</li>
+                </ul>
+            </div>
+
+            <!-- 完整课 -->
+            <div class="price-card featured">
+                <div class="card-title">30天完整版</div>
+                <div class="card-subtitle">从0到变现，全程陪跑</div>
+                <div class="price-value"><span class="currency">¥</span>1699</div>
+                <ul class="feature-list">
+                    <li><span class="icon check">✓</span>30天系统课程</li>
+                    <li><span class="icon check">✓</span>3套可变现项目</li>
+                    <li><span class="icon check">✓</span>专属学员社群</li>
+                    <li><span class="icon check">✓</span>每周直播答疑</li>
+                    <li><span class="icon check">✓</span>1对1环境配置</li>
+                    <li><span class="icon check">✓</span>项目源码交付</li>
+                    <li><span class="icon check">✓</span>终身课程更新</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bottom-note">
+            <span class="note-icon">💡</span>
+            <span class="note-text">
+                买169试水？升级完整版时<span class="highlight">直接抵扣</span>！
+            </span>
+        </div>
+    </div>
+    <script src="slide-nav.js"></script>
+</body>
+
+</html>

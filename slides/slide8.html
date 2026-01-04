@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务保障</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .main-title .highlight {
+            background: linear-gradient(90deg, #ffa500, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .guarantee-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .guarantee-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 165, 0, 0.5);
+        }
+
+        .guarantee-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.2), rgba(255, 107, 107, 0.2));
+        }
+
+        .guarantee-content {
+            flex: 1;
+        }
+
+        .guarantee-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .guarantee-desc {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .refund-banner {
+            background: linear-gradient(90deg, rgba(67, 233, 123, 0.15), rgba(56, 249, 215, 0.15));
+            border: 3px solid rgba(67, 233, 123, 0.5);
+            border-radius: 24px;
+            padding: 40px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .refund-icon {
+            font-size: 5rem;
+        }
+
+        .refund-content {
+            text-align: left;
+        }
+
+        .refund-title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .refund-title .accent {
+            color: #43e97b;
+        }
+
+        .refund-desc {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .corner-badge {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: #00d4ff;
+            color: #0a0a0a;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="corner-badge">🔴 直播专属</div>
+    <div class="slide">
+        <h1 class="main-title">
+            买课 <span class="highlight">零风险</span>
+        </h1>
+
+        <div class="guarantees-grid">
+            <div class="guarantee-card">
+                <div class="guarantee-icon">👨‍🏫</div>
+                <div class="guarantee-content">
+                    <div class="guarantee-title">1对1环境配置</div>
+                    <div class="guarantee-desc">
+                        最难的第一步，我手把手帮你搞定<br>
+                        不会装软件？我来帮你远程装
+                    </div>
+                </div>
+            </div>
+
+            <div class="guarantee-card">
+                <div class="guarantee-icon">💬</div>
+                <div class="guarantee-content">
+                    <div class="guarantee-title">每周直播答疑</div>
+                    <div class="guarantee-desc">
+                        遇到问题不用等<br>
+                        直播间现场给你解决
+                    </div>
+                </div>
+            </div>
+
+            <div class="guarantee-card">
+                <div class="guarantee-icon">♾️</div>
+                <div class="guarantee-content">
+                    <div class="guarantee-title">终身课程更新</div>
+                    <div class="guarantee-desc">
+                        AI领域日新月异<br>
+                        新内容免费更新，一次付费，终身受益
+                    </div>
+                </div>
+            </div>
+
+            <div class="guarantee-card">
+                <div class="guarantee-icon">👥</div>
+                <div class="guarantee-content">
+                    <div class="guarantee-title">专属学员社群</div>
+                    <div class="guarantee-desc">
+                        志同道合的人一起学<br>
+                        互相帮助，共同成长
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="refund-banner">
+            <div class="refund-icon">🛡️</div>
+            <div class="refund-content">
+                <div class="refund-title">
+                    30天学不会做产品？<span class="accent">全额退款！</span>
+                </div>
+                <div class="refund-desc">
+                    我对课程质量有信心，你没有任何风险
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="slide-nav.js"></script>
+</body>
+
+</html>

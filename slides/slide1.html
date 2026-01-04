@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI编程30天 - 课程介绍</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 动态背景粒子效果 */
+        .bg-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(0, 212, 255, 0.6);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .particle:nth-child(1) {
+            left: 10%;
+            top: 20%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            left: 20%;
+            top: 80%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(3) {
+            left: 60%;
+            top: 40%;
+            animation-delay: 4s;
+        }
+
+        .particle:nth-child(4) {
+            left: 70%;
+            top: 90%;
+            animation-delay: 1s;
+        }
+
+        .particle:nth-child(5) {
+            left: 90%;
+            top: 10%;
+            animation-delay: 3s;
+        }
+
+        .particle:nth-child(6) {
+            left: 30%;
+            top: 60%;
+            animation-delay: 5s;
+        }
+
+        .particle:nth-child(7) {
+            left: 80%;
+            top: 30%;
+            animation-delay: 2.5s;
+        }
+
+        .particle:nth-child(8) {
+            left: 50%;
+            top: 70%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0.6;
+            }
+
+            25% {
+                transform: translateY(-30px) translateX(10px);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(-15px) translateX(-10px);
+                opacity: 0.8;
+            }
+
+            75% {
+                transform: translateY(-40px) translateX(5px);
+                opacity: 1;
+            }
+        }
+
+        /* 主内容区 */
+        .slide {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 1200px;
+            padding: 60px;
+            text-align: center;
+        }
+
+        /* 顶部标签 */
+        .top-tag {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* 主标题 */
+        .main-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            text-shadow: 0 0 60px rgba(0, 212, 255, 0.5);
+        }
+
+        .main-title .highlight {
+            background: linear-gradient(90deg, #00d4ff, #7b68ee, #ff6b9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* 副标题 */
+        .subtitle {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 50px;
+            font-weight: 500;
+        }
+
+        .subtitle .accent {
+            color: #00d4ff;
+            font-weight: 700;
+        }
+
+        /* 核心卖点区 */
+        .selling-points {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .point {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px 40px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .point:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+        }
+
+        .point-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .point-text {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .point-desc {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            margin-top: 8px;
+        }
+
+        /* 底部CTA */
+        .cta-section {
+            margin-top: 40px;
+        }
+
+        .cta-text {
+            font-size: 1.5rem;
+            color: #ffa500;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 900;
+            padding: 15px 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(255, 107, 107, 0.4);
+        }
+
+        .price-tag .original {
+            font-size: 1.2rem;
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-right: 15px;
+        }
+
+        /* 角标 */
+        .corner-badge {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: #00d4ff;
+            color: #0a0a0a;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 背景粒子 -->
+    <div class="bg-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- 角标 -->
+    <div class="corner-badge">🔴 直播专属</div>
+
+    <!-- 主内容 -->
+    <div class="slide">
+        <div class="top-tag">🚀 零代码小白的逆袭之路</div>
+
+        <h1 class="main-title">
+            AI编程<span class="highlight">30天</span><br>
+            手把手强制入门
+        </h1>
+
+        <p class="subtitle">
+            别做程序员，做用AI指挥程序员的<span class="accent">CEO</span>
+        </p>
+
+        <div class="selling-points">
+            <div class="point">
+                <div class="point-icon">🎯</div>
+                <div class="point-text">零代码基础</div>
+                <div class="point-desc">会打字就能学</div>
+            </div>
+            <div class="point">
+                <div class="point-icon">💰</div>
+                <div class="point-text">真实可变现</div>
+                <div class="point-desc">不是玩具Demo</div>
+            </div>
+            <div class="point">
+                <div class="point-icon">🔥</div>
+                <div class="point-text">30天出产品</div>
+                <div class="point-desc">能上线能卖钱</div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <div class="cta-text">⏰ 直播间限时特惠</div>
+            <div class="price-tag">
+                <span class="original">¥2999</span>
+                ¥1699
+            </div>
+        </div>
+    </div>
+    <script src="slide-nav.js"></script>
+</body>
+
+</html>

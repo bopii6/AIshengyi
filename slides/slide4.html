@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30天课程大纲</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .main-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .main-title .highlight {
+            background: linear-gradient(90deg, #00d4ff, #7b68ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .phase {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 30px 25px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .phase:hover {
+            transform: translateY(-8px);
+            border-color: #00d4ff;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .phase-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .phase:nth-child(1) .phase-icon {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .phase:nth-child(2) .phase-icon {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .phase:nth-child(3) .phase-icon {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .phase:nth-child(4) .phase-icon {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+
+        .phase-info {
+            flex: 1;
+        }
+
+        .phase-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .phase-days {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .phase-content {
+            list-style: none;
+        }
+
+        .phase-content li {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .phase-content li:last-child {
+            border-bottom: none;
+        }
+
+        .phase-content li::before {
+            content: '→';
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        .phase-output {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .output-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 8px;
+        }
+
+        .output-value {
+            color: #ffa500;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .corner-badge {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: #00d4ff;
+            color: #0a0a0a;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="corner-badge">🔴 直播专属</div>
+    <div class="slide">
+        <div class="header">
+            <h1 class="main-title">
+                <span class="highlight">30天</span> 课程大纲
+            </h1>
+            <p class="subtitle">四个阶段，从0到1做出可变现产品</p>
+        </div>
+
+        <div class="timeline">
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-icon">🗡️</div>
+                    <div class="phase-info">
+                        <div class="phase-name">装备屠龙刀</div>
+                        <div class="phase-days">Day 1-10</div>
+                    </div>
+                </div>
+                <ul class="phase-content">
+                    <li>四款AI编辑器</li>
+                    <li>三大AI模型</li>
+                    <li>设计审美提升</li>
+                    <li>Git版本控制</li>
+                    <li>部署上线</li>
+                </ul>
+                <div class="phase-output">
+                    <div class="output-label">阶段产出</div>
+                    <div class="output-value">🌐 个人网站上线</div>
+                </div>
+            </div>
+
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-icon">🤖</div>
+                    <div class="phase-info">
+                        <div class="phase-name">数字人分身</div>
+                        <div class="phase-days">Day 11-20</div>
+                    </div>
+                </div>
+                <ul class="phase-content">
+                    <li>抖音内容提取</li>
+                    <li>AI改写脚本</li>
+                    <li>声音克隆</li>
+                    <li>数字人生成</li>
+                    <li>全网自动分发</li>
+                </ul>
+                <div class="phase-output">
+                    <div class="output-label">阶段产出</div>
+                    <div class="output-value">📹 数字人短视频</div>
+                </div>
+            </div>
+
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-icon">🏰</div>
+                    <div class="phase-info">
+                        <div class="phase-name">商业护城河</div>
+                        <div class="phase-days">Day 21-29</div>
+                    </div>
+                </div>
+                <ul class="phase-content">
+                    <li>游戏化交互</li>
+                    <li>Supabase数据库</li>
+                    <li>用户登录系统</li>
+                    <li>课程管理后台</li>
+                    <li>接入AI老师</li>
+                </ul>
+                <div class="phase-output">
+                    <div class="output-label">阶段产出</div>
+                    <div class="output-value">🎮 英语学习系统</div>
+                </div>
+            </div>
+
+            <div class="phase">
+                <div class="phase-header">
+                    <div class="phase-icon">💰</div>
+                    <div class="phase-info">
+                        <div class="phase-name">变现毕业</div>
+                        <div class="phase-days">Day 30+</div>
+                    </div>
+                </div>
+                <ul class="phase-content">
+                    <li>产品打磨</li>
+                    <li>定价策略</li>
+                    <li>销售话术</li>
+                    <li>渠道分发</li>
+                    <li>持续迭代</li>
+                </ul>
+                <div class="phase-output">
+                    <div class="output-label">阶段产出</div>
+                    <div class="output-value">💵 能卖钱的产品</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="slide-nav.js"></script>
+</body>
+
+</html>

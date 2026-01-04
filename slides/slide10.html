@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立即下单</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 动态光效背景 */
+        .glow-bg {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.3;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .glow-1 {
+            background: #ff6b6b;
+            top: -200px;
+            left: -200px;
+        }
+
+        .glow-2 {
+            background: #00d4ff;
+            bottom: -200px;
+            right: -200px;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        .slide {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 1000px;
+            text-align: center;
+        }
+
+        .urgency-banner {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 107, 107, 0.2);
+            border: 2px solid #ff6b6b;
+            border-radius: 50px;
+            padding: 15px 35px;
+            margin-bottom: 40px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4);
+            }
+
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 0 30px 10px rgba(255, 107, 107, 0.2);
+            }
+        }
+
+        .urgency-icon {
+            font-size: 2rem;
+        }
+
+        .urgency-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ff6b6b;
+        }
+
+        .main-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .main-title .highlight {
+            background: linear-gradient(90deg, #00d4ff, #7b68ee, #ff6b9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 50px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 25px 60px;
+            border-radius: 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-btn.secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .cta-btn.secondary:hover {
+            border-color: #00d4ff;
+            transform: translateY(-5px);
+        }
+
+        .cta-btn.primary {
+            background: linear-gradient(135deg, #ff6b6b, #ffa500);
+            border: none;
+            color: white;
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+        }
+
+        .cta-btn.primary:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(255, 107, 107, 0.5);
+        }
+
+        .btn-price {
+            font-size: 2.2rem;
+        }
+
+        .btn-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .bottom-note {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .note-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+        }
+
+        .note-icon {
+            font-size: 1.5rem;
+        }
+
+        .corner-badge {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: #ff6b6b;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+    <div class="corner-badge">🔥 仅剩 8 个名额</div>
+
+    <div class="slide">
+        <div class="urgency-banner">
+            <span class="urgency-icon">⏰</span>
+            <span class="urgency-text">本期只收50人，名额有限！</span>
+        </div>
+
+        <h1 class="main-title">
+            点击购物车<br>
+            <span class="highlight">立即下单</span>
+        </h1>
+
+        <p class="subtitle">
+            30天后，你将拥有属于自己的AI超能力
+        </p>
+
+        <div class="cta-buttons">
+            <div class="cta-btn secondary">
+                <span class="btn-price">¥169</span>
+                <span class="btn-label">入门体验课</span>
+            </div>
+            <div class="cta-btn primary">
+                <span class="btn-price">¥1699</span>
+                <span class="btn-label">30天完整版 · 力荐</span>
+            </div>
+        </div>
+
+        <div class="bottom-note">
+            <div class="note-item">
+                <span class="note-icon">🛡️</span>
+                <span>30天无效全额退</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">👨‍🏫</span>
+                <span>1对1环境配置</span>
+            </div>
+            <div class="note-item">
+                <span class="note-icon">♾️</span>
+                <span>终身课程更新</span>
+            </div>
+        </div>
+    </div>
+    <script src="slide-nav.js"></script>
+</body>
+
+</html>

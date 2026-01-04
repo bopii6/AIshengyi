@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直播PPT导航</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+        }
+
+        .slides-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .slide-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .slide-card:hover {
+            transform: translateY(-8px);
+            border-color: #00d4ff;
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+
+        .slide-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00d4ff, #7b68ee);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .slide-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .slide-desc {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .keyboard-hint {
+            text-align: center;
+            margin-top: 50px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.95rem;
+        }
+
+        .keyboard-hint kbd {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 12px;
+            border-radius: 6px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>🎬 直播PPT导航</h1>
+        <p>点击任意卡片进入对应页面，按 F11 全屏展示</p>
+    </div>
+
+    <div class="slides-grid">
+        <a href="slide1.html" class="slide-card">
+            <div class="slide-number">1</div>
+            <div class="slide-title">封面页</div>
+            <div class="slide-desc">课程标题<br>核心卖点<br>价格信息</div>
+        </a>
+
+        <a href="slide2.html" class="slide-card">
+            <div class="slide-number">2</div>
+            <div class="slide-title">你是哪一类人？</div>
+            <div class="slide-desc">老师<br>自媒体<br>家长</div>
+        </a>
+
+        <a href="slide3.html" class="slide-card">
+            <div class="slide-number">3</div>
+            <div class="slide-title">我做了什么？</div>
+            <div class="slide-desc">数字人产品<br>英语学习系统<br>零代码实现</div>
+        </a>
+
+        <a href="slide4.html" class="slide-card">
+            <div class="slide-number">4</div>
+            <div class="slide-title">30天课程大纲</div>
+            <div class="slide-desc">四阶段<br>装备→数字人→商业系统→变现</div>
+        </a>
+
+        <a href="slide5.html" class="slide-card">
+            <div class="slide-number">5</div>
+            <div class="slide-title">价格对比</div>
+            <div class="slide-desc">169 入门课<br>1699 完整版<br>抵扣说明</div>
+        </a>
+
+        <a href="slide6.html" class="slide-card">
+            <div class="slide-number">6</div>
+            <div class="slide-title">学完能得到什么？</div>
+            <div class="slide-desc">6项交付物<br>网站/数字人/系统<br>源码/能力/社群</div>
+        </a>
+
+        <a href="slide7.html" class="slide-card">
+            <div class="slide-number">7</div>
+            <div class="slide-title">为什么是现在？</div>
+            <div class="slide-desc">2026分水岭<br>去年→现在→后年<br>紧迫感</div>
+        </a>
+
+        <a href="slide8.html" class="slide-card">
+            <div class="slide-number">8</div>
+            <div class="slide-title">服务保障</div>
+            <div class="slide-desc">1对1配置<br>直播答疑<br>30天退款承诺</div>
+        </a>
+
+        <a href="slide9.html" class="slide-card">
+            <div class="slide-number">9</div>
+            <div class="slide-title">限时福利</div>
+            <div class="slide-desc">三项福利<br>抵扣/配置/免费课<br>领取方式</div>
+        </a>
+
+        <a href="slide10.html" class="slide-card">
+            <div class="slide-number">10</div>
+            <div class="slide-title">立即下单</div>
+            <div class="slide-desc">最终CTA<br>名额紧迫<br>购物车引导</div>
+        </a>
+    </div>
+
+    <div class="keyboard-hint">
+        💡 提示：进入页面后按 <kbd>F11</kbd> 全屏展示，按 <kbd>Alt</kbd>+<kbd>←</kbd> 返回导航
+    </div>
+</body>
+
+</html>

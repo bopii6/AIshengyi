@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学完你能得到什么？</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1300px;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .main-title .highlight {
+            background: linear-gradient(90deg, #43e97b, #38f9d7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .outcome-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .outcome-card:hover {
+            transform: translateY(-10px);
+            border-color: #43e97b;
+            box-shadow: 0 25px 50px rgba(67, 233, 123, 0.15);
+        }
+
+        .outcome-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .outcome-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .outcome-desc {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .bottom-banner {
+            background: linear-gradient(90deg, rgba(67, 233, 123, 0.15), rgba(56, 249, 215, 0.15));
+            border: 2px solid rgba(67, 233, 123, 0.3);
+            border-radius: 20px;
+            padding: 35px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .banner-icon {
+            font-size: 3.5rem;
+        }
+
+        .banner-content {
+            text-align: left;
+        }
+
+        .banner-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .banner-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .banner-subtitle .accent {
+            color: #43e97b;
+            font-weight: 700;
+        }
+
+        .corner-badge {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: #00d4ff;
+            color: #0a0a0a;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="corner-badge">🔴 直播专属</div>
+    <div class="slide">
+        <h1 class="main-title">
+            学完你能 <span class="highlight">得到什么？</span>
+        </h1>
+
+        <div class="outcomes-grid">
+            <div class="outcome-card">
+                <div class="outcome-icon">🌐</div>
+                <div class="outcome-title">个人网站</div>
+                <div class="outcome-desc">
+                    今晚8点<br>朋友圈能点开的<br>专属网站
+                </div>
+            </div>
+
+            <div class="outcome-card">
+                <div class="outcome-icon">🤖</div>
+                <div class="outcome-title">数字人分身</div>
+                <div class="outcome-desc">
+                    声音+形象克隆<br>10分钟出视频<br>告别蝉镜月费
+                </div>
+            </div>
+
+            <div class="outcome-card">
+                <div class="outcome-icon">🎮</div>
+                <div class="outcome-title">英语学习系统</div>
+                <div class="outcome-desc">
+                    完整商业级产品<br>可以拿来招生<br>可以直接卖钱
+                </div>
+            </div>
+
+            <div class="outcome-card">
+                <div class="outcome-icon">📦</div>
+                <div class="outcome-title">3套项目源码</div>
+                <div class="outcome-desc">
+                    拿来即用<br>可二次开发<br>可商业变现
+                </div>
+            </div>
+
+            <div class="outcome-card">
+                <div class="outcome-icon">🧠</div>
+                <div class="outcome-title">AI编程能力</div>
+                <div class="outcome-desc">
+                    指挥AI写代码<br>不用学编程语法<br>一人=一支团队
+                </div>
+            </div>
+
+            <div class="outcome-card">
+                <div class="outcome-icon">👥</div>
+                <div class="outcome-title">终身社群</div>
+                <div class="outcome-desc">
+                    专属学员社群<br>持续更新课程<br>长期价值
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-banner">
+            <div class="banner-icon">🎁</div>
+            <div class="banner-content">
+                <div class="banner-title">所有产出物都是你的资产</div>
+                <div class="banner-subtitle">
+                    自己用、给孩子用、给同事用、<span class="accent">拿去卖钱</span>——都行！
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="slide-nav.js"></script>
+</body>
+
+</html>

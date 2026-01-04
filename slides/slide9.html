@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>限时福利</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .slide {
+            width: 100%;
+            max-width: 1100px;
+            text-align: center;
+        }
+
+        .flash-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: flash 1s infinite;
+        }
+
+        @keyframes flash {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .main-title .highlight {
+            background: linear-gradient(90deg, #ff6b6b, #ffa500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 50px;
+        }
+
+        .gifts-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .gift-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px 40px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .gift-item:hover {
+            border-color: #ffa500;
+            transform: translateX(10px);
+        }
+
+        .gift-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b6b, #ffa500);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .gift-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .gift-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .gift-desc {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+        }
+
+        .gift-value {
+            background: rgba(255, 165, 0, 0.15);
+            border: 1px solid rgba(255, 165, 0, 0.3);
+            border-radius: 10px;
+            padding: 10px 20px;
+            color: #ffa500;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .action-box {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 165, 0, 0.2));
+            border: 3px solid #ffa500;
+            border-radius: 24px;
+            padding: 40px;
+        }
+
+        .action-title {
+            font-size: 1.8rem;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .action-steps {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+        }
+
+        .step-icon {
+            font-size: 1.8rem;
+        }
+
+        .corner-badge {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: #ff6b6b;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="corner-badge">⏰ 限时福利</div>
+    <div class="slide">
+        <div class="flash-icon">🎁</div>
+        <h1 class="main-title">
+            直播间 <span class="highlight">独家福利</span>
+        </h1>
+        <p class="subtitle">今天下单专属，过时不候</p>
+
+        <div class="gifts-container">
+            <div class="gift-item">
+                <div class="gift-number">1</div>
+                <div class="gift-content">
+                    <div class="gift-title">169入门课可抵扣</div>
+                    <div class="gift-desc">买入门课试水，升级完整版直接抵扣</div>
+                </div>
+                <div class="gift-value">省169元</div>
+            </div>
+
+            <div class="gift-item">
+                <div class="gift-number">2</div>
+                <div class="gift-content">
+                    <div class="gift-title">前50名1对1配置</div>
+                    <div class="gift-desc">远程帮你装好所有开发环境</div>
+                </div>
+                <div class="gift-value">价值300元</div>
+            </div>
+
+            <div class="gift-item">
+                <div class="gift-number">3</div>
+                <div class="gift-content">
+                    <div class="gift-title">转发朋友圈领169课</div>
+                    <div class="gift-desc">帮我宣传一下，入门课免费送你</div>
+                </div>
+                <div class="gift-value">免费领</div>
+            </div>
+        </div>
+
+        <div class="action-box">
+            <div class="action-title">🛒 如何领取福利？</div>
+            <div class="action-steps">
+                <div class="step">
+                    <span class="step-icon">1️⃣</span>
+                    <span>转发朋友圈或100人群</span>
+                </div>
+                <div class="step">
+                    <span class="step-icon">2️⃣</span>
+                    <span>截图私信助手</span>
+                </div>
+                <div class="step">
+                    <span class="step-icon">3️⃣</span>
+                    <span>领取169入门课</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="slide-nav.js"></script>
+</body>
+
+</html>
