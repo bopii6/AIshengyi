@@ -17,22 +17,23 @@
         body {
             font-family: 'Noto Sans SC', sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px;
+            padding: 15px;
+            overflow: hidden;
         }
 
         .slide {
             width: 100%;
-            max-width: 1100px;
+            max-width: 1000px;
             text-align: center;
         }
 
         .flash-icon {
-            font-size: 5rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 8px;
             animation: flash 1s infinite;
         }
 
@@ -49,10 +50,10 @@
         }
 
         .main-title {
-            font-size: 3.5rem;
+            font-size: 2.2rem;
             font-weight: 900;
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
 
         .main-title .highlight {
@@ -62,43 +63,42 @@
         }
 
         .subtitle {
-            font-size: 1.5rem;
+            font-size: 1rem;
             color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 50px;
+            margin-bottom: 20px;
         }
 
         .gifts-container {
             display: flex;
             flex-direction: column;
-            gap: 25px;
-            margin-bottom: 50px;
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
         .gift-item {
             background: rgba(255, 255, 255, 0.03);
             border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px 40px;
+            border-radius: 14px;
+            padding: 14px 20px;
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 15px;
             transition: all 0.3s ease;
         }
 
         .gift-item:hover {
             border-color: #ffa500;
-            transform: translateX(10px);
         }
 
         .gift-number {
-            width: 60px;
-            height: 60px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             background: linear-gradient(135deg, #ff6b6b, #ffa500);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 1.1rem;
             font-weight: 900;
             color: white;
             flex-shrink: 0;
@@ -110,69 +110,70 @@
         }
 
         .gift-title {
-            font-size: 1.5rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 8px;
+            margin-bottom: 2px;
         }
 
         .gift-desc {
             color: rgba(255, 255, 255, 0.6);
-            font-size: 1.1rem;
+            font-size: 0.85rem;
         }
 
         .gift-value {
             background: rgba(255, 165, 0, 0.15);
             border: 1px solid rgba(255, 165, 0, 0.3);
-            border-radius: 10px;
-            padding: 10px 20px;
+            border-radius: 8px;
+            padding: 6px 12px;
             color: #ffa500;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
         }
 
         .action-box {
             background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 165, 0, 0.2));
-            border: 3px solid #ffa500;
-            border-radius: 24px;
-            padding: 40px;
+            border: 2px solid #ffa500;
+            border-radius: 16px;
+            padding: 18px 25px;
         }
 
         .action-title {
-            font-size: 1.8rem;
+            font-size: 1.2rem;
             color: white;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
         .action-steps {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 25px;
             flex-wrap: wrap;
         }
 
         .step {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
+            font-size: 0.95rem;
         }
 
         .step-icon {
-            font-size: 1.8rem;
+            font-size: 1.2rem;
         }
 
         .corner-badge {
             position: fixed;
-            top: 30px;
-            right: 30px;
+            top: 20px;
+            right: 20px;
             background: #ff6b6b;
             color: white;
-            padding: 10px 25px;
+            padding: 8px 18px;
             border-radius: 8px;
             font-weight: 700;
+            font-size: 0.9rem;
             animation: pulse 2s infinite;
         }
 

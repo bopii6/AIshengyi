@@ -17,11 +17,12 @@
         body {
             font-family: 'Noto Sans SC', sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px;
+            padding: 20px;
+            overflow: hidden;
         }
 
         .slide {
@@ -31,27 +32,20 @@
         }
 
         .section-label {
-            display: inline-block;
-            background: linear-gradient(90deg, #00d4ff, #7b68ee);
-            color: white;
-            padding: 10px 30px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 30px;
+            display: none;
         }
 
         .main-title {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             font-weight: 900;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .subtitle {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 50px;
+            margin-bottom: 25px;
         }
 
         .subtitle .highlight {
@@ -62,15 +56,15 @@
         .products-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            margin-bottom: 50px;
+            gap: 25px;
+            margin-bottom: 25px;
         }
 
         .product-card {
             background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
             border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 50px 40px;
+            border-radius: 20px;
+            padding: 25px 25px;
             text-align: left;
             position: relative;
             overflow: hidden;
@@ -96,22 +90,22 @@
         }
 
         .product-icon {
-            font-size: 4rem;
-            margin-bottom: 25px;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
         .product-name {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
 
         .product-desc {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
+            font-size: 1rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
         }
 
         .product-features {
@@ -123,29 +117,29 @@
         .feature-tag {
             background: rgba(0, 212, 255, 0.15);
             color: #00d4ff;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.95rem;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
             font-weight: 500;
         }
 
         .highlight-box {
             background: linear-gradient(90deg, rgba(255, 107, 107, 0.15), rgba(255, 165, 0, 0.15));
             border: 2px solid rgba(255, 107, 107, 0.3);
-            border-radius: 20px;
-            padding: 30px 40px;
+            border-radius: 15px;
+            padding: 18px 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .highlight-icon {
-            font-size: 3rem;
+            font-size: 2rem;
         }
 
         .highlight-text {
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             color: white;
             font-weight: 700;
         }

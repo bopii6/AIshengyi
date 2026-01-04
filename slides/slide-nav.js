@@ -1,46 +1,100 @@
-// Slide Navigation - Keyboard & Touch Support
+// Slide Navigation - Keyboard & Touch Support with Smooth Transitions
 (function () {
     const TOTAL_SLIDES = 10;
+    let isTransitioning = false;
 
     // 从文件名获取当前slide编号
     const path = window.location.pathname;
     const match = path.match(/slide(\d+)\.html/);
     const currentSlide = match ? parseInt(match[1]) : 1;
 
-    // 导航函数
-    function goToSlide(num) {
-        if (num >= 1 && num <= TOTAL_SLIDES) {
+    // 创建过渡遮罩层
+    function createTransitionOverlay() {
+        const overlay = document.createElement('div');
+        overlay.id = 'slide-transition';
+        overlay.style.cssText = `
+            position: fixed;
+            inset: 0;
+            background: #0a0a0a;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease-out;
+        `;
+        document.body.appendChild(overlay);
+        return overlay;
+    }
+
+    const overlay = createTransitionOverlay();
+
+    // 页面加载时淡入效果
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.3s ease-out';
+
+    window.addEventListener('load', function () {
+        requestAnimationFrame(() => {
+            document.body.style.opacity = '1';
+        });
+    });
+
+    // 带过渡效果的导航函数
+    function goToSlide(num, direction = 'right') {
+        if (num < 1 || num > TOTAL_SLIDES || isTransitioning) return;
+        if (num === currentSlide) return;
+
+        isTransitioning = true;
+
+        // 添加滑动方向的动画
+        const slideContent = document.querySelector('.slide') || document.body;
+        const slideDirection = direction === 'right' ? '-30px' : '30px';
+
+        // 淡出 + 轻微滑动
+        slideContent.style.transition = 'opacity 0.2s ease-out, transform 0.2s ease-out';
+        slideContent.style.opacity = '0';
+        slideContent.style.transform = `translateX(${slideDirection})`;
+
+        // 同时显示遮罩
+        overlay.style.opacity = '1';
+
+        // 延迟后跳转
+        setTimeout(() => {
             window.location.href = `slide${num}.html`;
-        }
+        }, 200);
     }
 
     function prevSlide() {
         if (currentSlide > 1) {
-            goToSlide(currentSlide - 1);
+            goToSlide(currentSlide - 1, 'left');
         }
     }
 
     function nextSlide() {
         if (currentSlide < TOTAL_SLIDES) {
-            goToSlide(currentSlide + 1);
+            goToSlide(currentSlide + 1, 'right');
         }
     }
 
     // 键盘事件监听
     document.addEventListener('keydown', function (e) {
+        if (isTransitioning) return;
+
         switch (e.key) {
             case 'ArrowLeft':
+                e.preventDefault();
                 prevSlide();
                 break;
             case 'ArrowRight':
             case ' ': // 空格键也可以下一页
+                e.preventDefault();
                 nextSlide();
                 break;
             case 'Home':
-                goToSlide(1);
+                e.preventDefault();
+                goToSlide(1, 'left');
                 break;
             case 'End':
-                goToSlide(TOTAL_SLIDES);
+                e.preventDefault();
+                goToSlide(TOTAL_SLIDES, 'right');
                 break;
         }
     });
@@ -63,6 +117,8 @@
     }, { passive: true });
 
     function handleSwipe() {
+        if (isTransitioning) return;
+
         const deltaX = touchEndX - touchStartX;
         const deltaY = touchEndY - touchStartY;
         const minSwipeDistance = 50;

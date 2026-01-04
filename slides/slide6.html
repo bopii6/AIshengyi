@@ -17,24 +17,25 @@
         body {
             font-family: 'Noto Sans SC', sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px;
+            padding: 15px;
+            overflow: hidden;
         }
 
         .slide {
             width: 100%;
-            max-width: 1300px;
+            max-width: 1200px;
             text-align: center;
         }
 
         .main-title {
-            font-size: 3rem;
+            font-size: 2.2rem;
             font-weight: 900;
             color: white;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
         }
 
         .main-title .highlight {
@@ -46,56 +47,55 @@
         .outcomes-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-bottom: 50px;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
         .outcome-card {
             background: rgba(255, 255, 255, 0.03);
             border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 40px 30px;
+            border-radius: 16px;
+            padding: 18px 15px;
             text-align: center;
             transition: all 0.3s ease;
         }
 
         .outcome-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             border-color: #43e97b;
-            box-shadow: 0 25px 50px rgba(67, 233, 123, 0.15);
         }
 
         .outcome-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 8px;
         }
 
         .outcome-title {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 6px;
         }
 
         .outcome-desc {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 0.85rem;
+            line-height: 1.4;
         }
 
         .bottom-banner {
             background: linear-gradient(90deg, rgba(67, 233, 123, 0.15), rgba(56, 249, 215, 0.15));
             border: 2px solid rgba(67, 233, 123, 0.3);
-            border-radius: 20px;
-            padding: 35px 50px;
+            border-radius: 15px;
+            padding: 15px 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 25px;
+            gap: 15px;
         }
 
         .banner-icon {
-            font-size: 3.5rem;
+            font-size: 2rem;
         }
 
         .banner-content {
@@ -103,14 +103,14 @@
         }
 
         .banner-title {
-            font-size: 1.8rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .banner-subtitle {
-            font-size: 1.2rem;
+            font-size: 0.95rem;
             color: rgba(255, 255, 255, 0.7);
         }
 
@@ -121,13 +121,14 @@
 
         .corner-badge {
             position: fixed;
-            top: 30px;
-            right: 30px;
+            top: 20px;
+            right: 20px;
             background: #00d4ff;
             color: #0a0a0a;
-            padding: 10px 25px;
+            padding: 8px 18px;
             border-radius: 8px;
             font-weight: 700;
+            font-size: 0.9rem;
         }
     </style>
 </head>

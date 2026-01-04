@@ -17,24 +17,25 @@
         body {
             font-family: 'Noto Sans SC', sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px;
+            padding: 15px;
+            overflow: hidden;
         }
 
         .slide {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1100px;
             text-align: center;
         }
 
         .main-title {
-            font-size: 3.5rem;
+            font-size: 2.4rem;
             font-weight: 900;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .main-title .highlight {
@@ -42,9 +43,9 @@
         }
 
         .subtitle {
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 50px;
+            margin-bottom: 25px;
         }
 
         .timeline-container {
@@ -52,25 +53,25 @@
             justify-content: center;
             align-items: stretch;
             gap: 0;
-            margin-bottom: 50px;
+            margin-bottom: 25px;
         }
 
         .timeline-item {
             flex: 1;
-            max-width: 350px;
-            padding: 40px 35px;
+            max-width: 300px;
+            padding: 20px 25px;
             position: relative;
             border: 2px solid rgba(255, 255, 255, 0.1);
             background: rgba(255, 255, 255, 0.02);
         }
 
         .timeline-item:first-child {
-            border-radius: 24px 0 0 24px;
+            border-radius: 16px 0 0 16px;
             border-right: none;
         }
 
         .timeline-item:last-child {
-            border-radius: 0 24px 24px 0;
+            border-radius: 0 16px 16px 0;
             border-left: none;
         }
 
@@ -83,7 +84,7 @@
             border-color: #00d4ff;
             transform: scale(1.05);
             z-index: 1;
-            border-radius: 24px;
+            border-radius: 16px;
         }
 
         .timeline-item.future {
@@ -92,11 +93,11 @@
 
         .time-label {
             display: inline-block;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 1rem;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .past .time-label {
@@ -115,32 +116,32 @@
         }
 
         .time-title {
-            font-size: 2rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
 
         .time-desc {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
         .time-icon {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
         }
 
         .bottom-quote {
             background: rgba(255, 107, 107, 0.1);
             border: 2px solid rgba(255, 107, 107, 0.3);
-            border-radius: 20px;
-            padding: 30px 50px;
+            border-radius: 15px;
+            padding: 18px 35px;
         }
 
         .quote-text {
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             color: white;
             font-weight: 700;
         }
@@ -151,13 +152,14 @@
 
         .corner-badge {
             position: fixed;
-            top: 30px;
-            right: 30px;
+            top: 20px;
+            right: 20px;
             background: #00d4ff;
             color: #0a0a0a;
-            padding: 10px 25px;
+            padding: 8px 18px;
             border-radius: 8px;
             font-weight: 700;
+            font-size: 0.9rem;
         }
     </style>
 </head>

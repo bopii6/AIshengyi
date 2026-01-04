@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI编程30天 - 直播课件</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        /* 每个幻灯片的样式直接内联，保持原始尺寸 */
+    </style>
+</head>
+
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+                <style>
+                    #slide1 {
+                        width: 100%;
+                        max-width: 1200px;
+                        text-align: center;
+                        position: relative;
+                    }
+
+                    #slide1 .bg-particles {
+                        position: absolute;
+                        inset: 0;
+                        z-index: 0;
+                        pointer-events: none;
+                    }
+
+                    #slide1 .particle {
+                        position: absolute;
+                        width: 4px;
+                        height: 4px;
+                        background: rgba(0, 212, 255, 0.6);
+                        border-radius: 50%;
+                        animation: float 15s infinite ease-in-out;
+                    }
+
+                    @keyframes float {
+
+                        0%,
+                        100% {
+                            transform: translate(0, 0);
+                            opacity: 0.6;
+                        }
+
+                        50% {
+                            transform: translate(-30px, 10px);
+                            opacity: 0.8;
+                        }
+                    }
+
+                    #slide1 .top-tag {
+                        display: inline-block;
+                        background: linear-gradient(90deg, #ff6b6b, #ffa500);
+                        color: white;
+                        padding: 12px 32px;
+                        border-radius: 50px;
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                        letter-spacing: 2px;
+                        margin-bottom: 40px;
+                        animation: pulse 2s infinite;
+                    }
+
+                    @keyframes pulse {
+
+                        0%,
+                        100% {
+                            transform: scale(1);
+                        }
+
+                        50% {
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    #slide1 .main-title {
+                        font-size: 4.5rem;
+                        font-weight: 900;
+                        color: white;
+                        line-height: 1.3;
+                        margin-bottom: 30px;
+                        text-shadow: 0 0 60px rgba(0, 212, 255, 0.5);
+                    }
+
+                    #slide1 .highlight {
+                        background: linear-gradient(90deg, #00d4ff, #7b68ee, #ff6b9d);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+
+                    #slide1 .subtitle {
+                        font-size: 2rem;
+                        color: rgba(255, 255, 255, 0.85);
+                        margin-bottom: 50px;
+                        font-weight: 500;
+                    }
+
+                    #slide1 .accent {
+                        color: #00d4ff;
+                        font-weight: 700;
+                    }
+
+                    #slide1 .selling-points {
+                        display: flex;
+                        justify-content: center;
+                        gap: 40px;
+                        margin-bottom: 50px;
+                        flex-wrap: wrap;
+                    }
+
+                    #slide1 .point {
+                        background: rgba(255, 255, 255, 0.05);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 20px;
+                        padding: 30px 40px;
+                    }
+
+                    #slide1 .point-icon {
+                        font-size: 3rem;
+                        margin-bottom: 15px;
+                    }
+
+                    #slide1 .point-text {
+                        color: white;
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                    }
+
+                    #slide1 .point-desc {
+                        color: rgba(255, 255, 255, 0.6);
+                        font-size: 1rem;
+                        margin-top: 8px;
+                    }
+
+                    #slide1 .price-tag {
+                        background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+                        color: white;
+                        font-size: 2.5rem;
+                        font-weight: 900;
+                        padding: 15px 50px;
+                        border-radius: 15px;
+                        display: inline-block;
+                    }
+
+                    #slide1 .original {
+                        font-size: 1.2rem;
+                        text-decoration: line-through;
+                        opacity: 0.7;
+                        margin-right: 15px;
+                    }
+
+                    .corner-badge {
+                        position: fixed;
+                        top: 30px;
+                        right: 30px;
+                        background: #00d4ff;
+                        color: #0a0a0a;
+                        padding: 10px 25px;
+                        border-radius: 8px;
+                        font-weight: 700;
+                        font-size: 1rem;
+                        z-index: 9999;
+                    }
+                </style>
+                <div id="slide1">
+                    <div class="bg-particles">
+                        <div class="particle" style="top:20%;left:10%"></div>
+                        <div class="particle" style="top:80%;left:20%"></div>
+                        <div class="particle" style="top:40%;left:60%"></div>
+                        <div class="particle" style="top:90%;left:70%"></div>
+                        <div class="particle" style="top:10%;left:90%"></div>
+                        <div class="particle" style="top:60%;left:30%"></div>
+                        <div class="particle" style="top:30%;left:80%"></div>
+                        <div class="particle" style="top:70%;left:50%"></div>
+                    </div>
+                    <div class="corner-badge">🔴 直播专属</div>
+                    <div class="top-tag">🚀 零代码小白的逆袭之路</div>
+                    <h1 class="main-title">
+                        AI编程<span class="highlight">30天</span><br>手把手强制入门
+                    </h1>
+                    <p class="subtitle">
+                        AI实战：<span class="accent">所想，即所得</span>
+                    </p>
+                    <div class="selling-points">
+                        <div class="point">
+                            <div class="point-icon">🎯</div>
+                            <div class="point-text">零代码基础</div>
+                            <div class="point-desc">会打字就能学</div>
+                        </div>
+                        <div class="point">
+                            <div class="point-icon">💰</div>
+                            <div class="point-text">真实可变现</div>
+                            <div class="point-desc">不是玩具Demo</div>
+                        </div>
+                        <div class="point">
+                            <div class="point-icon">🔥</div>
+                            <div class="point-text">30天出产品</div>
+                            <div class="point-desc">能上线能卖钱</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+                <style>
+                    #slide2 {
+                        width: 100%;
+                        max-width: 1400px;
+                        text-align: center;
+                    }
+
+                    #slide2 .top-question {
+                        font-size: 3.5rem;
+                        font-weight: 900;
+                        color: white;
+                        margin-bottom: 60px;
+                    }
+
+                    #slide2 .highlight2 {
+                        background: linear-gradient(90deg, #ff6b6b, #ffa500);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+
+                    #slide2 .audience-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 30px;
+                        margin-bottom: 50px;
+                    }
+
+                    #slide2 .audience-card {
+                        background: rgba(255, 255, 255, 0.03);
+                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 24px;
+                        padding: 40px 30px;
+                        position: relative;
+                        overflow: hidden;
+                    }
+
+                    #slide2 .audience-card::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        height: 4px;
+                        background: linear-gradient(90deg, #00d4ff, #7b68ee);
+                    }
+
+                    #slide2 .card-icon {
+                        font-size: 4rem;
+                        margin-bottom: 20px;
+                    }
+
+                    #slide2 .card-title {
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                        color: white;
+                        margin-bottom: 20px;
+                    }
+
+                    #slide2 .pain-points {
+                        text-align: left;
+                    }
+
+                    #slide2 .pain-point {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 12px;
+                        margin-bottom: 15px;
+                        color: rgba(255, 255, 255, 0.75);
+                        font-size: 1.1rem;
+                        line-height: 1.5;
+                    }
+
+                    #slide2 .pain-point .icon {
+                        color: #ff6b6b;
+                        font-size: 1.2rem;
+                    }
+
+                    #slide2 .solution {
+                        margin-top: 25px;
+                        padding-top: 20px;
+                        border-top: 1px solid rgba(255, 255, 255, 0.1);
+                    }
+
+                    #slide2 .solution-text {
+                        color: #00d4ff;
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                    }
+
+                    #slide2 .bottom-cta {
+                        font-size: 1.8rem;
+                        color: #ffa500;
+                        font-weight: 700;
+                    }
+                </style>
+                <div id="slide2">
+                    <h1 class="top-question">
+                        直播间的朋友，<span class="highlight2">你是哪一类人？</span>
+                    </h1>
+                    <div class="audience-grid">
+                        <div class="audience-card">
+                            <div class="card-icon">👩‍🏫</div>
+                            <div class="card-title">老师 / 教育从业者</div>
+                            <div class="pain-points">
+                                <div class="pain-point">
+                                    <span class="icon">😫</span>
+                                    <span>想做一套英语学习工具招生引流</span>
+                                </div>
+                                <div class="pain-point">
+                                    <span class="icon">💸</span>
+                                    <span>找外包开发至少2万，还要等2-3个月</span>
+                                </div>
+                                <div class="pain-point">
+                                    <span class="icon">🎯</span>
+                                    <span>你最懂学生的痛点，但不会技术</span>
+                                </div>
+                            </div>
+                            <div class="solution">
+                                <div class="solution-text">✅ 30天自己做，省2万+</div>
+                            </div>
+                        </div>
+
+                        <div class="audience-card">
+                            <div class="card-icon">📱</div>
+                            <div class="card-title">抖音 / 视频号创作者</div>
+                            <div class="pain-points">
+                                <div class="pain-point">
+                                    <span class="icon">😫</span>
+                                    <span>每条视频都要自己拍，太累了</span>
+                                </div>
+                                <div class="pain-point">
+                                    <span class="icon">💸</span>
+                                    <span>蝉镜数字人2000/月，一年2.4万</span>
+                                </div>
+                                <div class="pain-point">
+                                    <span class="icon">🔄</span>
+                                    <span>想矩阵分发，但没有自动化工具</span>
+                                </div>
+                            </div>
+                            <div class="solution">
+                                <div class="solution-text">✅ 自己做数字人，终身0月费</div>
+                            </div>
+                        </div>
+
+                        <div class="audience-card">
+                            <div class="card-icon">👨‍👩‍👧</div>
+                            <div class="card-title">家长</div>
+                            <div class="pain-points">
+                                <div class="pain-point">
+                                    <span class="icon">😫</span>
+                                    <span>编程班/兴趣班太贵太低效</span>
+                                </div>
+                                <div class="pain-point">
+                                    <span class="icon">🤔</span>
+                                    <span>不想让孩子输在AI起跑线上</span>
+                                </div>
+                                <div class="pain-point">
+                                    <span class="icon">🎮</span>
+                                    <span>与其让孩子玩游戏，不如做游戏</span>
+                                </div>
+                            </div>
+                            <div class="solution">
+                                <div class="solution-text">✅ 和孩子一起用AI创造</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-cta">
+                        👆 看看自己是哪一类，公屏扣个数字！
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+                <style>
+                    #slide3 {
+                        width: 100%;
+                        max-width: 1400px;
+                        text-align: center;
+                    }
+
+                    #slide3 .main-title {
+                        font-size: 2.8rem;
+                        font-weight: 900;
+                        color: white;
+                        margin-bottom: 10px;
+                    }
+
+                    #slide3 .subtitle {
+                        font-size: 1.2rem;
+                        color: rgba(255, 255, 255, 0.7);
+                        margin-bottom: 25px;
+                    }
+
+                    #slide3 .subtitle .highlight {
+                        color: #ff6b6b;
+                        font-weight: 700;
+                    }
+
+                    #slide3 .products-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 25px;
+                        margin-bottom: 25px;
+                    }
+
+                    #slide3 .product-card {
+                        background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 20px;
+                        padding: 25px 25px;
+                        text-align: left;
+                        position: relative;
+                        overflow: hidden;
+                    }
+
+                    #slide3 .product-card::before {
+                        content: '';
+                        position: absolute;
+                        top: -50%;
+                        right: -50%;
+                        width: 100%;
+                        height: 100%;
+                        background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+                    }
+
+                    #slide3 .product-number {
+                        position: absolute;
+                        top: 20px;
+                        right: 30px;
+                        font-size: 6rem;
+                        font-weight: 900;
+                        color: rgba(255, 255, 255, 0.05);
+                    }
+
+                    #slide3 .product-icon {
+                        font-size: 2.5rem;
+                        margin-bottom: 10px;
+                    }
+
+                    #slide3 .product-name {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        color: white;
+                        margin-bottom: 8px;
+                    }
+
+                    #slide3 .product-desc {
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 1rem;
+                        line-height: 1.4;
+                        margin-bottom: 15px;
+                    }
+
+                    #slide3 .product-features {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                    }
+
+                    #slide3 .feature-tag {
+                        background: rgba(0, 212, 255, 0.15);
+                        color: #00d4ff;
+                        padding: 5px 12px;
+                        border-radius: 15px;
+                        font-size: 0.85rem;
+                        font-weight: 500;
+                    }
+
+                    #slide3 .highlight-box {
+                        background: linear-gradient(90deg, rgba(255, 107, 107, 0.15), rgba(255, 165, 0, 0.15));
+                        border: 2px solid rgba(255, 107, 107, 0.3);
+                        border-radius: 15px;
+                        padding: 18px 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 15px;
+                    }
+
+                    #slide3 .highlight-icon {
+                        font-size: 2rem;
+                    }
+
+                    #slide3 .highlight-text {
+                        font-size: 1.3rem;
+                        color: white;
+                        font-weight: 700;
+                    }
+
+                    #slide3 .highlight-text .accent {
+                        color: #ff6b6b;
+                    }
+                </style>
+                <div id="slide3">
+                    <h1 class="main-title">我做了什么？</h1>
+                    <p class="subtitle">
+                        零代码基础，<span class="highlight">一行代码都没写</span>，纯靠AI辅助完成
+                    </p>
+
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-number">01</div>
+                            <div class="product-icon">🤖</div>
+                            <div class="product-name">AI一键数字人生成</div>
+                            <div class="product-desc">
+                                输入对标链接 → 10分钟生成原创数字人短视频<br>
+                                半自动15分钟，全自动10分钟
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">语音克隆</span>
+                                <span class="feature-tag">形象生成</span>
+                                <span class="feature-tag">全网分发</span>
+                                <span class="feature-tag">矩阵运营</span>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-number">02</div>
+                            <div class="product-icon">🎮</div>
+                            <div class="product-name">游戏化英语学习系统</div>
+                            <div class="product-desc">
+                                商业级完整系统，已交付给教育机构老板<br>
+                                前端+后端+数据库+AI大模型
+                            </div>
+                            <div class="product-features">
+                                <span class="feature-tag">用户登录</span>
+                                <span class="feature-tag">学习进度</span>
+                                <span class="feature-tag">AI老师</span>
+                                <span class="feature-tag">后台管理</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <div class="highlight-icon">⚡</div>
+                        <div class="highlight-text">
+                            两周交付，全程<span class="accent">零代码</span>，你也可以！
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+                <style>
+                    #slide4 {
+                        width: 100%;
+                        max-width: 1400px;
+                    }
+
+                    #slide4 .header {
+                        text-align: center;
+                        margin-bottom: 50px;
+                    }
+
+                    #slide4 .main-title {
+                        font-size: 3rem;
+                        font-weight: 900;
+                        color: white;
+                        margin-bottom: 15px;
+                    }
+
+                    #slide4 .main-title .highlight {
+                        background: linear-gradient(90deg, #00d4ff, #7b68ee);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+
+                    #slide4 .subtitle {
+                        font-size: 1.3rem;
+                        color: rgba(255, 255, 255, 0.6);
+                    }
+
+                    #slide4 .timeline {
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        gap: 25px;
+                    }
+
+                    #slide4 .phase {
+                        background: rgba(255, 255, 255, 0.03);
+                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 24px;
+                        padding: 30px 25px;
+                        position: relative;
+                        transition: all 0.3s ease;
+                    }
+
+                    #slide4 .phase:hover {
+                        transform: translateY(-8px);
+                        border-color: #00d4ff;
+                    }
+
+                    #slide4 .phase-header {
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                        margin-bottom: 20px;
+                    }
+
+                    #slide4 .phase-icon {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 15px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.8rem;
+                    }
+
+                    #slide4 .phase:nth-child(1) .phase-icon {
+                        background: linear-gradient(135deg, #667eea, #764ba2);
+                    }
+
+                    #slide4 .phase:nth-child(2) .phase-icon {
+                        background: linear-gradient(135deg, #f093fb, #f5576c);
+                    }
+
+                    #slide4 .phase:nth-child(3) .phase-icon {
+                        background: linear-gradient(135deg, #4facfe, #00f2fe);
+                    }
+
+                    #slide4 .phase:nth-child(4) .phase-icon {
+                        background: linear-gradient(135deg, #43e97b, #38f9d7);
+                    }
+
+                    #slide4 .phase-info {
+                        flex: 1;
+                    }
+
+                    #slide4 .phase-name {
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        color: white;
+                        margin-bottom: 5px;
+                    }
+
+                    #slide4 .phase-days {
+                        font-size: 0.9rem;
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+
+                    #slide4 .phase-content {
+                        list-style: none;
+                    }
+
+                    #slide4 .phase-content li {
+                        color: rgba(255, 255, 255, 0.8);
+                        font-size: 0.95rem;
+                        padding: 8px 0;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+                    #slide4 .phase-content li:last-child {
+                        border-bottom: none;
+                    }
+
+                    #slide4 .phase-content li::before {
+                        content: '→';
+                        color: #00d4ff;
+                        font-weight: bold;
+                    }
+
+                    #slide4 .phase-output {
+                        margin-top: 20px;
+                        padding-top: 15px;
+                        border-top: 2px dashed rgba(255, 255, 255, 0.1);
+                    }
+
+                    #slide4 .output-label {
+                        font-size: 0.85rem;
+                        color: rgba(255, 255, 255, 0.5);
+                        margin-bottom: 8px;
+                    }
+
+                    #slide4 .output-value {
+                        color: #ffa500;
+                        font-weight: 700;
+                        font-size: 1rem;
+                    }
+                </style>
+                <div id="slide4">
+                    <div class="header">
+                        <h1 class="main-title">
+                            <span class="highlight">30天</span> 课程大纲
+                        </h1>
+                        <p class="subtitle">四个阶段，从0到1做出可变现产品</p>
+                    </div>
+
+                    <div class="timeline">
+                        <div class="phase">
+                            <div class="phase-header">
+                                <div class="phase-icon">🗡️</div>
+                                <div class="phase-info">
+                                    <div class="phase-name">装备屠龙刀</div>
+                                    <div class="phase-days">Day 1-10</div>
+                                </div>
+                            </div>
+                            <ul class="phase-content">
+                                <li>四款AI编辑器</li>
+                                <li>三大AI模型</li>
+                                <li>设计审美提升</li>
+                                <li>Git版本控制</li>
+                                <li>部署上线</li>
+                            </ul>
+                            <div class="phase-output">
+                                <div class="output-label">阶段产出</div>
+                                <div class="output-value">🌐 个人网站上线</div>
+                            </div>
+                        </div>
+
+                        <div class="phase">
+                            <div class="phase-header">
+                                <div class="phase-icon">🤖</div>
+                                <div class="phase-info">
+                                    <div class="phase-name">数字人分身</div>
+                                    <div class="phase-days">Day 11-20</div>
+                                </div>
+                            </div>
+                            <ul class="phase-content">
+                                <li>抖音内容提取</li>
+                                <li>AI改写脚本</li>
+                                <li>声音克隆</li>
+                                <li>数字人生成</li>
+                                <li>全网自动分发</li>
+                            </ul>
+                            <div class="phase-output">
+                                <div class="output-label">阶段产出</div>
+                                <div class="output-value">📹 数字人短视频</div>
+                            </div>
+                        </div>
+
+                        <div class="phase">
+                            <div class="phase-header">
+                                <div class="phase-icon">🏰</div>
+                                <div class="phase-info">
+                                    <div class="phase-name">商业护城河</div>
+                                    <div class="phase-days">Day 21-29</div>
+                                </div>
+                            </div>
+                            <ul class="phase-content">
+                                <li>游戏化交互</li>
+                                <li>Supabase数据库</li>
+                                <li>用户登录系统</li>
+                                <li>课程管理后台</li>
+                                <li>接入AI老师</li>
+                            </ul>
+                            <div class="phase-output">
+                                <div class="output-label">阶段产出</div>
+                                <div class="output-value">🎮 英语学习系统</div>
+                            </div>
+                        </div>
+
+                        <div class="phase">
+                            <div class="phase-header">
+                                <div class="phase-icon">💰</div>
+                                <div class="phase-info">
+                                    <div class="phase-name">变现毕业</div>
+                                    <div class="phase-days">Day 30+</div>
+                                </div>
+                            </div>
+                            <ul class="phase-content">
+                                <li>产品打磨</li>
+                                <li>定价策略</li>
+                                <li>销售话术</li>
+                                <li>渠道分发</li>
+                                <li>持续迭代</li>
+                            </ul>
+                            <div class="phase-output">
+                                <div class="output-label">阶段产出</div>
+                                <div class="output-value">💵 能卖钱的产品</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 示例（完整保留原始样式和内容）-->
+            <div class="swiper-slide">
+                <style>
+                    #slide5 {
+                        width: 100%;
+                        max-width: 1100px;
+                        text-align: center;
+                    }
+
+                    #slide5 .main-title {
+                        font-size: 2.2rem;
+                        font-weight: 900;
+                        color: white;
+                        margin-bottom: 20px;
+                    }
+
+                    #slide5 .pricing-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 20px;
+                        margin-bottom: 15px;
+                    }
+
+                    #slide5 .price-card {
+                        background: rgba(255, 255, 255, 0.03);
+                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 20px;
+                        padding: 20px 25px;
+                        position: relative;
+                    }
+
+                    #slide5 .featured {
+                        border-color: #ffa500;
+                        background: linear-gradient(145deg, rgba(255, 165, 0, 0.1), rgba(255, 107, 107, 0.05));
+                    }
+
+                    #slide5 .featured::before {
+                        content: '🔥 最受欢迎';
+                        position: absolute;
+                        top: -12px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background: linear-gradient(90deg, #ff6b6b, #ffa500);
+                        color: white;
+                        padding: 5px 15px;
+                        border-radius: 15px;
+                        font-size: 0.85rem;
+                        font-weight: 700;
+                    }
+
+                    #slide5 .card-title {
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        color: white;
+                        margin-bottom: 5px;
+                    }
+
+                    #slide5 .card-subtitle {
+                        font-size: 0.9rem;
+                        color: rgba(255, 255, 255, 0.5);
+                        margin-bottom: 12px;
+                    }
+
+                    #slide5 .price-value {
+                        font-size: 2.5rem;
+                        font-weight: 900;
+                        color: #00d4ff;
+                        margin-bottom: 12px;
+                    }
+
+                    #slide5 .currency {
+                        font-size: 1.2rem;
+                        vertical-align: super;
+                    }
+
+                    #slide5 .featured .price-value {
+                        color: #ffa500;
+                    }
+
+                    #slide5 .feature-list {
+                        list-style: none;
+                        text-align: left;
+                        padding: 0;
+                    }
+
+                    #slide5 .feature-list li {
+                        padding: 5px 0;
+                        color: rgba(255, 255, 255, 0.8);
+                        font-size: 0.9rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                    }
+
+                    #slide5 .feature-list li:last-child {
+                        border-bottom: none;
+                    }
+
+                    #slide5 .icon {
+                        font-size: 1rem;
+                    }
+
+                    #slide5 .check {
+                        color: #43e97b;
+                    }
+
+                    #slide5 .cross {
+                        color: #ff6b6b;
+                        opacity: 0.5;
+                    }
+
+                    #slide5 .bottom-note {
+                        background: rgba(0, 212, 255, 0.1);
+                        border: 1px solid rgba(0, 212, 255, 0.3);
+                        border-radius: 12px;
+                        padding: 12px 25px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 12px;
+                    }
+
+                    #slide5 .note-icon {
+                        font-size: 1.5rem;
+                    }
+
+                    #slide5 .note-text {
+                        font-size: 1rem;
+                        color: white;
+                    }
+
+                    #slide5 .note-highlight {
+                        color: #00d4ff;
+                        font-weight: 700;
+                    }
+                </style>
+                <div id="slide5">
+                    <h1 class="main-title">两种选择，按需上车 🚀</h1>
+                    <div class="pricing-grid">
+                        <div class="price-card">
+                            <div class="card-title">入门体验课</div>
+                            <div class="card-subtitle">试试水，1天上手</div>
+                            <div class="price-value"><span class="currency">¥</span>169</div>
+                            <ul class="feature-list">
+                                <li><span class="icon check">✓</span>环境配置全流程</li>
+                                <li><span class="icon check">✓</span>第一个项目跑通</li>
+                                <li><span class="icon check">✓</span>个人网站上线</li>
+                                <li><span class="icon check">✓</span>入门社群答疑</li>
+                                <li><span class="icon cross">✗</span>数字人项目</li>
+                                <li><span class="icon cross">✗</span>英语系统项目</li>
+                                <li><span class="icon cross">✗</span>1对1指导</li>
+                            </ul>
+                        </div>
+                        <div class="price-card featured">
+                            <div class="card-title">30天完整版</div>
+                            <div class="card-subtitle">从0到变现，全程陪跑</div>
+                            <div class="price-value"><span class="currency">¥</span>1699</div>
+                            <ul class="feature-list">
+                                <li><span class="icon check">✓</span>30天系统课程</li>
+                                <li><span class="icon check">✓</span>3套可变现项目</li>
+                                <li><span class="icon check">✓</span>专属学员社群</li>
+                                <li><span class="icon check">✓</span>每周直播答疑</li>
+                                <li><span class="icon check">✓</span>1对1环境配置</li>
+                                <li><span class="icon check">✓</span>项目源码交付</li>
+                                <li><span class="icon check">✓</span>终身课程更新</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bottom-note">
+                        <span class="note-icon">💡</span>
+                        <span class="note-text">
+                            买169试水？升级完整版时<span class="note-highlight">直接抵扣</span>！
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Slide 6 -->
+            <div class="swiper-slide">
+                <style>
+                    #slide6 {
+                        width: 100%;
+                        max-width: 1200px;
+                        text-align: center;
+                    }
+
+                    #slide6 .main-title {
+                        font-size: 2.2rem;
+                        font-weight: 900;
+                        color: white;
+                        margin-bottom: 20px;
+                    }
+
+                    #slide6 .main-title .highlight {
+                        background: linear-gradient(90deg, #43e97b, #38f9d7);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+
+                    #slide6 .outcomes-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 15px;
+                        margin-bottom: 20px;
+                    }
+
+                    #slide6 .outcome-card {
+                        background: rgba(255, 255, 255, 0.03);
+                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 16px;
+                        padding: 18px 15px;
+                        text-align: center;
+                        transition: all 0.3s ease;
+                    }
+
+                    #slide6 .outcome-card:hover {
+                        transform: translateY(-5px);
+                        border-color: #43e97b;
+                    }
+
+                    #slide6 .outcome-icon {
+                        font-size: 2.2rem;
+                        margin-bottom: 8px;
+                    }
+
+                    #slide6 .outcome-title {
+                        font-size: 1.1rem;
+                        font-weight: 700;
+                        color: white;
+                        margin-bottom: 6px;
+                    }
+
+                    #slide6 .outcome-desc {
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 0.85rem;
+                        line-height: 1.4;
+                    }
+
+                    #slide6 .bottom-banner {
+                        background: linear-gradient(90deg, rgba(67, 233, 123, 0.15), rgba(56, 249, 215, 0.15));
+                        border: 2px solid rgba(67, 233, 123, 0.3);
+                        border-radius: 15px;
+                        padding: 15px 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 15px;
+                    }
+
+                    #slide6 .banner-icon {
+                        font-size: 2rem;
+                    }
+
+                    #slide6 .banner-content {
+                        text-align: left;
+                    }
+
+                    #slide6 .banner-title {
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                        color: white;
+                        margin-bottom: 4px;
+                    }
+
+                    #slide6 .banner-subtitle {
+                        font-size: 0.95rem;
+                        color: rgba(255, 255, 255, 0.7);
+                    }
+
+                    #slide6 .banner-subtitle .accent {
+                        color: #43e97b;
+                        font-weight: 700;
+                    }
+                </style>
+                <div id="slide6">
+                    <h1 class="main-title">
+                        学完你能 <span class="highlight">得到什么？</span>
+                    </h1>
+
+                    <div class="outcomes-grid">
+                        <div class="outcome-card">
+                            <div class="outcome-icon">🌐</div>
+                            <div class="outcome-title">个人网站</div>
+                            <div class="outcome-desc">
+                                今晚8点<br>朋友圈能点开的<br>专属网站
+                            </div>
+                        </div>
+
+                        <div class="outcome-card">
+                            <div class="outcome-icon">🤖</div>
+                            <div class="outcome-title">数字人分身</div>
+                            <div class="outcome-desc">
+                                声音+形象克隆<br>10分钟出视频<br>告别蝉镜月费
+                            </div>
+                        </div>
+
+                        <div class="outcome-card">
+                            <div class="outcome-icon">🎮</div>
+                            <div class="outcome-title">英语学习系统</div>
+                            <div class="outcome-desc">
+                                完整商业级产品<br>可以拿来招生<br>可以直接卖钱
+                            </div>
+                        </div>
+
+                        <div class="outcome-card">
+                            <div class="outcome-icon">📦</div>
+                            <div class="outcome-title">3套项目源码</div>
+                            <div class="outcome-desc">
+                                拿来即用<br>可二次开发<br>可商业变现
+                            </div>
+                        </div>
+
+                        <div class="outcome-card">
+                            <div class="outcome-icon">🧠</div>
+                            <div class="outcome-title">AI编程能力</div>
+                            <div class="outcome-desc">
+                                指挥AI写代码<br>不用学编程语法<br>一人=一支团队
+                            </div>
+                        </div>
+
+                        <div class="outcome-card">
+                            <div class="outcome-icon">👥</div>
+                            <div class="outcome-title">终身社群</div>
+                            <div class="outcome-desc">
+                                专属学员社群<br>持续更新课程<br>长期价值
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bottom-banner">
+                        <div class="banner-icon">🎁</div>
+                        <div class="banner-content">
+                            <div class="banner-title">所有产出物都是你的资产</div>
+                            <div class="banner-subtitle">
+                                自己用、给孩子用、给同事用、<span class="accent">拿去卖钱</span>——都行！
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Slide 7 -->
+            <div class="swiper-slide">
+                <style>
+                    #slide7 {
+                        width: 100%;
+                        max-width: 1100px;
+                        text-align: center;
+                    }
+
+                    #slide7 .main-title {
+                        font-size: 2.4rem;
+                        font-weight: 900;
+                        color: white;
+                        margin-bottom: 10px;
+                    }
+
+                    #slide7 .main-title .highlight {
+                        color: #ff6b6b;
+                    }
+
+                    #slide7 .subtitle {
+                        font-size: 1.1rem;
+                        color: rgba(255, 255, 255, 0.6);
+                        margin-bottom: 25px;
+                    }
+
+                    #slide7 .timeline-container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: stretch;
+                        gap: 0;
+                        margin-bottom: 25px;
+                    }
+
+                    #slide7 .timeline-item {
+                        flex: 1;
+                        max-width: 300px;
+                        padding: 20px 25px;
+                        position: relative;
+                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        background: rgba(255, 255, 255, 0.02);
+                    }
+
+                    #slide7 .timeline-item:first-child {
+                        border-radius: 16px 0 0 16px;
+                        border-right: none;
+                    }
+
+                    #slide7 .timeline-item:last-child {
+                        border-radius: 0 16px 16px 0;
+                        border-left: none;
+                    }
+
+                    #slide7 .timeline-item.past {
+                        opacity: 0.5;
+                    }
+
+                    #slide7 .timeline-item.now {
+                        background: linear-gradient(145deg, rgba(0, 212, 255, 0.15), rgba(123, 104, 238, 0.1));
+                        border-color: #00d4ff;
+                        transform: scale(1.05);
+                        z-index: 1;
+                        border-radius: 16px;
+                    }
+
+                    #slide7 .timeline-item.future {
+                        opacity: 0.6;
+                    }
+
+                    #slide7 .time-label {
+                        display: inline-block;
+                        padding: 5px 15px;
+                        border-radius: 15px;
+                        font-size: 0.85rem;
+                        font-weight: 600;
+                        margin-bottom: 10px;
+                    }
+
+                    #slide7 .past .time-label {
+                        background: rgba(255, 255, 255, 0.1);
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+
+                    #slide7 .now .time-label {
+                        background: linear-gradient(90deg, #00d4ff, #7b68ee);
+                        color: white;
+                    }
+
+                    #slide7 .future .time-label {
+                        background: rgba(255, 107, 107, 0.2);
+                        color: #ff6b6b;
+                    }
+
+                    #slide7 .time-title {
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        color: white;
+                        margin-bottom: 8px;
+                    }
+
+                    #slide7 .time-desc {
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 0.9rem;
+                        line-height: 1.4;
+                    }
+
+                    #slide7 .time-icon {
+                        font-size: 2.2rem;
+                        margin-bottom: 10px;
+                    }
+
+                    #slide7 .bottom-quote {
+                        background: rgba(255, 107, 107, 0.1);
+                        border: 2px solid rgba(255, 107, 107, 0.3);
+                        border-radius: 15px;
+                        padding: 18px 35px;
+                    }
+
+                    #slide7 .quote-text {
+                        font-size: 1.2rem;
+                        color: white;
+                        font-weight: 700;
+                    }
+
+                    #slide7 .quote-text .accent {
+                        color: #ff6b6b;
+                    }
+                </style>
+                <div id="slide7">
+                    <h1 class="main-title">
+                        为什么是 <span class="highlight">现在</span> 要学？
+                    </h1>
+                    <p class="subtitle">2026年，AI编程迎来分水岭</p>
+
+                    <div class="timeline-container">
+                        <div class="timeline-item past">
+                            <div class="time-icon">🔙</div>
+                            <div class="time-label">去年</div>
+                            <div class="time-title">AI = 玩具</div>
+                            <div class="time-desc">
+                                只能做Demo<br>
+                                只能写贪吃蛇<br>
+                                做不了真项目
+                            </div>
+                        </div>
+
+                        <div class="timeline-item now">
+                            <div class="time-icon">🔥</div>
+                            <div class="time-label">现在 2026</div>
+                            <div class="time-title">AI = 生产力</div>
+                            <div class="time-desc">
+                                能做商业级产品<br>
+                                一人单挑一个团队<br>
+                                一周交付完整项目
+                            </div>
+                        </div>
+
+                        <div class="timeline-item future">
+                            <div class="time-icon">⚠️</div>
+                            <div class="time-label">后年</div>
+                            <div class="time-title">AI = 常识</div>
+                            <div class="time-desc">
+                                不会就落伍<br>
+                                红利期已过<br>
+                                被时代淘汰
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bottom-quote">
+                        <div class="quote-text">
+                            10年前不会上网是文盲，<span class="accent">2026年不会AI是新文盲</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8 -->
+            <div class="swiper-slide">
+                <style>
+                    #slide8 {
+                        width: 100%;
+                        max-width: 1100px;
+                        text-align: center;
+                    }
+
+                    #slide8 .main-title {
+                        font-size: 2.2rem;
+                        font-weight: 900;
+                        color: white;
+                        margin-bottom: 20px;
+                    }
+
+                    #slide8 .main-title .highlight {
+                        background: linear-gradient(90deg, #ffa500, #ff6b6b);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+
+                    #slide8 .guarantees-grid {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 15px;
+                        margin-bottom: 20px;
+                    }
+
+                    #slide8 .guarantee-card {
+                        background: rgba(255, 255, 255, 0.03);
+                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 16px;
+                        padding: 18px 20px;
+                        text-align: left;
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 15px;
+                        transition: all 0.3s ease;
+                    }
+
+                    #slide8 .guarantee-card:hover {
+                        border-color: rgba(255, 165, 0, 0.5);
+                    }
+
+                    #slide8 .guarantee-icon {
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 12px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.5rem;
+                        flex-shrink: 0;
+                        background: linear-gradient(135deg, rgba(255, 165, 0, 0.2), rgba(255, 107, 107, 0.2));
+                    }
+
+                    #slide8 .guarantee-content {
+                        flex: 1;
+                    }
+
+                    #slide8 .guarantee-title {
+                        font-size: 1.1rem;
+                        font-weight: 700;
+                        color: white;
+                        margin-bottom: 4px;
+                    }
+
+                    #slide8 .guarantee-desc {
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 0.85rem;
+                        line-height: 1.4;
+                    }
+
+                    #slide8 .refund-banner {
+                        background: linear-gradient(90deg, rgba(67, 233, 123, 0.15), rgba(56, 249, 215, 0.15));
+                        border: 2px solid rgba(67, 233, 123, 0.5);
+                        border-radius: 16px;
+                        padding: 18px 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 20px;
+                    }
+
+                    #slide8 .refund-icon {
+                        font-size: 2.5rem;
+                    }
+
+                    #slide8 .refund-content {
+                        text-align: left;
+                    }
+
+                    #slide8 .refund-title {
+                        font-size: 1.3rem;
+                        font-weight: 900;
+                        color: white;
+                        margin-bottom: 4px;
+                    }
+
+                    #slide8 .refund-title .accent {
+                        color: #43e97b;
+                    }
+
+                    #slide8 .refund-desc {
+                        font-size: 0.95rem;
+                        color: rgba(255, 255, 255, 0.8);
+                    }
+                </style>
+                <div id="slide8">
+                    <h1 class="main-title">
+                        买课 <span class="highlight">零风险</span>
+                    </h1>
+
+                    <div class="guarantees-grid">
+                        <div class="guarantee-card">
+                            <div class="guarantee-icon">👨‍🏫</div>
+                            <div class="guarantee-content">
+                                <div class="guarantee-title">1对1环境配置</div>
+                                <div class="guarantee-desc">
+                                    最难的第一步，我手把手帮你搞定<br>
+                                    不会装软件？我来帮你远程装
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="guarantee-card">
+                            <div class="guarantee-icon">💬</div>
+                            <div class="guarantee-content">
+                                <div class="guarantee-title">每周直播答疑</div>
+                                <div class="guarantee-desc">
+                                    遇到问题不用等<br>
+                                    直播间现场给你解决
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="guarantee-card">
+                            <div class="guarantee-icon">♾️</div>
+                            <div class="guarantee-content">
+                                <div class="guarantee-title">终身课程更新</div>
+                                <div class="guarantee-desc">
+                                    AI领域日新月异<br>
+                                    新内容免费更新，一次付费，终身受益
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="guarantee-card">
+                            <div class="guarantee-icon">👥</div>
+                            <div class="guarantee-content">
+                                <div class="guarantee-title">专属学员社群</div>
+                                <div class="guarantee-desc">
+                                    志同道合的人一起学<br>
+                                    互相帮助，共同成长
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="refund-banner">
+                        <div class="refund-icon">🛡️</div>
+                        <div class="refund-content">
+                            <div class="refund-title">
+                                30天学不会做产品？<span class="accent">全额退款！</span>
+                            </div>
+                            <div class="refund-desc">
+                                我对课程质量有信心，你没有任何风险
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Slide 9 -->
+            <div class="swiper-slide">
+                <style>
+                    #slide9 {
+                        width: 100%;
+                        max-width: 1000px;
+                        text-align: center;
+                    }
+
+                    #slide9 .flash-icon {
+                        font-size: 2.5rem;
+                        margin-bottom: 8px;
+                        animation: flash 1s infinite;
+                    }
+
+                    @keyframes flash {
+
+                        0%,
+                        100% {
+                            opacity: 1;
+                        }
+
+                        50% {
+                            opacity: 0.5;
+                        }
+                    }
+
+                    #slide9 .main-title {
+                        font-size: 2.2rem;
+                        font-weight: 900;
+                        color: white;
+                        margin-bottom: 8px;
+                    }
+
+                    #slide9 .main-title .highlight {
+                        background: linear-gradient(90deg, #ff6b6b, #ffa500);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+
+                    #slide9 .subtitle {
+                        font-size: 1rem;
+                        color: rgba(255, 255, 255, 0.6);
+                        margin-bottom: 20px;
+                    }
+
+                    #slide9 .gifts-container {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+                        margin-bottom: 20px;
+                    }
+
+                    #slide9 .gift-item {
+                        background: rgba(255, 255, 255, 0.03);
+                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 14px;
+                        padding: 14px 20px;
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                        transition: all 0.3s ease;
+                    }
+
+                    #slide9 .gift-item:hover {
+                        border-color: #ffa500;
+                    }
+
+                    #slide9 .gift-number {
+                        width: 38px;
+                        height: 38px;
+                        border-radius: 50%;
+                        background: linear-gradient(135deg, #ff6b6b, #ffa500);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.1rem;
+                        font-weight: 900;
+                        color: white;
+                        flex-shrink: 0;
+                    }
+
+                    #slide9 .gift-content {
+                        flex: 1;
+                        text-align: left;
+                    }
+
+                    #slide9 .gift-title {
+                        font-size: 1.05rem;
+                        font-weight: 700;
+                        color: white;
+                        margin-bottom: 2px;
+                    }
+
+                    #slide9 .gift-desc {
+                        color: rgba(255, 255, 255, 0.6);
+                        font-size: 0.85rem;
+                    }
+
+                    #slide9 .gift-value {
+                        background: rgba(255, 165, 0, 0.15);
+                        border: 1px solid rgba(255, 165, 0, 0.3);
+                        border-radius: 8px;
+                        padding: 6px 12px;
+                        color: #ffa500;
+                        font-weight: 700;
+                        font-size: 0.9rem;
+                    }
+
+                    #slide9 .action-box {
+                        background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 165, 0, 0.2));
+                        border: 2px solid #ffa500;
+                        border-radius: 16px;
+                        padding: 18px 25px;
+                    }
+
+                    #slide9 .action-title {
+                        font-size: 1.2rem;
+                        color: white;
+                        font-weight: 700;
+                        margin-bottom: 12px;
+                    }
+
+                    #slide9 .action-steps {
+                        display: flex;
+                        justify-content: center;
+                        gap: 25px;
+                        flex-wrap: wrap;
+                    }
+
+                    #slide9 .step {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        color: rgba(255, 255, 255, 0.9);
+                        font-size: 0.95rem;
+                    }
+
+                    #slide9 .step-icon {
+                        font-size: 1.2rem;
+                    }
+                </style>
+                <div id="slide9">
+                    <div class="flash-icon">🎁</div>
+                    <h1 class="main-title">
+                        直播间 <span class="highlight">独家福利</span>
+                    </h1>
+                    <p class="subtitle">今天下单专属，过时不候</p>
+
+                    <div class="gifts-container">
+                        <div class="gift-item">
+                            <div class="gift-number">1</div>
+                            <div class="gift-content">
+                                <div class="gift-title">169入门课可抵扣</div>
+                                <div class="gift-desc">买入门课试水，升级完整版直接抵扣</div>
+                            </div>
+                            <div class="gift-value">省169元</div>
+                        </div>
+
+                        <div class="gift-item">
+                            <div class="gift-number">2</div>
+                            <div class="gift-content">
+                                <div class="gift-title">前50名1对1配置</div>
+                                <div class="gift-desc">远程帮你装好所有开发环境</div>
+                            </div>
+                            <div class="gift-value">价值300元</div>
+                        </div>
+
+                        <div class="gift-item">
+                            <div class="gift-number">3</div>
+                            <div class="gift-content">
+                                <div class="gift-title">转发朋友圈领169课</div>
+                                <div class="gift-desc">帮我宣传一下，入门课免费送你</div>
+                            </div>
+                            <div class="gift-value">免费领</div>
+                        </div>
+                    </div>
+
+                    <div class="action-box">
+                        <div class="action-title">🛒 如何领取福利？</div>
+                        <div class="action-steps">
+                            <div class="step">
+                                <span class="step-icon">1️⃣</span>
+                                <span>转发朋友圈或100人群</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-icon">2️⃣</span>
+                                <span>截图私信助手</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-icon">3️⃣</span>
+                                <span>领取169入门课</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10 -->
+            <div class="swiper-slide">
+                <style>
+                    #slide10 {
+                        position: relative;
+                        z-index: 1;
+                        width: 100%;
+                        max-width: 1000px;
+                        text-align: center;
+                    }
+
+                    #slide10 .urgency-banner {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 15px;
+                        background: rgba(255, 107, 107, 0.2);
+                        border: 2px solid #ff6b6b;
+                        border-radius: 50px;
+                        padding: 15px 35px;
+                        margin-bottom: 40px;
+                        animation: pulse10 2s infinite;
+                    }
+
+                    @keyframes pulse10 {
+
+                        0%,
+                        100% {
+                            transform: scale(1);
+                            box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4);
+                        }
+
+                        50% {
+                            transform: scale(1.02);
+                            box-shadow: 0 0 30px 10px rgba(255, 107, 107, 0.2);
+                        }
+                    }
+
+                    #slide10 .urgency-icon {
+                        font-size: 2rem;
+                    }
+
+                    #slide10 .urgency-text {
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        color: #ff6b6b;
+                    }
+
+                    #slide10 .main-title {
+                        font-size: 4.5rem;
+                        font-weight: 900;
+                        color: white;
+                        margin-bottom: 20px;
+                        line-height: 1.2;
+                    }
+
+                    #slide10 .main-title .highlight {
+                        background: linear-gradient(90deg, #00d4ff, #7b68ee, #ff6b9d);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+
+                    #slide10 .subtitle {
+                        font-size: 1.8rem;
+                        color: rgba(255, 255, 255, 0.7);
+                        margin-bottom: 50px;
+                    }
+
+                    #slide10 .cta-buttons {
+                        display: flex;
+                        justify-content: center;
+                        gap: 30px;
+                        margin-bottom: 50px;
+                        flex-wrap: wrap;
+                    }
+
+                    #slide10 .cta-btn {
+                        padding: 25px 60px;
+                        border-radius: 20px;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 8px;
+                        transition: all 0.3s ease;
+                        cursor: pointer;
+                    }
+
+                    #slide10 .cta-btn.secondary {
+                        background: rgba(255, 255, 255, 0.05);
+                        border: 3px solid rgba(255, 255, 255, 0.2);
+                        color: white;
+                    }
+
+                    #slide10 .cta-btn.secondary:hover {
+                        border-color: #00d4ff;
+                        transform: translateY(-5px);
+                    }
+
+                    #slide10 .cta-btn.primary {
+                        background: linear-gradient(135deg, #ff6b6b, #ffa500);
+                        border: none;
+                        color: white;
+                        box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+                    }
+
+                    #slide10 .cta-btn.primary:hover {
+                        transform: translateY(-8px) scale(1.02);
+                        box-shadow: 0 20px 50px rgba(255, 107, 107, 0.5);
+                    }
+
+                    #slide10 .btn-price {
+                        font-size: 2.2rem;
+                    }
+
+                    #slide10 .btn-label {
+                        font-size: 1rem;
+                        opacity: 0.8;
+                    }
+
+                    #slide10 .bottom-note {
+                        display: flex;
+                        justify-content: center;
+                        gap: 50px;
+                        flex-wrap: wrap;
+                    }
+
+                    #slide10 .note-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        color: rgba(255, 255, 255, 0.6);
+                        font-size: 1.1rem;
+                    }
+
+                    #slide10 .note-icon {
+                        font-size: 1.5rem;
+                    }
+                </style>
+                <div id="slide10">
+                    <div class="urgency-banner">
+                        <span class="urgency-icon">⏰</span>
+                        <span class="urgency-text">本期只收50人，名额有限！</span>
+                    </div>
+
+                    <h1 class="main-title">
+                        点击购物车<br>
+                        <span class="highlight">立即下单</span>
+                    </h1>
+
+                    <p class="subtitle">
+                        30天后，你将拥有属于自己的AI超能力
+                    </p>
+
+                    <div class="cta-buttons">
+                        <div class="cta-btn secondary">
+                            <span class="btn-price">¥169</span>
+                            <span class="btn-label">入门体验课</span>
+                        </div>
+                        <div class="cta-btn primary">
+                            <span class="btn-price">¥1699</span>
+                            <span class="btn-label">30天完整版 · 力荐</span>
+                        </div>
+                    </div>
+
+                    <div class="bottom-note">
+                        <div class="note-item">
+                            <span class="note-icon">🛡️</span>
+                            <span>30天无效全额退</span>
+                        </div>
+                        <div class="note-item">
+                            <span class="note-icon">👨‍🏫</span>
+                            <span>1对1环境配置</span>
+                        </div>
+                        <div class="note-item">
+                            <span class="note-icon">♾️</span>
+                            <span>终身课程更新</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper(".swiper", {
+                direction: "horizontal",
+                speed: 300,
+                keyboard: {
+                    enabled: true,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+
+                // 核心修复：启用触摸模拟（让鼠标/触摸板能拖拽）
+                simulateTouch: true,           // 🔥 关键！让鼠标也能拖拽
+                allowTouchMove: true,          // 允许触摸移动
+                grabCursor: true,              // 显示抓手光标
+
+                // 让拖拽真正"跟手"
+                touchRatio: 1,                 // 1:1 跟随手指
+                threshold: 10,                 // 只需10px就开始跟随（降低了！）
+
+                // 拖拽释放后的行为
+                longSwipes: true,              // 启用长拖拽
+                longSwipesRatio: 0.3,         // 拖拽30%就切换
+                shortSwipes: true,             // 允许短拖拽（但由threshold控制）
+                longSwipesMs: 200,             // 长拖拽时间阈值
+
+                // 边缘处理
+                resistance: true,
+                resistanceRatio: 0.5,          // 边缘阻力降低
+                touchReleaseOnEdges: false,
+
+                // 平滑度
+                followFinger: true,            // 🔥 关键！完全跟随手指
+                freeMode: false,               // 不启用自由模式（会自动吸附）
+                freeModeSticky: false,
+
+                // 🔥 关键新增：启用触摸板双指滑动（降低灵敏度）
+                mousewheel: {
+                    enabled: true,
+                    forceToAxis: true,         // 强制只在水平方向
+                    sensitivity: 3,            // 提高阈值：需要更大的滑动才切换
+                    releaseOnEdges: true,
+                    invert: false,             // 不反转方向
+                },
+
+                // 防止误触
+                touchStartPreventDefault: false,
+            });
+        });
+    </script>
+</body>
+
+</html>
