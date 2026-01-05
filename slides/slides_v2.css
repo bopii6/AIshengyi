@@ -679,3 +679,37 @@ body::after {
         border-color: var(--text-white);
     }
 }
+
+/* ===== Danmu (Floating Comments) Animation ===== */
+.viral-danmu-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+    /* Behind main content */
+}
+
+.viral-danmu-item {
+    position: absolute;
+    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.1);
+    /* Very subtle opacity */
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    left: 100%;
+    animation: danmu-drift linear infinite;
+}
+
+@keyframes danmu-drift {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-150vw);
+    }
+}
