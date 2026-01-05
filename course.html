@@ -1,727 +1,604 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI编程30天实战 - 课程表</title>
+    <meta name="description" content="AI编程30天实战课程表 - 所想，即所得">
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Internal override for the ticket specific styles if needed, 
-           but mostly will use styles.css. 
-           Defining some specific overrides here for the unique page layout. */
-        body {
-            background-color: #f0f0f2;
-            /* Light background for contrast with tickets */
-            color: #1d1d1f;
-        }
-
-        .bg-animation {
-            opacity: 0.5;
-            filter: blur(100px);
-            z-index: 0;
-        }
-
-        .ticket-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 24px;
-            padding: 40px 0;
-            position: relative;
-            z-index: 1;
-        }
-    </style>
+    <link rel="stylesheet" href="course_styles.css">
 </head>
 
-<body>
+<body class="course-page">
     <div class="bg-animation"></div>
 
     <div class="container">
         <header class="header">
-            <div class="header-badge">🚀 30 Day AI Coding Challenge</div>
-            <h1>你的通关车票</h1>
-            <p class="subtitle">完成每一个任务，<strong style="color: #ef4444;">撕毁</strong>每一张车票</p>
+            <h1>🚀 AI编程30天实战</h1>
+            <p class="subtitle">所想，即所得</p>
         </header>
 
-        <div class="ticket-grid">
-            <!-- Phase 1: 上帝视角 (Day 1-10) -->
-            <!-- Day 1 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #FF6B6B;">
-                        <span class="day-tag">Day 1</span>
-                        <span class="phase-tag">装备篇</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>神兵出鞘</h3>
-                        <p>Cursor / VS Code / Claude CLI 深度配置</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🛠️</span> Editor Setup
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#001</span>
-                </div>
+        <!-- Phase 1: 上帝视角·装备"屠龙刀" -->
+        <section class="phase-section phase-1">
+            <div class="phase-header">
+                <span class="phase-badge">PHASE 1</span>
+                <span class="phase-title">上帝视角·装备"屠龙刀"</span>
             </div>
 
-            <!-- Day 2 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #FF6B6B;">
-                        <span class="day-tag">Day 2</span>
-                        <span class="phase-tag">装备篇</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>反重力引擎</h3>
-                        <p>Antigravity 插件安装与环境配置</p>
-                        <div class="ticket-meta">
-                            <span class="icon">⚡</span> Environment
+            <div class="ticket-grid">
+                <!-- Day 1 -->
+                <div class="ticket phase-1" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 01</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration" style="background-image: url('images/day1_illustration.png');">
                         </div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Editors</span>
+                        </div>
+                        <h3 class="ticket-title">神兵出鞘</h3>
+                        <p class="ticket-desc">Cursor / VS Code / Claude CLI 深度配置，打造最强开发环境。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
                     </div>
                 </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#002</span>
+
+                <!-- Day 2 -->
+                <div class="ticket phase-1" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 02</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration" style="background-image: url('images/day2_illustration.png');">
+                        </div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Environment</span>
+                        </div>
+                        <h3 class="ticket-title">反重力引擎</h3>
+                        <p class="ticket-desc">Antigravity 插件安装与环境配置，下一代 AI 编程体验。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="ticket phase-1" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 03</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration" style="background-image: url('images/day3_illustration.png');">
+                        </div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Terminal</span>
+                        </div>
+                        <h3 class="ticket-title">终端革命</h3>
+                        <p class="ticket-desc">像黑客一样使用命令行 CLI 工具，摆脱鼠标依赖。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 4 -->
+                <div class="ticket phase-1" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 04</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration" style="background-image: url('images/day4_illustration.png');">
+                        </div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">AI Models</span>
+                        </div>
+                        <h3 class="ticket-title">调兵遣将</h3>
+                        <p class="ticket-desc">驾驭 Claude、Codex、GLM 三大 AI 军团，灵活应对项目需求。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 5 -->
+                <div class="ticket phase-1" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 05</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration" style="background-image: url('images/day5_illustration.png');">
+                        </div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Prompt</span>
+                        </div>
+                        <h3 class="ticket-title">知己知彼</h3>
+                        <p class="ticket-desc">深入理解 AI 模型差异，掌握高效 Prompt 技巧。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 6 -->
+                <div class="ticket phase-1" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 06</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration" style="background-image: url('images/day6_illustration.png');">
+                        </div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Design</span>
+                        </div>
+                        <h3 class="ticket-title">去AI味</h3>
+                        <p class="ticket-desc">利用设计语言系统，让产品脱离 AI 味，价值 2000 万。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 7 -->
+                <div class="ticket phase-1" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 07</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration" style="background-image: url('images/day7_illustration.png');">
+                        </div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Version Control</span>
+                        </div>
+                        <h3 class="ticket-title">掌控时空</h3>
+                        <p class="ticket-desc">用自然语言指导 Git，弯道超车降伏版本控制。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 8 -->
+                <div class="ticket phase-1" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 08</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration" style="background-image: url('images/day8_illustration.png');">
+                        </div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Deploy</span>
+                        </div>
+                        <h3 class="ticket-title">昭告天下</h3>
+                        <p class="ticket-desc">Cloudflare 免费 CDN 加速，一键全球部署。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 9 -->
+                <div class="ticket phase-1" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 09</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration" style="background-image: url('images/day9_illustration.png');">
+                        </div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Vercel</span>
+                        </div>
+                        <h3 class="ticket-title">火箭升空</h3>
+                        <p class="ticket-desc">Vercel 一键部署，让你的个人网站全球可见。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 10 -->
+                <div class="ticket phase-1" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 10</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration"
+                            style="background-image: url('images/day10_illustration.png');"></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Domain</span>
+                        </div>
+                        <h3 class="ticket-title">阶段验收</h3>
+                        <p class="ticket-desc">今晚8点，你的个人主页必须在朋友圈能点开！</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Day 3 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #FF6B6B;">
-                        <span class="day-tag">Day 3</span>
-                        <span class="phase-tag">装备篇</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>终端革命</h3>
-                        <p>像黑客一样使用命令行 CLI 工具</p>
-                        <div class="ticket-meta">
-                            <span class="icon">💻</span> Terminal
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#003</span>
-                </div>
+        <!-- Phase 2: 项目实战·全自动数字人分身 -->
+        <section class="phase-section phase-2">
+            <div class="phase-header">
+                <span class="phase-badge">PHASE 2</span>
+                <span class="phase-title">项目实战·全自动数字人分身</span>
             </div>
 
-            <!-- Day 4 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #FF8787;">
-                        <span class="day-tag">Day 4</span>
-                        <span class="phase-tag">调兵遣将</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>Claude Opus</h3>
-                        <p>最刁的模型：处理复杂逻辑与架构</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🧠</span> AI Model
+            <div class="ticket-grid">
+                <!-- Day 11 -->
+                <div class="ticket phase-2" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 11</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration"
+                            style="background-image: url('images/day11_illustration.png');"></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">OCR</span>
                         </div>
+                        <h3 class="ticket-title">文字提取</h3>
+                        <p class="ticket-desc">输入抖音链接，使用语音 OCR 技术提取逐字稿文案。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
                     </div>
                 </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#004</span>
+
+                <!-- Day 12 -->
+                <div class="ticket phase-2" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 12</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration"
+                            style="background-image: url('images/day12_illustration.png');"></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Rewrite</span>
+                        </div>
+                        <h3 class="ticket-title">洗稿大师</h3>
+                        <p class="ticket-desc">接入腾讯混元，训练专属 Prompt，将爆款变成原创。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 13 -->
+                <div class="ticket phase-2" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 13</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration"
+                            style="background-image: url('images/day13_illustration.png');"></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Voice Clone</span>
+                        </div>
+                        <h3 class="ticket-title">声音克隆</h3>
+                        <p class="ticket-desc">录制1分钟音频，训练出一模一样的 AI 嘴替。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 14 -->
+                <div class="ticket phase-2" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 14</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration"
+                            style="background-image: url('images/day14_illustration.png');"></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Docker</span>
+                        </div>
+                        <h3 class="ticket-title">容器魔法</h3>
+                        <p class="ticket-desc">部署 Docker 容器，用 AI 解决技术难点。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 15 -->
+                <div class="ticket phase-2" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 15</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration"
+                            style="background-image: url('images/day15_illustration.png');"></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">GPU</span>
+                        </div>
+                        <h3 class="ticket-title">云端算力</h3>
+                        <p class="ticket-desc">租用 GPU 服务器，释放数字人生成的算力潜能。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 16 -->
+                <div class="ticket phase-2" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 16</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration"
+                            style="background-image: url('images/day16_illustration.png');"></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Digital Human</span>
+                        </div>
+                        <h3 class="ticket-title">画皮术 I</h3>
+                        <p class="ticket-desc">数字人形象训练，开启你的数字分身之旅。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 17 -->
+                <div class="ticket phase-2" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 17</div>
+                    <div class="ticket-main has-illustration">
+                        <div class="ticket-illustration"
+                            style="background-image: url('images/day17_illustration.png');"></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Video Sync</span>
+                        </div>
+                        <h3 class="ticket-title">画皮术 II</h3>
+                        <p class="ticket-desc">语音 + 文字 + 形象 = 完美的数字人视频。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 18 -->
+                <div class="ticket phase-2" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 18</div>
+                    <div class="ticket-main">
+                        <div class="ticket-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Pipeline</span>
+                        </div>
+                        <h3 class="ticket-title">画皮术 III</h3>
+                        <p class="ticket-desc">完善数字人生成流水线，一键生成高质量视频。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 19 -->
+                <div class="ticket phase-2" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 19</div>
+                    <div class="ticket-main">
+                        <div class="ticket-icon"><i class="fa-solid fa-share-nodes"></i></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Auto Upload</span>
+                        </div>
+                        <h3 class="ticket-title">全网分发 I</h3>
+                        <p class="ticket-desc">使用 social-auto-upload 开源框架实现自动发布。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 20 -->
+                <div class="ticket phase-2" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 20</div>
+                    <div class="ticket-main">
+                        <div class="ticket-icon"><i class="fa-solid fa-globe"></i></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Matrix</span>
+                        </div>
+                        <h3 class="ticket-title">全网分发 II</h3>
+                        <p class="ticket-desc">将数字人视频自动分发到多个平台，形成矩阵。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Day 5 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #FF8787;">
-                        <span class="day-tag">Day 5</span>
-                        <span class="phase-tag">调兵遣将</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>Codex & GLM</h3>
-                        <p>低成本修复 Bug 与日常代码补全</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🔧</span> Debugging
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#005</span>
-                </div>
+        <!-- Phase 3: 商业护城河·英语闯关系统 -->
+        <section class="phase-section phase-3">
+            <div class="phase-header">
+                <span class="phase-badge">PHASE 3</span>
+                <span class="phase-title">商业护城河·英语闯关系统</span>
             </div>
 
-            <!-- Day 6 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #4ECDC4;">
-                        <span class="day-tag">Day 6</span>
-                        <span class="phase-tag">审美霸权</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>去 AI 味</h3>
-                        <p>设计语言系统：字体、间距与留白</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🎨</span> Design System
+            <div class="ticket-grid">
+                <!-- Day 21 -->
+                <div class="ticket phase-3" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 21</div>
+                    <div class="ticket-main">
+                        <div class="ticket-icon"><i class="fa-solid fa-gamepad"></i></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Game</span>
                         </div>
+                        <h3 class="ticket-title">游戏化 I</h3>
+                        <p class="ticket-desc">单词掉落 + 键盘监听，打造 MVP 游戏核心。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
                     </div>
                 </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#006</span>
+
+                <!-- Day 22 -->
+                <div class="ticket phase-3" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 22</div>
+                    <div class="ticket-main">
+                        <div class="ticket-icon"><i class="fa-solid fa-volume-high"></i></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Audio</span>
+                        </div>
+                        <h3 class="ticket-title">游戏化 II</h3>
+                        <p class="ticket-desc">音效反馈系统，让游戏体验更加沉浸。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 23 -->
+                <div class="ticket phase-3" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 23</div>
+                    <div class="ticket-main">
+                        <div class="ticket-icon"><i class="fa-solid fa-trophy"></i></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Rewards</span>
+                        </div>
+                        <h3 class="ticket-title">游戏化 III</h3>
+                        <p class="ticket-desc">积分系统与成就徽章，激励用户持续学习。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 24 -->
+                <div class="ticket phase-3" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 24</div>
+                    <div class="ticket-main">
+                        <div class="ticket-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Levels</span>
+                        </div>
+                        <h3 class="ticket-title">游戏化 IV</h3>
+                        <p class="ticket-desc">关卡设计与难度曲线，打造完整游戏体验。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 25 -->
+                <div class="ticket phase-3" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 25</div>
+                    <div class="ticket-main">
+                        <div class="ticket-icon"><i class="fa-solid fa-palette"></i></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">UI/UX</span>
+                        </div>
+                        <h3 class="ticket-title">游戏化 V</h3>
+                        <p class="ticket-desc">界面美化与动效，让产品脱颖而出。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 26 -->
+                <div class="ticket phase-3" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 26</div>
+                    <div class="ticket-main">
+                        <div class="ticket-icon"><i class="fa-solid fa-database"></i></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Backend</span>
+                        </div>
+                        <h3 class="ticket-title">后端之神 I</h3>
+                        <p class="ticket-desc">Supabase 建表：用户表、课程表、积分表。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 27 -->
+                <div class="ticket phase-3" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 27</div>
+                    <div class="ticket-main">
+                        <div class="ticket-icon"><i class="fa-solid fa-code"></i></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">SQL</span>
+                        </div>
+                        <h3 class="ticket-title">后端之神 II</h3>
+                        <p class="ticket-desc">AI 帮你写 SQL，数据为王的时代已来临。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 28 -->
+                <div class="ticket phase-3" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 28</div>
+                    <div class="ticket-main">
+                        <div class="ticket-icon"><i class="fa-solid fa-book"></i></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Content</span>
+                        </div>
+                        <h3 class="ticket-title">印钞机 I</h3>
+                        <p class="ticket-desc">设计教材内容结构，把知识变成可售卖的产品。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Day 29 -->
+                <div class="ticket phase-3" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 29</div>
+                    <div class="ticket-main">
+                        <div class="ticket-icon"><i class="fa-solid fa-file-import"></i></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">Import</span>
+                        </div>
+                        <h3 class="ticket-title">印钞机 II</h3>
+                        <p class="ticket-desc">批量导入教材内容，填充产品素材库。</p>
+                    </div>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Day 7 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #4ECDC4;">
-                        <span class="day-tag">Day 7</span>
-                        <span class="phase-tag">审美霸权</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>复刻 Apple</h3>
-                        <p>10分钟复刻其官网风格落地页</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🍎</span> CSS Mastery
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#007</span>
-                </div>
+        <!-- Phase 4: 超级个体·变现与毕业 -->
+        <section class="phase-section phase-4">
+            <div class="phase-header">
+                <span class="phase-badge">PHASE 4</span>
+                <span class="phase-title">超级个体·变现与毕业</span>
             </div>
 
-            <!-- Day 8 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #45B7D1;">
-                        <span class="day-tag">Day 8</span>
-                        <span class="phase-tag">掌控时空</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>降伏 Git</h3>
-                        <p>用自然语言指挥 Git 版本控制</p>
-                        <div class="ticket-meta">
-                            <span class="icon">⏳</span> Git Magic
+            <div class="ticket-grid">
+                <!-- Day 30 -->
+                <div class="ticket phase-4" onclick="tearTicket(this)">
+                    <div class="ticket-day">DAY 30</div>
+                    <div class="ticket-main">
+                        <div class="ticket-icon"><i class="fa-solid fa-robot"></i></div>
+                        <div class="ticket-tag-row">
+                            <span class="ticket-tag">AI Teacher</span>
                         </div>
+                        <h3 class="ticket-title">AI老师</h3>
+                        <p class="ticket-desc">接入 OpenAI/混元 API，答错时 AI 老师自动讲解语法。</p>
                     </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#008</span>
+                    <div class="ticket-stub">
+                        <a href="#" class="stub-btn btn-docs"><i class="fa-solid fa-file-lines"></i> 文档</a>
+                        <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Day 9 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #96CEB4;">
-                        <span class="day-tag">Day 9</span>
-                        <span class="phase-tag">昭告天下</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>Vercel 部署</h3>
-                        <p>一键部署，让全球能访问你的网站</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🌍</span> Deployment
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#009</span>
-                </div>
-            </div>
-
-            <!-- Day 10 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #96CEB4;">
-                        <span class="day-tag">Day 10</span>
-                        <span class="phase-tag">昭告天下</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>CDN 加速</h3>
-                        <p>Cloudflare 配置与域名绑定</p>
-                        <div class="ticket-meta">
-                            <span class="icon">⚡</span> Network
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#010</span>
-                </div>
-            </div>
-
-            <!-- Phase 2: 数字人分身 (Day 11-20) -->
-            <!-- Day 11 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #A06CD5;">
-                        <span class="day-tag">Day 11</span>
-                        <span class="phase-tag">项目实战</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>视频提取</h3>
-                        <p>抖音视频链接转逐字稿 (OCR)</p>
-                        <div class="ticket-meta">
-                            <span class="icon">📝</span> Python/API
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#011</span>
-                </div>
-            </div>
-
-            <!-- Day 12 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #A06CD5;">
-                        <span class="day-tag">Day 12</span>
-                        <span class="phase-tag">项目实战</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>洗稿大师</h3>
-                        <p>接入混元，训练专属 Prompt 改写</p>
-                        <div class="ticket-meta">
-                            <span class="icon">✍️</span> LLM Flow
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#012</span>
-                </div>
-            </div>
-
-            <!-- Day 13 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #A06CD5;">
-                        <span class="day-tag">Day 13</span>
-                        <span class="phase-tag">项目实战</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>声音复刻</h3>
-                        <p>CosyVoice 训练你的 AI 嘴替</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🎙️</span> Audio AI
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#013</span>
-                </div>
-            </div>
-
-            <!-- Day 14 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #624CAB;">
-                        <span class="day-tag">Day 14</span>
-                        <span class="phase-tag">黑科技</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>Docker 入门</h3>
-                        <p>用 AI 解决环境部署难题</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🐳</span> DevOps
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#014</span>
-                </div>
-            </div>
-
-            <!-- Day 15 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #624CAB;">
-                        <span class="day-tag">Day 15</span>
-                        <span class="phase-tag">黑科技</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>云端算力</h3>
-                        <p>租用 GPU 服务器进行推理</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🖥️</span> GPU Cloud
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#015</span>
-                </div>
-            </div>
-
-            <!-- Day 16 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #624CAB;">
-                        <span class="day-tag">Day 16</span>
-                        <span class="phase-tag">黑科技</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>画皮：环境搭建</h3>
-                        <p>配置数字人视频生成环境</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🎭</span> Setup
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#016</span>
-                </div>
-            </div>
-
-            <!-- Day 17 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #624CAB;">
-                        <span class="day-tag">Day 17</span>
-                        <span class="phase-tag">黑科技</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>画皮：模型推理</h3>
-                        <p>运行 SadTalker/HeyGen 类似模型</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🎥</span> Inference
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#017</span>
-                </div>
-            </div>
-
-            <!-- Day 18 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #624CAB;">
-                        <span class="day-tag">Day 18</span>
-                        <span class="phase-tag">黑科技</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>画皮：API 封装</h3>
-                        <p>将数字人功能封装为 API</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🔌</span> Backend
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#018</span>
-                </div>
-            </div>
-
-            <!-- Day 19 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #E55812;">
-                        <span class="day-tag">Day 19</span>
-                        <span class="phase-tag">全网分发</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>矩阵黑科技</h3>
-                        <p>Social-auto-upload 框架配置</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🕸️</span> Automation
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#019</span>
-                </div>
-            </div>
-
-            <!-- Day 20 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #E55812;">
-                        <span class="day-tag">Day 20</span>
-                        <span class="phase-tag">全网分发</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>多平台实战</h3>
-                        <p>自动分发视频到抖音、B站</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🚀</span> Publish
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#020</span>
-                </div>
-            </div>
-
-            <!-- Phase 3: 商业护城河 (Day 21-30) -->
-            <!-- Day 21 (Added filler to bridge gap or split existing) -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #F8D210; color: black;">
-                        <span class="day-tag">Day 21</span>
-                        <span class="phase-tag">护城河</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>商业系统设计</h3>
-                        <p>设计高留存的英语闯关系统</p>
-                        <div class="ticket-meta">
-                            <span class="icon">📐</span> Architecture
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#021</span>
-                </div>
-            </div>
-
-            <!-- Day 22 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #F8D210; color: black;">
-                        <span class="day-tag">Day 22</span>
-                        <span class="phase-tag">护城河</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>MVP 游戏化</h3>
-                        <p>实现单词掉落核心交互</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🎮</span> Game Logic
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#022</span>
-                </div>
-            </div>
-
-            <!-- Day 23 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #F8D210; color: black;">
-                        <span class="day-tag">Day 23</span>
-                        <span class="phase-tag">护城河</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>键盘监听</h3>
-                        <p>处理用户输入与判定逻辑</p>
-                        <div class="ticket-meta">
-                            <span class="icon">⌨️</span> Events
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#023</span>
-                </div>
-            </div>
-
-            <!-- Day 24 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #F8D210; color: black;">
-                        <span class="day-tag">Day 24</span>
-                        <span class="phase-tag">护城河</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>音效反馈</h3>
-                        <p>增加打击感与正向反馈</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🔊</span> Audio
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#024</span>
-                </div>
-            </div>
-
-            <!-- Day 25 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #F8D210; color: black;">
-                        <span class="day-tag">Day 25</span>
-                        <span class="phase-tag">护城河</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>各显神通</h3>
-                        <p>优化游戏循环与状态管理</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🔄</span> Refactor
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#025</span>
-                </div>
-            </div>
-
-            <!-- Day 26 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #3D5A80;">
-                        <span class="day-tag">Day 26</span>
-                        <span class="phase-tag">后端之神</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>梭哈 Supabase</h3>
-                        <p>AI 辅助建表与 SQL 编写</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🗄️</span> Database
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#026</span>
-                </div>
-            </div>
-
-            <!-- Day 27 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #3D5A80;">
-                        <span class="day-tag">Day 27</span>
-                        <span class="phase-tag">后端之神</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>数据联调</h3>
-                        <p>前端对接 Supabase 接口</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🔌</span> API
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#027</span>
-                </div>
-            </div>
-
-            <!-- Day 28 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #98C1D9; color: black;">
-                        <span class="day-tag">Day 28</span>
-                        <span class="phase-tag">内容填充</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>印钞机</h3>
-                        <p>批量导入课程教材数据</p>
-                        <div class="ticket-meta">
-                            <span class="icon">📥</span> Data Import
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#028</span>
-                </div>
-            </div>
-
-            <!-- Day 29 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #98C1D9; color: black;">
-                        <span class="day-tag">Day 29</span>
-                        <span class="phase-tag">内容填充</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>细节打磨</h3>
-                        <p>UI 动效与交互体验优化</p>
-                        <div class="ticket-meta">
-                            <span class="icon">✨</span> Polish
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO COMPLETE</span>
-                    <span class="stub-code">#029</span>
-                </div>
-            </div>
-
-            <!-- Day 30 -->
-            <div class="ticket" onclick="tearTicket(this)">
-                <div class="ticket-content">
-                    <div class="ticket-header" style="background: #293241;">
-                        <span class="day-tag">Day 30</span>
-                        <span class="phase-tag">超级个体</span>
-                    </div>
-                    <div class="ticket-body">
-                        <h3>智能 AI 老师</h3>
-                        <p>接入 API 实现自动语法讲解</p>
-                        <div class="ticket-meta">
-                            <span class="icon">🎓</span> Final
-                        </div>
-                    </div>
-                </div>
-                <div class="ticket-stub">
-                    <div class="tear-line"></div>
-                    <span class="status-text">CLICK TO GRADUATE</span>
-                    <span class="stub-code">#030</span>
-                </div>
-            </div>
-
-        </div>
-
-        <div style="text-align: center; margin-top: 40px; margin-bottom: 60px;">
-            <p style="color: #666;">只有卖出去，才叫创业。</p>
-        </div>
+        <footer class="course-footer">
+            <p>🎯 只有卖出去，才叫创业</p>
+        </footer>
     </div>
 
     <script>
         function tearTicket(element) {
             if (!element.classList.contains('is-torn')) {
                 element.classList.add('is-torn');
-                // Play sound effect if desired
             }
         }
     </script>

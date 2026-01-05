@@ -1,24 +1,31 @@
 /* ===== CSS Variables ===== */
 :root {
-    /* Colors */
-    --bg-primary: #0a0a0b;
-    --bg-secondary: #111113;
-    --bg-tertiary: #18181b;
-    --bg-card: rgba(24, 24, 27, 0.6);
-    --bg-card-hover: rgba(39, 39, 42, 0.8);
+    /* Colors - Light Theme */
+    --bg-primary: #ffffff;
+    --bg-secondary: #fcd5ce;
+    /* Light peach/rose */
+    --bg-tertiary: #fae1dd;
+    --bg-card: rgba(255, 255, 255, 0.8);
+    --bg-card-hover: rgba(255, 240, 240, 0.9);
 
-    --text-primary: #fafafa;
-    --text-secondary: #a1a1aa;
+    --text-primary: #18181b;
+    /* Zinc 900 */
+    --text-secondary: #52525b;
+    /* Zinc 600 */
     --text-tertiary: #71717a;
+    /* Zinc 500 */
 
-    --accent-primary: #8b5cf6;
-    --accent-secondary: #a78bfa;
-    --accent-tertiary: #c4b5fd;
-    --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
-    --accent-glow: rgba(139, 92, 246, 0.4);
+    --accent-primary: #e55812;
+    /* Burnt orange */
+    --accent-secondary: #f8961e;
+    /* Orange */
+    --accent-tertiary: #f9c74f;
+    /* Yellow */
+    --accent-gradient: linear-gradient(135deg, #e55812 0%, #f9c74f 100%);
+    --accent-glow: rgba(229, 88, 18, 0.2);
 
-    --border-color: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(255, 255, 255, 0.15);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --border-hover: rgba(0, 0, 0, 0.15);
 
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -562,6 +569,7 @@ section {
     margin-bottom: 16px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -1411,4 +1419,278 @@ section {
     50% {
         box-shadow: 0 0 15px 5px rgba(255, 107, 107, 0.2);
     }
+}
+
+/* ===== Chunxiang-Inspired Course Schedule Styles ===== */
+/* Dark mode base for course page */
+body.course-page {
+    background: #0a0a0f;
+    color: #ffffff;
+}
+
+body.course-page .container {
+    max-width: 1400px;
+}
+
+body.course-page .header {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+body.course-page .header h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+body.course-page .subtitle {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.course-page .header-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Glow effect background */
+body.course-page .bg-animation {
+    background: radial-gradient(ellipse at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 40%),
+        radial-gradient(ellipse at 20% 60%, rgba(34, 197, 94, 0.08) 0%, transparent 40%);
+    opacity: 1;
+    filter: blur(0);
+}
+
+/* Ticket Grid */
+.ticket-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    padding: 40px 0;
+}
+
+@media (max-width: 1100px) {
+    .ticket-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .ticket-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Phase Header */
+.phase-header {
+    grid-column: 1 / -1;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.phase-header:first-child {
+    margin-top: 0;
+}
+
+.phase-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.phase-badge {
+    font-size: 0.7rem;
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ===== Ticket Card (Chunxiang Style) ===== */
+.ticket {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ticket:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Ticket Main Content */
+.ticket-main {
+    position: relative;
+    padding: 24px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Torn paper effect at bottom */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px),
+            95% 100%, 90% calc(100% - 8px), 85% 100%, 80% calc(100% - 8px), 75% 100%, 70% calc(100% - 8px), 65% 100%, 60% calc(100% - 8px), 55% 100%, 50% calc(100% - 8px), 45% 100%, 40% calc(100% - 8px), 35% 100%, 30% calc(100% - 8px), 25% 100%, 20% calc(100% - 8px), 15% 100%, 10% calc(100% - 8px), 5% 100%, 0 calc(100% - 8px));
+}
+
+/* Phase Color Schemes */
+.phase-1 .ticket-main {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.phase-2 .ticket-main {
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+}
+
+.phase-3 .ticket-main {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+}
+
+.phase-4 .ticket-main {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+/* Day Badge */
+.ticket-day {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-family: 'Orbitron', 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transform: rotate(-3deg);
+    letter-spacing: 1px;
+}
+
+/* Watermark */
+.ticket-main::before {
+    content: attr(data-watermark);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.08);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.ticket-tag-row {
+    margin-bottom: 8px;
+}
+
+.ticket-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.ticket-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ticket-desc {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.4;
+}
+
+/* Ticket Stub (Footer) */
+.ticket-stub {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.stub-text {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stub-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Tear Animation */
+.ticket.is-torn {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.ticket.is-torn .ticket-stub {
+    transform: translateY(20px) rotate(5deg);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+.ticket.is-torn::after {
+    content: "✓ COMPLETED";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-8deg);
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #22c55e;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 3px solid #22c55e;
+    z-index: 10;
+    animation: stampIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes stampIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2) rotate(-8deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(-8deg);
+    }
+}
+
+/* Footer styling for course page */
+body.course-page div[style*="text-align: center"] p {
+    color: rgba(255, 255, 255, 0.5);
 }

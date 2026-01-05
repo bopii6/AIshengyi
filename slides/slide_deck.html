@@ -18,7 +18,9 @@
 
         body {
             font-family: 'Noto Sans SC', sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            background: #f8fafc;
+            /* Refined light theme */
+            color: #1e293b;
             height: 100vh;
             width: 100vw;
             overflow: hidden;
@@ -65,7 +67,8 @@
                         position: absolute;
                         width: 4px;
                         height: 4px;
-                        background: rgba(0, 212, 255, 0.6);
+                        background: rgba(229, 88, 18, 0.4);
+                        /* Orange/Red particles */
                         border-radius: 50%;
                         animation: float 15s infinite ease-in-out;
                     }
@@ -86,14 +89,15 @@
 
                     #slide1 .top-tag {
                         display: inline-block;
-                        background: linear-gradient(90deg, #ff6b6b, #ffa500);
+                        background: linear-gradient(120deg, #ea580c, #f59e0b);
                         color: white;
-                        padding: 12px 32px;
+                        padding: 10px 28px;
                         border-radius: 50px;
-                        font-size: 1.2rem;
+                        font-size: 1.1rem;
                         font-weight: 700;
-                        letter-spacing: 2px;
+                        letter-spacing: 1px;
                         margin-bottom: 40px;
+                        box-shadow: 0 4px 15px rgba(234, 88, 12, 0.2);
                         animation: pulse 2s infinite;
                     }
 
@@ -111,29 +115,30 @@
 
                     #slide1 .main-title {
                         font-size: 4.5rem;
-                        font-weight: 900;
-                        color: white;
-                        line-height: 1.3;
+                        font-weight: 800;
+                        color: #0f172a;
+                        line-height: 1.2;
                         margin-bottom: 30px;
-                        text-shadow: 0 0 60px rgba(0, 212, 255, 0.5);
+                        letter-spacing: -0.02em;
+                        /* text-shadow: 0 0 60px rgba(0, 212, 255, 0.5); Removed glow */
                     }
 
                     #slide1 .highlight {
-                        background: linear-gradient(90deg, #00d4ff, #7b68ee, #ff6b9d);
+                        background: linear-gradient(120deg, #ea580c, #f59e0b);
                         -webkit-background-clip: text;
                         background-clip: text;
                         -webkit-text-fill-color: transparent;
                     }
 
                     #slide1 .subtitle {
-                        font-size: 2rem;
-                        color: rgba(255, 255, 255, 0.85);
+                        font-size: 1.8rem;
+                        color: #475569;
                         margin-bottom: 50px;
                         font-weight: 500;
                     }
 
                     #slide1 .accent {
-                        color: #00d4ff;
+                        color: #ea580c;
                         font-weight: 700;
                     }
 
@@ -146,10 +151,18 @@
                     }
 
                     #slide1 .point {
-                        background: rgba(255, 255, 255, 0.05);
-                        border: 1px solid rgba(255, 255, 255, 0.1);
-                        border-radius: 20px;
+                        background: #ffffff;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 24px;
                         padding: 30px 40px;
+                        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+                        transition: all 0.3s ease;
+                    }
+
+                    #slide1 .point:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+                        border-color: #cbd5e1;
                     }
 
                     #slide1 .point-icon {
@@ -158,19 +171,19 @@
                     }
 
                     #slide1 .point-text {
-                        color: white;
+                        color: #1e293b;
                         font-size: 1.4rem;
                         font-weight: 700;
                     }
 
                     #slide1 .point-desc {
-                        color: rgba(255, 255, 255, 0.6);
+                        color: #64748b;
                         font-size: 1rem;
                         margin-top: 8px;
                     }
 
                     #slide1 .price-tag {
-                        background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+                        background: linear-gradient(135deg, #e55812, #f9c74f);
                         color: white;
                         font-size: 2.5rem;
                         font-weight: 900;
@@ -190,8 +203,8 @@
                         position: fixed;
                         top: 30px;
                         right: 30px;
-                        background: #00d4ff;
-                        color: #0a0a0a;
+                        background: #f8961e;
+                        color: white;
                         padding: 10px 25px;
                         border-radius: 8px;
                         font-weight: 700;
@@ -250,13 +263,14 @@
 
                     #slide2 .top-question {
                         font-size: 3.5rem;
-                        font-weight: 900;
-                        color: white;
+                        font-weight: 800;
+                        color: #0f172a;
                         margin-bottom: 60px;
+                        letter-spacing: -0.02em;
                     }
 
                     #slide2 .highlight2 {
-                        background: linear-gradient(90deg, #ff6b6b, #ffa500);
+                        background: linear-gradient(120deg, #ea580c, #f59e0b);
                         -webkit-background-clip: text;
                         background-clip: text;
                         -webkit-text-fill-color: transparent;
@@ -270,12 +284,20 @@
                     }
 
                     #slide2 .audience-card {
-                        background: rgba(255, 255, 255, 0.03);
-                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        background: #ffffff;
+                        border: 1px solid #e2e8f0;
                         border-radius: 24px;
                         padding: 40px 30px;
                         position: relative;
                         overflow: hidden;
+                        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+                        transition: all 0.3s ease;
+                    }
+
+                    #slide2 .audience-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+                        border-color: #cbd5e1;
                     }
 
                     #slide2 .audience-card::before {
@@ -285,7 +307,7 @@
                         left: 0;
                         right: 0;
                         height: 4px;
-                        background: linear-gradient(90deg, #00d4ff, #7b68ee);
+                        background: linear-gradient(90deg, #ea580c, #f59e0b);
                     }
 
                     #slide2 .card-icon {
@@ -296,7 +318,7 @@
                     #slide2 .card-title {
                         font-size: 1.8rem;
                         font-weight: 700;
-                        color: white;
+                        color: #1e293b;
                         margin-bottom: 20px;
                     }
 
@@ -309,31 +331,31 @@
                         align-items: flex-start;
                         gap: 12px;
                         margin-bottom: 15px;
-                        color: rgba(255, 255, 255, 0.75);
+                        color: #64748b;
                         font-size: 1.1rem;
                         line-height: 1.5;
                     }
 
                     #slide2 .pain-point .icon {
-                        color: #ff6b6b;
+                        color: #ef4444;
                         font-size: 1.2rem;
                     }
 
                     #slide2 .solution {
                         margin-top: 25px;
                         padding-top: 20px;
-                        border-top: 1px solid rgba(255, 255, 255, 0.1);
+                        border-top: 1px solid #e2e8f0;
                     }
 
                     #slide2 .solution-text {
-                        color: #00d4ff;
+                        color: #059669;
                         font-size: 1.1rem;
-                        font-weight: 600;
+                        font-weight: 700;
                     }
 
                     #slide2 .bottom-cta {
                         font-size: 1.8rem;
-                        color: #ffa500;
+                        color: #ea580c;
                         font-weight: 700;
                     }
                 </style>
@@ -425,19 +447,20 @@
 
                     #slide3 .main-title {
                         font-size: 2.8rem;
-                        font-weight: 900;
-                        color: white;
+                        font-weight: 800;
+                        color: #0f172a;
                         margin-bottom: 10px;
+                        letter-spacing: -0.02em;
                     }
 
                     #slide3 .subtitle {
                         font-size: 1.2rem;
-                        color: rgba(255, 255, 255, 0.7);
+                        color: #475569;
                         margin-bottom: 25px;
                     }
 
                     #slide3 .subtitle .highlight {
-                        color: #ff6b6b;
+                        color: #ea580c;
                         font-weight: 700;
                     }
 
@@ -449,13 +472,21 @@
                     }
 
                     #slide3 .product-card {
-                        background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        background: #ffffff;
+                        border: 1px solid #e2e8f0;
                         border-radius: 20px;
                         padding: 25px 25px;
                         text-align: left;
                         position: relative;
                         overflow: hidden;
+                        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+                        transition: all 0.3s ease;
+                    }
+
+                    #slide3 .product-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+                        border-color: #cbd5e1;
                     }
 
                     #slide3 .product-card::before {
@@ -465,7 +496,7 @@
                         right: -50%;
                         width: 100%;
                         height: 100%;
-                        background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+                        background: radial-gradient(circle, rgba(234, 88, 12, 0.05) 0%, transparent 70%);
                     }
 
                     #slide3 .product-number {
@@ -474,7 +505,7 @@
                         right: 30px;
                         font-size: 6rem;
                         font-weight: 900;
-                        color: rgba(255, 255, 255, 0.05);
+                        color: #f1f5f9;
                     }
 
                     #slide3 .product-icon {
@@ -485,12 +516,12 @@
                     #slide3 .product-name {
                         font-size: 1.5rem;
                         font-weight: 700;
-                        color: white;
+                        color: #1e293b;
                         margin-bottom: 8px;
                     }
 
                     #slide3 .product-desc {
-                        color: rgba(255, 255, 255, 0.7);
+                        color: #64748b;
                         font-size: 1rem;
                         line-height: 1.4;
                         margin-bottom: 15px;
@@ -503,18 +534,18 @@
                     }
 
                     #slide3 .feature-tag {
-                        background: rgba(0, 212, 255, 0.15);
-                        color: #00d4ff;
+                        background: #fff7ed;
+                        color: #ea580c;
                         padding: 5px 12px;
                         border-radius: 15px;
                         font-size: 0.85rem;
-                        font-weight: 500;
+                        font-weight: 600;
                     }
 
                     #slide3 .highlight-box {
-                        background: linear-gradient(90deg, rgba(255, 107, 107, 0.15), rgba(255, 165, 0, 0.15));
-                        border: 2px solid rgba(255, 107, 107, 0.3);
-                        border-radius: 15px;
+                        background: #fff7ed;
+                        border: 1px solid #fdba74;
+                        border-radius: 16px;
                         padding: 18px 30px;
                         display: flex;
                         align-items: center;
@@ -528,12 +559,12 @@
 
                     #slide3 .highlight-text {
                         font-size: 1.3rem;
-                        color: white;
+                        color: #1e293b;
                         font-weight: 700;
                     }
 
                     #slide3 .highlight-text .accent {
-                        color: #ff6b6b;
+                        color: #ea580c;
                     }
                 </style>
                 <div id="slide3">
@@ -601,20 +632,22 @@
 
                     #slide4 .main-title {
                         font-size: 3rem;
-                        font-weight: 900;
-                        color: white;
+                        font-weight: 800;
+                        color: #0f172a;
                         margin-bottom: 15px;
+                        letter-spacing: -0.02em;
                     }
 
                     #slide4 .main-title .highlight {
-                        background: linear-gradient(90deg, #00d4ff, #7b68ee);
+                        background: linear-gradient(120deg, #0ea5e9, #6366f1);
                         -webkit-background-clip: text;
+                        background-clip: text;
                         -webkit-text-fill-color: transparent;
                     }
 
                     #slide4 .subtitle {
                         font-size: 1.3rem;
-                        color: rgba(255, 255, 255, 0.6);
+                        color: #475569;
                     }
 
                     #slide4 .timeline {
@@ -624,17 +657,19 @@
                     }
 
                     #slide4 .phase {
-                        background: rgba(255, 255, 255, 0.03);
-                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        background: #ffffff;
+                        border: 1px solid #e2e8f0;
                         border-radius: 24px;
                         padding: 30px 25px;
                         position: relative;
                         transition: all 0.3s ease;
+                        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
                     }
 
                     #slide4 .phase:hover {
                         transform: translateY(-8px);
-                        border-color: #00d4ff;
+                        border-color: #38bdf8;
+                        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
                     }
 
                     #slide4 .phase-header {
@@ -677,13 +712,14 @@
                     #slide4 .phase-name {
                         font-size: 1.3rem;
                         font-weight: 700;
-                        color: white;
+                        color: #1e293b;
                         margin-bottom: 5px;
                     }
 
                     #slide4 .phase-days {
                         font-size: 0.9rem;
-                        color: rgba(255, 255, 255, 0.5);
+                        color: #64748b;
+                        font-weight: 500;
                     }
 
                     #slide4 .phase-content {
@@ -691,10 +727,10 @@
                     }
 
                     #slide4 .phase-content li {
-                        color: rgba(255, 255, 255, 0.8);
+                        color: #475569;
                         font-size: 0.95rem;
                         padding: 8px 0;
-                        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                        border-bottom: 1px solid #f1f5f9;
                         display: flex;
                         align-items: center;
                         gap: 10px;
@@ -706,24 +742,24 @@
 
                     #slide4 .phase-content li::before {
                         content: '→';
-                        color: #00d4ff;
+                        color: #0ea5e9;
                         font-weight: bold;
                     }
 
                     #slide4 .phase-output {
                         margin-top: 20px;
                         padding-top: 15px;
-                        border-top: 2px dashed rgba(255, 255, 255, 0.1);
+                        border-top: 2px dashed #e2e8f0;
                     }
 
                     #slide4 .output-label {
                         font-size: 0.85rem;
-                        color: rgba(255, 255, 255, 0.5);
+                        color: #71717a;
                         margin-bottom: 8px;
                     }
 
                     #slide4 .output-value {
-                        color: #ffa500;
+                        color: #0ea5e9;
                         font-weight: 700;
                         font-size: 1rem;
                     }
@@ -835,9 +871,10 @@
 
                     #slide5 .main-title {
                         font-size: 2.2rem;
-                        font-weight: 900;
-                        color: white;
+                        font-weight: 800;
+                        color: #0f172a;
                         margin-bottom: 20px;
+                        letter-spacing: -0.02em;
                     }
 
                     #slide5 .pricing-grid {
@@ -848,16 +885,23 @@
                     }
 
                     #slide5 .price-card {
-                        background: rgba(255, 255, 255, 0.03);
-                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        background: #ffffff;
+                        border: 1px solid #e2e8f0;
                         border-radius: 20px;
                         padding: 20px 25px;
                         position: relative;
+                        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+                        transition: all 0.3s ease;
+                    }
+
+                    #slide5 .price-card:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
                     }
 
                     #slide5 .featured {
-                        border-color: #ffa500;
-                        background: linear-gradient(145deg, rgba(255, 165, 0, 0.1), rgba(255, 107, 107, 0.05));
+                        border-color: #fb923c;
+                        background: linear-gradient(135deg, #fff7ed, #ffffff);
                     }
 
                     #slide5 .featured::before {
@@ -866,7 +910,7 @@
                         top: -12px;
                         left: 50%;
                         transform: translateX(-50%);
-                        background: linear-gradient(90deg, #ff6b6b, #ffa500);
+                        background: linear-gradient(120deg, #ea580c, #f59e0b);
                         color: white;
                         padding: 5px 15px;
                         border-radius: 15px;
@@ -877,20 +921,20 @@
                     #slide5 .card-title {
                         font-size: 1.3rem;
                         font-weight: 700;
-                        color: white;
+                        color: #1e293b;
                         margin-bottom: 5px;
                     }
 
                     #slide5 .card-subtitle {
                         font-size: 0.9rem;
-                        color: rgba(255, 255, 255, 0.5);
+                        color: #64748b;
                         margin-bottom: 12px;
                     }
 
                     #slide5 .price-value {
                         font-size: 2.5rem;
                         font-weight: 900;
-                        color: #00d4ff;
+                        color: #0f172a;
                         margin-bottom: 12px;
                     }
 
@@ -900,7 +944,7 @@
                     }
 
                     #slide5 .featured .price-value {
-                        color: #ffa500;
+                        color: #ea580c;
                     }
 
                     #slide5 .feature-list {
@@ -910,13 +954,13 @@
                     }
 
                     #slide5 .feature-list li {
-                        padding: 5px 0;
-                        color: rgba(255, 255, 255, 0.8);
+                        padding: 8px 0;
+                        color: #475569;
                         font-size: 0.9rem;
                         display: flex;
                         align-items: center;
                         gap: 8px;
-                        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                        border-bottom: 1px solid #f1f5f9;
                     }
 
                     #slide5 .feature-list li:last-child {
@@ -928,7 +972,7 @@
                     }
 
                     #slide5 .check {
-                        color: #43e97b;
+                        color: #059669;
                     }
 
                     #slide5 .cross {
@@ -937,8 +981,8 @@
                     }
 
                     #slide5 .bottom-note {
-                        background: rgba(0, 212, 255, 0.1);
-                        border: 1px solid rgba(0, 212, 255, 0.3);
+                        background: #fff7ed;
+                        border: 1px solid #fdba74;
                         border-radius: 12px;
                         padding: 12px 25px;
                         display: flex;
@@ -953,11 +997,11 @@
 
                     #slide5 .note-text {
                         font-size: 1rem;
-                        color: white;
+                        color: #1e293b;
                     }
 
                     #slide5 .note-highlight {
-                        color: #00d4ff;
+                        color: #ea580c;
                         font-weight: 700;
                     }
                 </style>
@@ -1014,13 +1058,14 @@
 
                     #slide6 .main-title {
                         font-size: 2.2rem;
-                        font-weight: 900;
-                        color: white;
+                        font-weight: 800;
+                        color: #0f172a;
                         margin-bottom: 20px;
+                        letter-spacing: -0.02em;
                     }
 
                     #slide6 .main-title .highlight {
-                        background: linear-gradient(90deg, #43e97b, #38f9d7);
+                        background: linear-gradient(120deg, #10b981, #34d399);
                         -webkit-background-clip: text;
                         background-clip: text;
                         -webkit-text-fill-color: transparent;
@@ -1034,17 +1079,19 @@
                     }
 
                     #slide6 .outcome-card {
-                        background: rgba(255, 255, 255, 0.03);
-                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        background: #ffffff;
+                        border: 1px solid #e2e8f0;
                         border-radius: 16px;
                         padding: 18px 15px;
                         text-align: center;
                         transition: all 0.3s ease;
+                        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
                     }
 
                     #slide6 .outcome-card:hover {
                         transform: translateY(-5px);
-                        border-color: #43e97b;
+                        border-color: #34d399;
+                        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
                     }
 
                     #slide6 .outcome-icon {
@@ -1055,19 +1102,19 @@
                     #slide6 .outcome-title {
                         font-size: 1.1rem;
                         font-weight: 700;
-                        color: white;
+                        color: #1e293b;
                         margin-bottom: 6px;
                     }
 
                     #slide6 .outcome-desc {
-                        color: rgba(255, 255, 255, 0.7);
+                        color: #64748b;
                         font-size: 0.85rem;
                         line-height: 1.4;
                     }
 
                     #slide6 .bottom-banner {
-                        background: linear-gradient(90deg, rgba(67, 233, 123, 0.15), rgba(56, 249, 215, 0.15));
-                        border: 2px solid rgba(67, 233, 123, 0.3);
+                        background: #ecfdf5;
+                        border: 1px solid #6ee7b7;
                         border-radius: 15px;
                         padding: 15px 30px;
                         display: flex;
@@ -1087,17 +1134,17 @@
                     #slide6 .banner-title {
                         font-size: 1.2rem;
                         font-weight: 700;
-                        color: white;
+                        color: #1e293b;
                         margin-bottom: 4px;
                     }
 
                     #slide6 .banner-subtitle {
                         font-size: 0.95rem;
-                        color: rgba(255, 255, 255, 0.7);
+                        color: #475569;
                     }
 
                     #slide6 .banner-subtitle .accent {
-                        color: #43e97b;
+                        color: #059669;
                         font-weight: 700;
                     }
                 </style>
@@ -1180,18 +1227,19 @@
 
                     #slide7 .main-title {
                         font-size: 2.4rem;
-                        font-weight: 900;
-                        color: white;
+                        font-weight: 800;
+                        color: #0f172a;
                         margin-bottom: 10px;
+                        letter-spacing: -0.02em;
                     }
 
                     #slide7 .main-title .highlight {
-                        color: #ff6b6b;
+                        color: #ea580c;
                     }
 
                     #slide7 .subtitle {
                         font-size: 1.1rem;
-                        color: rgba(255, 255, 255, 0.6);
+                        color: #475569;
                         margin-bottom: 25px;
                     }
 
@@ -1208,8 +1256,8 @@
                         max-width: 300px;
                         padding: 20px 25px;
                         position: relative;
-                        border: 2px solid rgba(255, 255, 255, 0.1);
-                        background: rgba(255, 255, 255, 0.02);
+                        border: 1px solid #e2e8f0;
+                        background: #ffffff;
                     }
 
                     #slide7 .timeline-item:first-child {
@@ -1227,9 +1275,10 @@
                     }
 
                     #slide7 .timeline-item.now {
-                        background: linear-gradient(145deg, rgba(0, 212, 255, 0.15), rgba(123, 104, 238, 0.1));
-                        border-color: #00d4ff;
+                        background: #ffffff;
+                        border-color: #fb923c;
                         transform: scale(1.05);
+                        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
                         z-index: 1;
                         border-radius: 16px;
                     }
@@ -1248,29 +1297,29 @@
                     }
 
                     #slide7 .past .time-label {
-                        background: rgba(255, 255, 255, 0.1);
-                        color: rgba(255, 255, 255, 0.5);
+                        background: #f1f5f9;
+                        color: #64748b;
                     }
 
                     #slide7 .now .time-label {
-                        background: linear-gradient(90deg, #00d4ff, #7b68ee);
+                        background: linear-gradient(120deg, #ea580c, #f59e0b);
                         color: white;
                     }
 
                     #slide7 .future .time-label {
-                        background: rgba(255, 107, 107, 0.2);
-                        color: #ff6b6b;
+                        background: #fff7ed;
+                        color: #ea580c;
                     }
 
                     #slide7 .time-title {
                         font-size: 1.4rem;
                         font-weight: 700;
-                        color: white;
+                        color: #1e293b;
                         margin-bottom: 8px;
                     }
 
                     #slide7 .time-desc {
-                        color: rgba(255, 255, 255, 0.7);
+                        color: #475569;
                         font-size: 0.9rem;
                         line-height: 1.4;
                     }
@@ -1281,20 +1330,20 @@
                     }
 
                     #slide7 .bottom-quote {
-                        background: rgba(255, 107, 107, 0.1);
-                        border: 2px solid rgba(255, 107, 107, 0.3);
+                        background: #fff7ed;
+                        border: 1px solid #fdba74;
                         border-radius: 15px;
                         padding: 18px 35px;
                     }
 
                     #slide7 .quote-text {
                         font-size: 1.2rem;
-                        color: white;
+                        color: #1e293b;
                         font-weight: 700;
                     }
 
                     #slide7 .quote-text .accent {
-                        color: #ff6b6b;
+                        color: #ea580c;
                     }
                 </style>
                 <div id="slide7">
@@ -1357,13 +1406,14 @@
 
                     #slide8 .main-title {
                         font-size: 2.2rem;
-                        font-weight: 900;
-                        color: white;
+                        font-weight: 800;
+                        color: #0f172a;
                         margin-bottom: 20px;
+                        letter-spacing: -0.02em;
                     }
 
                     #slide8 .main-title .highlight {
-                        background: linear-gradient(90deg, #ffa500, #ff6b6b);
+                        background: linear-gradient(120deg, #ea580c, #ef4444);
                         -webkit-background-clip: text;
                         background-clip: text;
                         -webkit-text-fill-color: transparent;
@@ -1377,15 +1427,16 @@
                     }
 
                     #slide8 .guarantee-card {
-                        background: rgba(255, 255, 255, 0.03);
-                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        background: #ffffff;
+                        border: 1px solid #e2e8f0;
                         border-radius: 16px;
-                        padding: 18px 20px;
+                        padding: 20px 25px;
                         text-align: left;
                         display: flex;
                         align-items: flex-start;
                         gap: 15px;
                         transition: all 0.3s ease;
+                        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
                     }
 
                     #slide8 .guarantee-card:hover {
@@ -1411,19 +1462,19 @@
                     #slide8 .guarantee-title {
                         font-size: 1.1rem;
                         font-weight: 700;
-                        color: white;
+                        color: #1e293b;
                         margin-bottom: 4px;
                     }
 
                     #slide8 .guarantee-desc {
-                        color: rgba(255, 255, 255, 0.7);
-                        font-size: 0.85rem;
+                        color: #64748b;
+                        font-size: 0.9rem;
                         line-height: 1.4;
                     }
 
                     #slide8 .refund-banner {
-                        background: linear-gradient(90deg, rgba(67, 233, 123, 0.15), rgba(56, 249, 215, 0.15));
-                        border: 2px solid rgba(67, 233, 123, 0.5);
+                        background: #ecfdf5;
+                        border: 1px solid #6ee7b7;
                         border-radius: 16px;
                         padding: 18px 30px;
                         display: flex;
@@ -1442,18 +1493,18 @@
 
                     #slide8 .refund-title {
                         font-size: 1.3rem;
-                        font-weight: 900;
-                        color: white;
+                        font-weight: 800;
+                        color: #1e293b;
                         margin-bottom: 4px;
                     }
 
                     #slide8 .refund-title .accent {
-                        color: #43e97b;
+                        color: #059669;
                     }
 
                     #slide8 .refund-desc {
                         font-size: 0.95rem;
-                        color: rgba(255, 255, 255, 0.8);
+                        color: #475569;
                     }
                 </style>
                 <div id="slide8">
@@ -1551,13 +1602,14 @@
 
                     #slide9 .main-title {
                         font-size: 2.2rem;
-                        font-weight: 900;
-                        color: white;
+                        font-weight: 800;
+                        color: #0f172a;
                         margin-bottom: 8px;
+                        letter-spacing: -0.02em;
                     }
 
                     #slide9 .main-title .highlight {
-                        background: linear-gradient(90deg, #ff6b6b, #ffa500);
+                        background: linear-gradient(120deg, #ea580c, #ef4444);
                         -webkit-background-clip: text;
                         background-clip: text;
                         -webkit-text-fill-color: transparent;
@@ -1565,7 +1617,7 @@
 
                     #slide9 .subtitle {
                         font-size: 1rem;
-                        color: rgba(255, 255, 255, 0.6);
+                        color: #475569;
                         margin-bottom: 20px;
                     }
 
@@ -1577,18 +1629,19 @@
                     }
 
                     #slide9 .gift-item {
-                        background: rgba(255, 255, 255, 0.03);
-                        border: 2px solid rgba(255, 255, 255, 0.1);
+                        background: #ffffff;
+                        border: 1px solid #e2e8f0;
                         border-radius: 14px;
                         padding: 14px 20px;
                         display: flex;
                         align-items: center;
                         gap: 15px;
                         transition: all 0.3s ease;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
                     }
 
                     #slide9 .gift-item:hover {
-                        border-color: #ffa500;
+                        border-color: #fb923c;
                     }
 
                     #slide9 .gift-number {
@@ -1613,12 +1666,12 @@
                     #slide9 .gift-title {
                         font-size: 1.05rem;
                         font-weight: 700;
-                        color: white;
+                        color: #1e293b;
                         margin-bottom: 2px;
                     }
 
                     #slide9 .gift-desc {
-                        color: rgba(255, 255, 255, 0.6);
+                        color: #64748b;
                         font-size: 0.85rem;
                     }
 
@@ -1633,15 +1686,15 @@
                     }
 
                     #slide9 .action-box {
-                        background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 165, 0, 0.2));
-                        border: 2px solid #ffa500;
+                        background: #fff7ed;
+                        border: 1px solid #fdba74;
                         border-radius: 16px;
                         padding: 18px 25px;
                     }
 
                     #slide9 .action-title {
                         font-size: 1.2rem;
-                        color: white;
+                        color: #1a1a1a;
                         font-weight: 700;
                         margin-bottom: 12px;
                     }
@@ -1657,7 +1710,7 @@
                         display: flex;
                         align-items: center;
                         gap: 8px;
-                        color: rgba(255, 255, 255, 0.9);
+                        color: #1a1a1a;
                         font-size: 0.95rem;
                     }
 
@@ -1770,10 +1823,11 @@
 
                     #slide10 .main-title {
                         font-size: 4.5rem;
-                        font-weight: 900;
-                        color: white;
+                        font-weight: 800;
+                        color: #0f172a;
                         margin-bottom: 20px;
                         line-height: 1.2;
+                        letter-spacing: -0.02em;
                     }
 
                     #slide10 .main-title .highlight {
@@ -1785,7 +1839,7 @@
 
                     #slide10 .subtitle {
                         font-size: 1.8rem;
-                        color: rgba(255, 255, 255, 0.7);
+                        color: #475569;
                         margin-bottom: 50px;
                     }
 
@@ -1811,13 +1865,13 @@
                     }
 
                     #slide10 .cta-btn.secondary {
-                        background: rgba(255, 255, 255, 0.05);
-                        border: 3px solid rgba(255, 255, 255, 0.2);
-                        color: white;
+                        background: #ffffff;
+                        border: 1px solid #e2e8f0;
+                        color: #1e293b;
                     }
 
                     #slide10 .cta-btn.secondary:hover {
-                        border-color: #00d4ff;
+                        border-color: #cbd5e1;
                         transform: translateY(-5px);
                     }
 
@@ -1853,7 +1907,7 @@
                         display: flex;
                         align-items: center;
                         gap: 10px;
-                        color: rgba(255, 255, 255, 0.6);
+                        color: #64748b;
                         font-size: 1.1rem;
                     }
 

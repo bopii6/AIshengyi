@@ -1,0 +1,437 @@
+/* ===== Chunxiang-Inspired Course Schedule Styles v2 ===== */
+/* Dark mode base for course page */
+body.course-page {
+    background: #050508;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+body.course-page .container {
+    max-width: 1080px;
+}
+
+body.course-page .header {
+    text-align: center;
+    padding: 80px 0 40px;
+}
+
+body.course-page .header h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+body.course-page .subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+}
+
+body.course-page .header-badge {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+}
+
+/* Glow effect background */
+body.course-page .bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.25) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 30% at 0% 80%, rgba(34, 197, 94, 0.12) 0%, transparent 50%);
+    opacity: 1;
+    filter: blur(0);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Ticket Grid - 3 columns */
+.ticket-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 20px 0 60px;
+}
+
+@media (max-width: 1100px) {
+    .ticket-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 680px) {
+    .ticket-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* Phase Header */
+.phase-header {
+    grid-column: 1 / -1;
+    margin: 48px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.phase-header:first-child {
+    margin-top: 0;
+}
+
+.phase-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.phase-badge {
+    font-size: 0.65rem;
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 5px 14px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ===== Ticket Card ===== */
+.ticket {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    background: #12121a;
+}
+
+.ticket:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+}
+
+/* Ticket Main Content */
+.ticket-main {
+    position: relative;
+    padding: 80px 20px 24px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+/* BIGGER Sawtooth torn paper effect */
+.ticket-main::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 16px;
+    background: linear-gradient(135deg, transparent 50%, #12121a 50%) 0 0 / 16px 16px,
+        linear-gradient(-135deg, transparent 50%, #12121a 50%) 0 0 / 16px 16px;
+    background-position: left bottom;
+}
+
+/* Phase Color Schemes with gradient */
+.phase-1 .ticket-main {
+    background: linear-gradient(145deg, #3b82f6 0%, #1e40af 100%);
+}
+
+.phase-2 .ticket-main {
+    background: linear-gradient(145deg, #a855f7 0%, #6b21a8 100%);
+}
+
+.phase-3 .ticket-main {
+    background: linear-gradient(145deg, #f97316 0%, #c2410c 100%);
+}
+
+.phase-4 .ticket-main {
+    background: linear-gradient(145deg, #22c55e 0%, #15803d 100%);
+}
+
+/* RIBBON Day Badge - corner ribbon style */
+.ticket-day {
+    position: absolute;
+    top: 16px;
+    left: -40px;
+    width: 140px;
+    text-align: center;
+    transform: rotate(-45deg);
+    font-family: 'Orbitron', 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 800;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 8px 0;
+    letter-spacing: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 20;
+}
+
+/* Topic Icon/Illustration Placeholder */
+.ticket-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    font-size: 4rem;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+/* Illustration Image at top of card */
+.ticket-illustration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.ticket-illustration::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to top, var(--ticket-bg, #3b82f6), transparent);
+}
+
+.phase-1 .ticket-main {
+    --ticket-bg: #1e40af;
+}
+
+.phase-2 .ticket-main {
+    --ticket-bg: #6b21a8;
+}
+
+.phase-3 .ticket-main {
+    --ticket-bg: #c2410c;
+}
+
+.phase-4 .ticket-main {
+    --ticket-bg: #15803d;
+}
+
+/* Card with illustration needs more padding at top */
+.ticket-main.has-illustration {
+    padding-top: 140px;
+    min-height: 280px;
+}
+
+/* Faint Watermark */
+.ticket-main::before {
+    content: attr(data-code);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.ticket-tag-row {
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 2;
+}
+
+.ticket-tag {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.25);
+    color: rgba(255, 255, 255, 0.9);
+    display: inline-block;
+}
+
+.ticket-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.ticket-desc {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    position: relative;
+    z-index: 2;
+}
+
+/* Ticket Footer with Buttons - Matching Card Color */
+.ticket-stub {
+    position: relative;
+    padding: 18px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Sawtooth top edge for stub */
+.ticket-stub::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: linear-gradient(135deg, transparent 50%, currentColor 50%) 0 0 / 12px 12px,
+        linear-gradient(-135deg, transparent 50%, currentColor 50%) 0 0 / 12px 12px;
+    background-position: left top;
+    color: inherit;
+}
+
+/* Phase-specific stub colors */
+.phase-1 .ticket-stub {
+    background: linear-gradient(145deg, #2563eb 0%, #1e40af 100%);
+}
+
+.phase-1 .ticket-stub::before {
+    color: #2563eb;
+}
+
+.phase-2 .ticket-stub {
+    background: linear-gradient(145deg, #9333ea 0%, #6b21a8 100%);
+}
+
+.phase-2 .ticket-stub::before {
+    color: #9333ea;
+}
+
+.phase-3 .ticket-stub {
+    background: linear-gradient(145deg, #ea580c 0%, #c2410c 100%);
+}
+
+.phase-3 .ticket-stub::before {
+    color: #ea580c;
+}
+
+.phase-4 .ticket-stub {
+    background: linear-gradient(145deg, #16a34a 0%, #15803d 100%);
+}
+
+.phase-4 .ticket-stub::before {
+    color: #16a34a;
+}
+
+/* Footer Buttons */
+.stub-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    text-decoration: none;
+}
+
+.stub-btn.btn-docs {
+    background: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.stub-btn.btn-docs:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+.stub-btn.btn-faq {
+    background: #3b82f6;
+    color: #ffffff;
+}
+
+.stub-btn.btn-faq:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.stub-btn i {
+    font-size: 0.9rem;
+}
+
+/* Tear Animation */
+.ticket.is-torn {
+    opacity: 0.4;
+    pointer-events: none;
+    filter: saturate(0.3);
+}
+
+.ticket.is-torn .ticket-stub {
+    transform: translateY(30px) rotate(8deg);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.6, 0, 0.2, 1);
+}
+
+.ticket.is-torn::after {
+    content: "✓ DONE";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-12deg);
+    font-family: 'Orbitron', monospace;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #22c55e;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 16px 32px;
+    border-radius: 12px;
+    border: 4px solid #22c55e;
+    z-index: 10;
+    animation: stampIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1.2) forwards;
+    box-shadow: 0 8px 32px rgba(34, 197, 94, 0.4);
+}
+
+@keyframes stampIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2.5) rotate(-12deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(-12deg);
+    }
+}
+
+/* Footer styling for course page */
+body.course-page div[style*="text-align: center"] p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+}
