@@ -459,6 +459,15 @@ body.course-page div[style*="text-align: center"] p {
     gap: 16px;
     overflow-y: auto;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+}
+
+.course-outline::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari/Opera */
 }
 
 .course-outline.collapsed {
