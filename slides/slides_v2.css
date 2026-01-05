@@ -539,7 +539,7 @@ body::after {
 
 /* ===== Swiper Pagination ===== */
 .swiper-pagination {
-    bottom: 20px !important;
+    bottom: 50px !important;
 }
 
 .swiper-pagination-bullet {
@@ -715,4 +715,20 @@ body::after {
     100% {
         transform: translateX(-150vw);
     }
+}
+
+/* ===== Persistent Legend Footer ===== */
+.viral-footer-legend {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    z-index: 9999;
+    pointer-events: none;
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+    font-family: 'Inter', sans-serif;
 }
