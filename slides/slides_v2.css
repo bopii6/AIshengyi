@@ -723,12 +723,17 @@ body::after {
     bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.4);
-    font-weight: 700;
-    letter-spacing: 0.15em;
+    font-size: 1.8rem;
+    /* Increased size significantly */
+    color: rgba(255, 255, 255, 0.9);
+    /* High visibility */
+    font-weight: 800;
+    letter-spacing: 0.1em;
     z-index: 9999;
     pointer-events: none;
-    text-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
-    font-family: 'Inter', sans-serif;
+    text-shadow: 0 0 30px rgba(245, 158, 11, 0.6);
+    /* Orange glow to match theme */
+    font-family: 'Noto Sans SC', sans-serif;
+    text-align: center;
+    width: 100%;
 }
