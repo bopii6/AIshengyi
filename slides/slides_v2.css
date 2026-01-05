@@ -643,15 +643,17 @@ body::after {
 /* ===== Typewriter Animation ===== */
 .viral-typewriter {
     display: inline-block;
+    vertical-align: bottom;
     overflow: hidden;
     border-right: 0.15em solid var(--text-white);
     white-space: nowrap;
-    margin: 0 auto;
+    margin: 0;
     letter-spacing: 0.05em;
+    width: 0;
+    /* Start at 0 */
     animation:
-        typing 2s steps(20, end),
+        typing 1.5s steps(8, end) forwards,
         blink-caret 0.75s step-end infinite;
-    vertical-align: bottom;
 }
 
 @keyframes typing {
@@ -660,8 +662,10 @@ body::after {
     }
 
     to {
-        width: 100%
+        width: 3.4em;
     }
+
+    /* Approx width for "AI编程" */
 }
 
 @keyframes blink-caret {
