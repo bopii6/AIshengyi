@@ -43,7 +43,7 @@
     /* Gap between title and content */
     --gap-title: 10px;
     /* Gap between hero and subtitle */
-    --container-max-width: 1000px;
+    --container-max-width: 85vw;
 }
 
 /* ===== Global Reset for Slides ===== */
