@@ -639,3 +639,39 @@ body::after {
         border-radius: 16px !important;
     }
 }
+
+/* ===== Typewriter Animation ===== */
+.viral-typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 0.15em solid var(--text-white);
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.05em;
+    animation:
+        typing 2s steps(20, end),
+        blink-caret 0.75s step-end infinite;
+    vertical-align: bottom;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--text-white);
+    }
+}
