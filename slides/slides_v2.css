@@ -539,7 +539,7 @@ body::after {
 
 /* ===== Swiper Pagination ===== */
 .swiper-pagination {
-    bottom: 50px !important;
+    bottom: 24px !important;
 }
 
 .swiper-pagination-bullet {
@@ -555,6 +555,19 @@ body::after {
     opacity: 1 !important;
     width: 32px !important;
     border-radius: 6px !important;
+}
+
+/* ===== Persistent Legend Footer ===== */
+.viral-footer-legend {
+    font-size: 2.2rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 40px rgba(245, 158, 11, 0.8);
+    font-family: 'Noto Sans SC', sans-serif;
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
 }
 
 /* ===== Urgency Banner ===== */
@@ -715,25 +728,4 @@ body::after {
     100% {
         transform: translateX(-150vw);
     }
-}
-
-/* ===== Persistent Legend Footer ===== */
-.viral-footer-legend {
-    position: fixed;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.8rem;
-    /* Increased size significantly */
-    color: rgba(255, 255, 255, 0.9);
-    /* High visibility */
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    z-index: 9999;
-    pointer-events: none;
-    text-shadow: 0 0 30px rgba(245, 158, 11, 0.6);
-    /* Orange glow to match theme */
-    font-family: 'Noto Sans SC', sans-serif;
-    text-align: center;
-    width: 100%;
 }
