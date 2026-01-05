@@ -696,8 +696,8 @@ body::after {
 .viral-danmu-item {
     position: absolute;
     white-space: nowrap;
-    color: rgba(255, 255, 255, 0.1);
-    /* Very subtle opacity */
+    color: rgba(255, 255, 255, 0.8);
+    /* Higher baseline, controlled by inline opacity */
     font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
     left: 100%;
