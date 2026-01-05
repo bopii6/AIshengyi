@@ -5,27 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AI编程30天 - 直播课件</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="slides_v2.css">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Noto Sans SC', sans-serif;
-            background: #f8fafc;
-            /* Refined light theme */
-            color: #1e293b;
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-        }
-
+        /* Base Swiper Styles */
         .swiper {
             width: 100%;
             height: 100%;
@@ -37,12 +24,21 @@
             align-items: center;
             padding: 40px;
         }
-
-        /* 每个幻灯片的样式直接内联，保持原始尺寸 */
     </style>
 </head>
 
 <body>
+    <!-- Global Background Animation -->
+    <div class="fixed inset-0 z-[-1] pointer-events-none"
+        style="position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;">
+        <div
+            style="position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: conic-gradient(from 180deg at 50% 50%, #2a8af6 0deg, #a853ba 180deg, #e92a67 360deg); filter: blur(120px); opacity: 0.15; border-radius: 50%;">
+        </div>
+        <div
+            style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px); background-size: 50px 50px; mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);">
+        </div>
+    </div>
+
     <div class="swiper">
         <div class="swiper-wrapper">
 

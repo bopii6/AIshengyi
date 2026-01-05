@@ -1,0 +1,340 @@
+/* slides_v2.css - Dark Tech Aesthetic for Slide Deck */
+
+/* ===== Variables (Synced with styles_v2.css) ===== */
+:root {
+    /* Colors */
+    --bg-main: #000212;
+    --bg-secondary: #0A0A0A;
+    --bg-card: rgba(255, 255, 255, 0.03);
+    --bg-card-hover: rgba(255, 255, 255, 0.06);
+
+    --text-primary: #EEEEEE;
+    --text-secondary: #A1A1AA;
+    --text-tertiary: #52525B;
+
+    /* Accents */
+    --accent-primary: #8B5CF6;
+    /* Violet */
+    --accent-secondary: #3B82F6;
+    /* Blue */
+    --accent-tertiary: #EC4899;
+    /* Pink */
+    --accent-gradient: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%);
+    --accent-glow: conic-gradient(from 180deg at 50% 50%, #2a8af6 0deg, #a853ba 180deg, #e92a67 360deg);
+
+    /* Borders */
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.15);
+
+    /* Effects */
+    --glass-blur: blur(12px);
+    --shadow-glow: 0 0 80px rgba(139, 92, 246, 0.15);
+
+    /* Fonts */
+    --font-sans: 'Inter', sans-serif;
+    --font-tech: 'Orbitron', sans-serif;
+}
+
+/* ===== Global Overrides ===== */
+body {
+    background-color: var(--bg-main) !important;
+    color: var(--text-primary) !important;
+    font-family: var(--font-sans) !important;
+    overflow: hidden;
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+.main-title,
+.top-question {
+    color: #fff !important;
+    letter-spacing: -0.02em;
+}
+
+p,
+.subtitle,
+.point-desc,
+.phase-content li {
+    color: var(--text-secondary) !important;
+}
+
+/* ===== Common Component Styles ===== */
+
+/* Glass Cards (Replacing White Cards) */
+.point,
+.audience-card,
+.product-card,
+.phase,
+.highlight-box,
+.comparison-card,
+.step-card,
+.price-card,
+.outcome-card,
+.timeline-item,
+.guarantee-card,
+.bottom-banner,
+.bottom-quote,
+.refund-banner,
+.feature-list li,
+.timeline-item.now,
+.bottom-note,
+.gift-item,
+.action-box,
+.urgency-banner,
+.cta-btn.secondary {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
+    backdrop-filter: var(--glass-blur);
+    box-shadow: none !important;
+    color: var(--text-primary) !important;
+}
+
+.point:hover,
+.audience-card:hover,
+.product-card:hover,
+.phase:hover,
+.price-card:hover,
+.outcome-card:hover,
+.guarantee-card:hover,
+.timeline-item.now,
+.gift-item:hover,
+.cta-btn.secondary:hover {
+    background: var(--bg-card-hover) !important;
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.15) !important;
+    transform: translateY(-5px);
+}
+
+/* Specific Banner Overrides */
+.bottom-banner,
+.bottom-quote,
+.refund-banner,
+.bottom-note,
+.action-box {
+    background: rgba(139, 92, 246, 0.05) !important;
+    /* Subtle purple tint */
+    border: 1px solid var(--border-color) !important;
+}
+
+.urgency-banner {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border-color: #ef4444 !important;
+}
+
+/* Featured Price Card */
+.price-card.featured {
+    background: rgba(234, 88, 12, 0.1) !important;
+    /* Orange tint */
+    border-color: #ea580c !important;
+}
+
+.price-card.featured::before {
+    background: var(--accent-gradient) !important;
+    color: #fff !important;
+}
+
+/* Gift Values */
+.gift-value {
+    background: rgba(234, 88, 12, 0.15) !important;
+    border: 1px solid #ea580c !important;
+    color: #ea580c !important;
+}
+
+/* Text Highlights */
+.highlight,
+.highlight2,
+.accent,
+.card-title,
+.product-name,
+.phase-name,
+.highlight-text,
+.note-highlight,
+.banner-subtitle .accent,
+.quote-text .accent,
+.refund-title .accent,
+.gift-title,
+.action-title,
+.urgency-text,
+.btn-price {
+    color: #fff !important;
+}
+
+.highlight,
+.highlight2,
+.accent {
+    background: var(--accent-gradient) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    font-weight: 800 !important;
+}
+
+/* Tags & Badges */
+.top-tag,
+.corner-badge,
+.feature-tag,
+.product-number {
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-tag {
+    background: rgba(139, 92, 246, 0.1) !important;
+    border: 1px solid var(--accent-primary) !important;
+    color: var(--accent-primary) !important;
+}
+
+.corner-badge {
+    background: var(--accent-tertiary) !important;
+}
+
+.feature-tag {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: var(--accent-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Specific Text Overrides */
+.price-value {
+    color: #fff !important;
+}
+
+.card-subtitle,
+.outcome-desc,
+.time-desc,
+.guarantee-desc,
+.banner-subtitle,
+.gift-desc,
+.step,
+.btn-label,
+.note-item {
+    color: var(--text-secondary) !important;
+}
+
+.feature-list li {
+    color: var(--text-secondary) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* Timeline Specifics */
+.timeline-item.past {
+    opacity: 0.5;
+}
+
+.timeline-item.future {
+    opacity: 0.5;
+    background: transparent !important;
+    border-style: dashed !important;
+}
+
+.time-label {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-primary) !important;
+}
+
+.timeline-item.now .time-label {
+    background: var(--accent-gradient) !important;
+    color: #fff !important;
+}
+
+/* Icons */
+.point-icon,
+.card-icon,
+.product-icon,
+.phase-icon,
+.icon,
+.outcome-icon,
+.time-icon,
+.guarantee-icon,
+.refund-icon,
+.banner-icon,
+.note-icon,
+.gift-number,
+.step-icon,
+.flash-icon,
+.urgency-icon {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+.check {
+    color: #34d399 !important;
+}
+
+.cross {
+    color: #ef4444 !important;
+}
+
+.gift-number {
+    background: var(--accent-gradient) !important;
+    color: #fff !important;
+}
+
+/* Layout & Alignment Fixes */
+/* Ensure all slide containers are centered */
+[id^="slide"] {
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    /* Standardize max-width */
+}
+
+/* Swiper Slide Overflow Fix */
+.swiper-slide {
+    overflow: hidden !important;
+    /* Prevent bleeding */
+    box-sizing: border-box !important;
+}
+
+/* Center grids and flex containers */
+.pricing-grid,
+.outcomes-grid,
+.guarantees-grid,
+.timeline-container,
+.products-grid,
+.audience-grid,
+.gifts-container,
+.action-steps,
+.cta-buttons,
+.bottom-note {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+    /* Allow them to fill their container */
+    justify-content: center !important;
+    /* Ensure flex items are centered */
+}
+
+/* Fix specific timeline layout */
+.timeline-container {
+    gap: 20px !important;
+    /* Add gap for better separation in dark mode */
+}
+
+.timeline-item {
+    border-radius: 16px !important;
+    /* Round all corners */
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Particles/Backgrounds */
+.bg-particles .particle {
+    background: var(--accent-primary) !important;
+    box-shadow: 0 0 10px var(--accent-primary);
+}
+
+/* Swiper Controls */
+.swiper-pagination-bullet {
+    background: var(--text-secondary) !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--accent-primary) !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--accent-primary) !important;
+}
