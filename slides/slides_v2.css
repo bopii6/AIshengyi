@@ -73,7 +73,8 @@ body {
 /* ===== Structural Coordination Classes ===== */
 .viral-container {
     width: 100% !important;
-    max-width: var(--container-max-width) !important;
+    max-width: 850px;
+    /* Removed !important to allow inline style overrides */
     margin: 0 auto !important;
     position: relative !important;
     z-index: 1 !important;
