@@ -77,12 +77,12 @@
                                         👩‍🏫 老师、教培机构</td>
                                     <td
                                         style="padding: 24px 32px; font-size: 1.15rem; opacity: 0.9; width: 38%; text-align: left; vertical-align: middle; line-height: 1.6;">
-                                        ① 做个招生小工具<br>② 想要开启副业</td>
+                                        ① 做个“家庭AI自习室”<br>② 想要开启副业</td>
                                     <td
                                         style="padding: 24px 32px; width: 40%; text-align: left; vertical-align: middle;">
                                         <span class="text-gradient-neon"
                                             style="font-weight: 700; font-size: 1.1rem; line-height: 1.8;">①
-                                            两周自己搞定，省10万<br>② AI做产品卖给同行</span>
+                                            AI编程，省10万加盟费<br>② 0成本自研AI产品</span>
                                     </td>
                                 </tr>
                                 <tr
@@ -940,6 +940,79 @@
                 </div>
             </div>
 
+            <!-- ========== HIDDEN SLIDES (备用素材) ========== -->
+            <!-- 按 H 键可切换显示/隐藏备用幻灯片 -->
+
+            <!-- Hidden Slide H1: 黄仁勋预测 - AI创造百万富翁 -->
+            <div class="swiper-slide hidden-slide" data-hidden="true" style="display: none; position: relative;">
+
+                <div class="viral-number" style="opacity: 0.4; z-index: 5;">H1</div>
+
+                <!-- Hidden Badge -->
+                <div
+                    style="position: absolute; top: 24px; right: 24px; background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.4); padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; color: #F59E0B; z-index: 10;">
+                    📦 备用素材
+                </div>
+
+                <!-- 主体内容 -->
+                <div class="viral-container" style="max-width: 950px; z-index: 5; position: relative;">
+                    <header class="viral-header" style="margin-bottom: 32px;">
+                        <div style="margin-bottom: 16px;">
+                            <span
+                                style="display: inline-block; background: linear-gradient(135deg, rgba(118, 185, 0, 0.2), rgba(118, 185, 0, 0.1)); border: 1px solid rgba(118, 185, 0, 0.4); padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; color: #76B900;">
+                                🟢 NVIDIA CEO
+                            </span>
+                        </div>
+                        <h1 class="viral-hero" style="font-size: 2.5rem;">
+                            <span class="text-gradient-fire">黄仁勋</span> 最大胆预测
+                        </h1>
+                    </header>
+
+                    <div class="viral-content" style="gap: 32px;">
+                        <!-- 核心区域：图片背景 + 引用框 -->
+                        <div style="position: relative; max-width: 850px; margin: 0 auto;">
+
+                            <!-- 图片作为局部背景（在引用框后面，略微超出） -->
+                            <div
+                                style="position: absolute; inset: -30px; z-index: 0; border-radius: 20px; overflow: hidden;">
+                                <img src="images/huang_renxun_prediction.png" alt="黄仁勋预测"
+                                    style="width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: 0.65; cursor: pointer;"
+                                    onclick="showLightbox('images/huang_renxun_prediction.png')">
+                                <!-- 轻度渐变遮罩 -->
+                                <div
+                                    style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 23, 42, 0.35) 0%, rgba(15, 23, 42, 0.5) 100%);">
+                                </div>
+                            </div>
+
+                            <!-- Quote Card - 半透明玻璃效果 -->
+                            <div
+                                style="position: relative; z-index: 1; padding: 36px 44px; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);">
+                                <div
+                                    style="font-size: 2.5rem; line-height: 1; opacity: 0.35; margin-bottom: 12px; font-family: Georgia, serif;">
+                                    "</div>
+                                <p
+                                    style="font-size: 1.6rem; line-height: 1.8; font-weight: 600; margin: 0; text-shadow: 0 2px 8px rgba(0,0,0,0.4);">
+                                    人工智能将在<span class="text-gradient-fire"
+                                        style="font-weight: 800; font-size: 1.9rem;">5年内</span>创造的百万富翁数量，<br>
+                                    将超过互联网在<span class="text-gradient-neon"
+                                        style="font-weight: 700; font-size: 1.9rem;">20年内</span>创造的百万富翁数量。
+                                </p>
+                                <div
+                                    style="font-size: 2.5rem; line-height: 1; text-align: right; opacity: 0.35; margin-top: 12px; font-family: Georgia, serif;">
+                                    "</div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom CTA -->
+                        <div style="text-align: center; margin-top: 24px;">
+                            <span style="font-size: 1.5rem; font-weight: 500; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+                                🚀 现在入局AI，正是 <span class="text-gradient-fire" style="font-weight: 800;">最佳时机</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="swiper-pagination"></div>
 
@@ -1025,6 +1098,187 @@
                 };
                 document.body.appendChild(overlay);
             }
+
+            // ========== 隐藏幻灯片切换功能 ==========
+            // 按 H 键切换显示/隐藏备用素材幻灯片
+            let hiddenSlidesVisible = false;
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'h' || e.key === 'H') {
+                    hiddenSlidesVisible = !hiddenSlidesVisible;
+                    const hiddenSlides = document.querySelectorAll('.hidden-slide');
+
+                    hiddenSlides.forEach(slide => {
+                        slide.style.display = hiddenSlidesVisible ? 'flex' : 'none';
+                    });
+
+                    // 重新初始化 Swiper 以更新幻灯片
+                    const swiperEl = document.querySelector('.swiper');
+                    if (swiperEl && swiperEl.swiper) {
+                        swiperEl.swiper.update();
+                    }
+
+                    // 显示提示
+                    showToast(hiddenSlidesVisible ? '📦 备用素材已显示 (共' + hiddenSlides.length + '页)' : '🔒 备用素材已隐藏');
+                }
+            });
+
+            // Toast 提示函数
+            function showToast(message) {
+                const existing = document.getElementById('slide-toast');
+                if (existing) existing.remove();
+
+                const toast = document.createElement('div');
+                toast.id = 'slide-toast';
+                toast.style.cssText = 'position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); color: white; padding: 12px 24px; border-radius: 30px; font-size: 1rem; z-index: 10001; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); animation: fadeInUp 0.3s ease;';
+                toast.textContent = message;
+                document.body.appendChild(toast);
+
+                setTimeout(() => {
+                    toast.style.opacity = '0';
+                    toast.style.transition = 'opacity 0.3s ease';
+                    setTimeout(() => toast.remove(), 300);
+                }, 2000);
+            }
+
+            // ========== 批注/画笔功能 ==========
+
+            // 1. 创建 Canvas 和 按钮 UI
+            const canvas = document.createElement('canvas');
+            canvas.id = 'annotation-canvas';
+            canvas.style.cssText = 'position: fixed; inset: 0; z-index: 9998; pointer-events: none; cursor: crosshair;';
+            document.body.appendChild(canvas);
+
+            const ctx = canvas.getContext('2d');
+            let isDrawing = false;
+            let drawingMode = false;
+
+            // 调整画布大小
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            // 创建画笔按钮工具栏
+            const toolbar = document.createElement('div');
+            toolbar.style.cssText = 'position: fixed; bottom: 24px; right: 24px; z-index: 10002; display: flex; gap: 12px; align-items: center;';
+            toolbar.innerHTML = `
+                <button id="btn-pen" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); width: 50px; height: 50px; border-radius: 50%; color: white; font-size: 1.5rem; cursor: pointer; backdrop-filter: blur(10px); transition: all 0.2s; display: flex; align-items: center; justify-content: center;" title="开启/关闭画笔 (P)">
+                    ✏️
+                </button>
+                <button id="btn-clear" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); width: 40px; height: 40px; border-radius: 50%; color: #ef4444; font-size: 1.2rem; cursor: pointer; backdrop-filter: blur(10px); transition: all 0.2s; display: none; align-items: center; justify-content: center;" title="清除 (C)">
+                    🗑️
+                </button>
+            `;
+            document.body.appendChild(toolbar);
+
+            const btnPen = document.getElementById('btn-pen');
+            const btnClear = document.getElementById('btn-clear');
+
+            // 2. 画笔逻辑
+            function toggleDrawingMode() {
+                drawingMode = !drawingMode;
+
+                if (drawingMode) {
+                    // 开启画笔模式
+                    canvas.style.pointerEvents = 'auto'; // 让canvas接收点击
+                    btnPen.style.background = '#F59E0B'; // 按钮变亮
+                    btnPen.style.border = '1px solid #F59E0B';
+                    btnPen.style.boxShadow = '0 0 15px rgba(245, 158, 11, 0.5)';
+                    btnClear.style.display = 'flex';
+
+                    showToast('✏️ 画笔已开启');
+
+                    // 禁用 Swiper 触摸滑动，防止画画时切页
+                    const swiperEl = document.querySelector('.swiper');
+                    if (swiperEl && swiperEl.swiper) swiperEl.swiper.allowTouchMove = false;
+
+                } else {
+                    // 关闭画笔模式
+                    canvas.style.pointerEvents = 'none';
+                    btnPen.style.background = 'rgba(255, 255, 255, 0.1)';
+                    btnPen.style.border = '1px solid rgba(255, 255, 255, 0.2)';
+                    btnPen.style.boxShadow = 'none';
+                    btnClear.style.display = 'none';
+
+                    showToast('🚫 画笔已关闭');
+
+                    // 恢复 Swiper
+                    const swiperEl = document.querySelector('.swiper');
+                    if (swiperEl && swiperEl.swiper) swiperEl.swiper.allowTouchMove = true;
+                }
+            }
+
+            function clearCanvas() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                showToast('🧹 笔迹已清除');
+            }
+
+            // 绑定按钮事件
+            btnPen.onclick = toggleDrawingMode;
+            btnClear.onclick = clearCanvas;
+
+            // 绑定键盘快捷键
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'p' || e.key === 'P') toggleDrawingMode();
+                if (drawingMode && (e.key === 'c' || e.key === 'C')) clearCanvas();
+            });
+
+            // 3. 绘图事件监听
+            function startDrawing(e) {
+                if (!drawingMode) return;
+                isDrawing = true;
+                draw(e);
+            }
+
+            function stopDrawing() {
+                isDrawing = false;
+                ctx.beginPath(); // 重置路径
+            }
+
+            function draw(e) {
+                if (!drawingMode || !isDrawing) return;
+
+                // 兼容鼠标和触摸
+                const clientX = e.clientX || e.touches[0].clientX;
+                const clientY = e.clientY || e.touches[0].clientY;
+
+                ctx.lineWidth = 4;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = '#ef4444'; // 红色画笔
+                // ctx.strokeStyle = '#F59E0B'; // 或者用醒目的橙色
+
+                ctx.lineTo(clientX, clientY);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(clientX, clientY);
+
+                e.preventDefault(); // 防止触摸滚动
+            }
+
+            // 监听翻页事件，翻页自动清除笔迹 (放在 Swiper 实例存在后)
+            window.addEventListener('load', () => {
+                const swiperEl = document.querySelector('.swiper');
+                if (swiperEl && swiperEl.swiper) {
+                    swiperEl.swiper.on('slideChange', () => {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height); // 翻页自动清屏
+                    });
+                }
+            });
+
+            // 鼠标事件
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mouseup', stopDrawing);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseout', stopDrawing);
+
+            // 触摸事件 (适配平板/手机)
+            canvas.addEventListener('touchstart', startDrawing, { passive: false });
+            canvas.addEventListener('touchend', stopDrawing);
+            canvas.addEventListener('touchmove', draw, { passive: false });
+
         </script>
 </body>
 
