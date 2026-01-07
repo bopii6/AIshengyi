@@ -38,10 +38,103 @@
             color: rgba(255, 255, 255, 0.8);
             z-index: 10;
         }
+
+        /* 自动播放控制按钮样式 */
+        #autoplay-toggle-btn {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 1000;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+
+        #autoplay-toggle-btn.manual {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        #autoplay-toggle-btn.manual:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        #autoplay-toggle-btn.auto {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(16, 185, 129, 0.1));
+            color: #10B981;
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 4px 25px rgba(16, 185, 129, 0.4);
+            }
+        }
+
+        #autoplay-toggle-btn .icon {
+            font-size: 1.2rem;
+        }
+
+        /* 进度条指示器 */
+        #autoplay-progress {
+            position: fixed;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #autoplay-progress.visible {
+            opacity: 1;
+        }
+
+        #autoplay-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #10B981, #34D399);
+            border-radius: 2px;
+            transition: width 0.1s linear;
+        }
     </style>
 </head>
 
 <body>
+    <!-- 自动播放控制按钮 -->
+    <button id="autoplay-toggle-btn" class="manual" onclick="toggleAutoplay()">
+        <span class="icon">▶️</span>
+        <span class="text">自动播放</span>
+    </button>
+
+    <!-- 自动播放进度条 -->
+    <div id="autoplay-progress">
+        <div id="autoplay-progress-bar"></div>
+    </div>
+
     <!-- Global Background Animation -->
     <div class="fixed inset-0 z-[-1] pointer-events-none"
         style="position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;">
@@ -1022,6 +1115,7 @@
                 var swiper = new Swiper(".swiper", {
                     direction: "horizontal",
                     speed: 300,
+                    loop: true,  // 🔥 启用循环，到最后一页后回到第一页
                     keyboard: {
                         enabled: true,
                         onlyInViewport: false,  // 🔥 关键修正：确保即使焦点不在也能控制
@@ -1030,6 +1124,13 @@
                     pagination: {
                         el: ".swiper-pagination",
                         clickable: true,
+                    },
+
+                    // 🔥 自动播放配置（默认关闭，点击按钮启用）
+                    autoplay: {
+                        delay: 5000,              // 每页停留5秒
+                        disableOnInteraction: false, // 用户操作后不停止自动播放
+                        pauseOnMouseEnter: false,    // 鼠标悬停不暂停
                     },
 
                     // 核心修复：启用触摸模拟（让鼠标/触摸板能拖拽）
@@ -1069,7 +1170,140 @@
                     // 防止误触
                     touchStartPreventDefault: false,
                 });
+
+                // 🔥 初始化时停止自动播放（默认手动模式）
+                swiper.autoplay.stop();
+
+                // 将 swiper 实例挂载到 window 以便全局访问
+                window.swiperInstance = swiper;
             });
+
+            // ========== 自动播放控制逻辑 ==========
+            let isAutoplayOn = false;
+            let progressInterval = null;
+
+            function toggleAutoplay() {
+                const btn = document.getElementById('autoplay-toggle-btn');
+                const progressContainer = document.getElementById('autoplay-progress');
+                const swiper = window.swiperInstance;
+
+                if (!swiper) return;
+
+                isAutoplayOn = !isAutoplayOn;
+
+                if (isAutoplayOn) {
+                    // 切换到自动播放模式
+                    btn.className = 'auto';
+                    btn.innerHTML = '<span class="icon">⏸️</span><span class="text">手动播放</span>';
+                    progressContainer.classList.add('visible');
+                    swiper.autoplay.start();
+                    startProgressBar();
+                    showToast('🔄 自动播放已开启 (5秒/页)');
+                } else {
+                    // 切换到手动播放模式
+                    btn.className = 'manual';
+                    btn.innerHTML = '<span class="icon">▶️</span><span class="text">自动播放</span>';
+                    progressContainer.classList.remove('visible');
+                    swiper.autoplay.stop();
+                    stopProgressBar();
+                    showToast('✋ 手动播放模式');
+                }
+            }
+
+            // 进度条动画
+            function startProgressBar() {
+                const progressBar = document.getElementById('autoplay-progress-bar');
+                let progress = 0;
+                const duration = 5000; // 5秒
+                const interval = 50;   // 50ms 更新一次
+                const increment = (interval / duration) * 100;
+
+                progressBar.style.width = '0%';
+
+                if (progressInterval) clearInterval(progressInterval);
+
+                progressInterval = setInterval(() => {
+                    progress += increment;
+                    if (progress >= 100) {
+                        progress = 0;
+                    }
+                    progressBar.style.width = progress + '%';
+                }, interval);
+            }
+
+            function stopProgressBar() {
+                if (progressInterval) {
+                    clearInterval(progressInterval);
+                    progressInterval = null;
+                }
+                const progressBar = document.getElementById('autoplay-progress-bar');
+                progressBar.style.width = '0%';
+            }
+
+            // 监听幻灯片切换，重置进度条
+            window.addEventListener('load', () => {
+                const swiper = window.swiperInstance;
+                if (swiper) {
+                    swiper.on('slideChange', () => {
+                        if (isAutoplayOn) {
+                            const progressBar = document.getElementById('autoplay-progress-bar');
+                            progressBar.style.width = '0%';
+                        }
+                    });
+                }
+            });
+
+            // 键盘快捷键：空格键切换自动播放
+            document.addEventListener('keydown', (e) => {
+                if (e.code === 'Space' && !e.target.matches('input, textarea')) {
+                    e.preventDefault();
+                    toggleAutoplay();
+                }
+            });
+
+            // 将 toggleAutoplay 挂载到 window
+            window.toggleAutoplay = toggleAutoplay;
+
+            // Toast 提示函数（如果尚未定义）
+            function showToast(message) {
+                // 检查是否已有 toast
+                let existingToast = document.getElementById('toast-message');
+                if (existingToast) existingToast.remove();
+
+                const toast = document.createElement('div');
+                toast.id = 'toast-message';
+                toast.textContent = message;
+                toast.style.cssText = `
+                    position: fixed;
+                    bottom: 100px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: rgba(0, 0, 0, 0.8);
+                    color: white;
+                    padding: 12px 24px;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    z-index: 10000;
+                    animation: fadeInOut 2s ease forwards;
+                `;
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 2000);
+            }
+
+            // Toast 动画
+            if (!document.getElementById('toast-animation-style')) {
+                const style = document.createElement('style');
+                style.id = 'toast-animation-style';
+                style.textContent = `
+                    @keyframes fadeInOut {
+                        0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+                        15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                        85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+                        100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
 
             // Lightbox logic
             // Lightbox function for image zoom
