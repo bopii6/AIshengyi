@@ -388,6 +388,22 @@ body.course-page .bg-animation {
     transform: translateY(-2px);
 }
 
+.stub-btn.btn-video {
+    background: #22c55e;
+    color: #ffffff;
+}
+
+.stub-btn.btn-video:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+}
+
+.stub-btn.is-disabled {
+    opacity: 0.45;
+    pointer-events: none;
+    filter: grayscale(0.4);
+}
+
 .stub-btn i {
     font-size: 0.9rem;
 }
@@ -433,6 +449,145 @@ body.course-page .bg-animation {
     to {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1) rotate(-12deg);
+    }
+}
+
+/* Video modal */
+body.modal-open {
+    overflow: hidden;
+}
+
+.video-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 2000;
+}
+
+.video-modal.is-open {
+    display: flex;
+}
+
+.video-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.7);
+    backdrop-filter: blur(6px);
+}
+
+.video-modal-dialog {
+    position: relative;
+    width: min(960px, 92vw);
+    background: #0b0b12;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+    padding: 16px;
+    z-index: 1;
+}
+
+.video-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.video-modal-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.video-modal-close {
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.video-modal-close:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000000;
+}
+
+.video-embed iframe,
+.video-embed video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-speed {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.video-speed.is-hidden {
+    display: none;
+}
+
+.speed-btn {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.speed-btn:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.speed-btn.is-active {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: #ffffff;
+}
+
+.video-fallback {
+    display: inline-flex;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+}
+
+.video-fallback:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 680px) {
+    .video-modal {
+        padding: 16px;
+    }
+
+    .video-modal-dialog {
+        padding: 12px;
     }
 }
 
@@ -530,6 +685,10 @@ body.course-page div[style*="text-align: center"] p {
     display: none;
 }
 
+.outline-section.collapsed .outline-cards {
+    display: none;
+}
+
 .outline-days {
     list-style: none;
     padding: 0;
@@ -541,6 +700,52 @@ body.course-page div[style*="text-align: center"] p {
     border-left: 2px solid rgba(255, 255, 255, 0.1);
     margin-left: 8px;
     margin-top: 4px;
+}
+
+.outline-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.outline-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 10px 12px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.outline-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.outline-card-meta {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 4px;
+}
+
+.outline-card-title {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.35;
+}
+
+.outline-days:empty {
+    display: none;
+    padding-left: 0;
+    margin-left: 0;
+    border-left: none;
 }
 
 .outline-days li a {
