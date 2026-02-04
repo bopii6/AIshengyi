@@ -670,8 +670,9 @@ body.modal-open {
 .hotspot-content {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 12px;
-    padding: 16px 20px;
+    border-radius: 14px;
+    padding: 0;
+    overflow: hidden;
     transition: all 0.25s ease;
 }
 
@@ -679,6 +680,35 @@ body.modal-open {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(247, 37, 133, 0.3);
     transform: translateX(4px);
+}
+
+.hotspot-illustration {
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hotspot-illustration::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.65) 100%);
+}
+
+.hotspot-content .hotspot-title,
+.hotspot-content .hotspot-actions {
+    padding: 0 20px;
+}
+
+.hotspot-content .hotspot-title {
+    margin: 16px 0 12px;
+}
+
+.hotspot-content .hotspot-actions {
+    padding-bottom: 16px;
 }
 
 .hotspot-title {
