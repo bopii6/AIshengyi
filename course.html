@@ -637,7 +637,7 @@
             if (isMobile()) {
                 courseOutline.classList.add('mobile-open');
                 sidebarOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                document.body.classList.add('sidebar-open');
             } else {
                 courseOutline.classList.remove('collapsed');
                 mainWrapper.classList.remove('sidebar-collapsed');
@@ -649,7 +649,7 @@
             if (isMobile()) {
                 courseOutline.classList.remove('mobile-open');
                 sidebarOverlay.classList.remove('active');
-                document.body.style.overflow = '';
+                document.body.classList.remove('sidebar-open');
             } else {
                 courseOutline.classList.add('collapsed');
                 mainWrapper.classList.add('sidebar-collapsed');
@@ -686,7 +686,7 @@
                 mainWrapper.classList.remove('sidebar-collapsed');
                 sidebarOverlay.classList.remove('active');
                 sidebarToggle.classList.remove('sidebar-hidden');
-                document.body.style.overflow = '';
+                document.body.classList.remove('sidebar-open');
                 previousMobile = currentMobile;
             }
         });
