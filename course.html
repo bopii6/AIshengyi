@@ -610,9 +610,9 @@
                 <div class="video-embed" id="videoEmbed"></div>
                 <div class="video-speed" id="videoSpeed">
                     <button class="speed-btn" type="button" data-speed="0.75">0.75x</button>
-                    <button class="speed-btn is-active" type="button" data-speed="1">1x</button>
+                    <button class="speed-btn" type="button" data-speed="1">1x</button>
                     <button class="speed-btn" type="button" data-speed="1.25">1.25x</button>
-                    <button class="speed-btn" type="button" data-speed="1.5">1.5x</button>
+                    <button class="speed-btn is-active" type="button" data-speed="1.5">1.5x</button>
                     <button class="speed-btn" type="button" data-speed="2">2x</button>
                 </div>
                 <a class="video-fallback" id="videoFallback" href="#" target="_blank" rel="noopener">在新窗口打开</a>
@@ -700,6 +700,7 @@
         let lastFocusedElement = null;
         let currentHls = null;
         let currentVideo = null;
+        const defaultPlaybackRate = 1.5;
 
         const isDirectVideo = (url) => /\.(mp4|m3u8|webm|ogg)(\?|#|$)/i.test(url);
         const isHlsStream = (url) => /\.m3u8(\?|#|$)/i.test(url);
@@ -729,6 +730,7 @@
                 }
                 videoEmbed.appendChild(video);
                 currentVideo = video;
+                currentVideo.playbackRate = defaultPlaybackRate;
                 videoSpeed.classList.remove('is-hidden');
             } else {
                 const iframe = document.createElement('iframe');
@@ -746,7 +748,7 @@
             videoModal.setAttribute('aria-hidden', 'false');
             document.body.classList.add('modal-open');
             document.querySelectorAll('.speed-btn').forEach(btn => {
-                btn.classList.toggle('is-active', btn.dataset.speed === '1');
+                btn.classList.toggle('is-active', btn.dataset.speed === String(defaultPlaybackRate));
             });
         };
 
