@@ -24,7 +24,10 @@
 
     <!-- Left Sidebar Outline -->
     <nav class="course-outline" id="courseOutline">
-        <a href="index.html" class="back-home-btn"><i class="fa-solid fa-arrow-left"></i> 返回首页</a>
+        <div class="outline-top-links">
+            <a href="index.html" class="back-home-btn"><i class="fa-solid fa-arrow-left"></i> 返回首页</a>
+            <a href="admin.html" class="back-home-btn admin-entry" target="_blank" rel="noopener">admin</a>
+        </div>
 
         <div class="outline-section">
             <div class="outline-phase-title" data-target="phase-1">
@@ -147,12 +150,6 @@
             <header class="header" style="padding: 24px 0 8px;">
                 <h1>🚀 AI编程30天实战课程表</h1>
                 <p class="subtitle">零基础到独立变现，每一天都有成果</p>
-                <div class="auth-actions">
-                    <span class="auth-status" id="authStatus">未登录</span>
-                    <button class="auth-login-btn" id="authLoginBtn" type="button">登录</button>
-                    <button class="auth-logout-btn is-hidden" id="authLogoutBtn" type="button">退出</button>
-                    <a class="auth-admin-link" href="admin.html" target="_blank" rel="noopener">管理后台</a>
-                </div>
             </header>
 
             <!-- Phase 1: 10天从零到上线产品 -->
@@ -825,9 +822,6 @@
         const authModal = document.getElementById('authModal');
         const authForm = document.getElementById('authForm');
         const authError = document.getElementById('authError');
-        const authLoginBtn = document.getElementById('authLoginBtn');
-        const authLogoutBtn = document.getElementById('authLogoutBtn');
-        const authStatus = document.getElementById('authStatus');
         const authCloseBtn = authModal?.querySelector('.auth-modal-close');
         const authBackdrop = authModal?.querySelector('.auth-modal-backdrop');
         const authUsernameInput = document.getElementById('authUsername');
@@ -890,13 +884,7 @@
 
         const syncAuthState = () => {
             const session = getSession();
-            const loggedIn = !!session;
-            if (authStatus) {
-                authStatus.textContent = loggedIn ? `已登录：${session.username}` : '未登录';
-            }
-            authLoginBtn?.classList.toggle('is-hidden', loggedIn);
-            authLogoutBtn?.classList.toggle('is-hidden', !loggedIn);
-            updateLockedButtons(loggedIn);
+            updateLockedButtons(!!session);
         };
 
         const isMobile = () => window.innerWidth <= 900;
@@ -959,11 +947,6 @@
             }
         });
 
-        authLoginBtn?.addEventListener('click', openAuthModal);
-        authLogoutBtn?.addEventListener('click', () => {
-            window.courseAuth?.clearSession?.();
-            syncAuthState();
-        });
         authCloseBtn?.addEventListener('click', closeAuthModal);
         authBackdrop?.addEventListener('click', closeAuthModal);
         document.addEventListener('keydown', (event) => {
