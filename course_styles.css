@@ -776,11 +776,6 @@ body.course-page div[style*="text-align: center"] p {
     flex-direction: column;
 }
 
-.course-outline .back-home-btn.admin-entry {
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
 
 .course-outline .back-home-btn:hover {
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(139, 92, 246, 0.15) 100%);
