@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>账号管理后台</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Orbitron:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="admin_styles.css">
+    <script src="auth.js" defer></script>
+    <script src="admin.js" defer></script>
+</head>
+
+<body class="admin-page">
+    <div class="bg-animation"></div>
+    <main class="admin-wrapper">
+        <header class="admin-header">
+            <span class="pill">Admin Console</span>
+            <h1>课程账号管理</h1>
+            <p>设置学员账号密码，控制文档与视频访问权限。</p>
+            <a href="course.html">返回课程页面</a>
+        </header>
+
+        <section class="panel" id="adminSetup">
+            <h2>首次设置管理员密码</h2>
+            <form id="adminSetupForm" class="form-grid">
+                <div>
+                    <label for="setupPassword">管理员密码</label>
+                    <input type="password" id="setupPassword" autocomplete="new-password" placeholder="至少4位">
+                </div>
+                <div>
+                    <label for="setupPasswordConfirm">确认密码</label>
+                    <input type="password" id="setupPasswordConfirm" autocomplete="new-password" placeholder="再次输入">
+                </div>
+                <div class="form-actions">
+                    <button class="btn" type="submit">保存管理员密码</button>
+                </div>
+                <div class="status" id="setupStatus"></div>
+            </form>
+        </section>
+
+        <section class="panel" id="adminLogin">
+            <h2>管理员登录</h2>
+            <form id="adminLoginForm" class="form-grid">
+                <div>
+                    <label for="adminPassword">管理员密码</label>
+                    <input type="password" id="adminPassword" autocomplete="current-password" placeholder="输入管理员密码">
+                </div>
+                <div class="form-actions">
+                    <button class="btn" type="submit">进入管理</button>
+                </div>
+                <div class="status" id="loginStatus"></div>
+            </form>
+        </section>
+
+        <section class="panel is-hidden" id="adminPanel">
+            <h2>账号管理</h2>
+            <form id="accountForm" class="form-grid">
+                <div>
+                    <label for="accountUsername">账号</label>
+                    <input type="text" id="accountUsername" placeholder="例如：user01">
+                </div>
+                <div>
+                    <label for="accountPassword">密码</label>
+                    <input type="password" id="accountPassword" placeholder="至少4位">
+                </div>
+                <div class="form-actions">
+                    <button class="btn" type="submit">新增 / 重置密码</button>
+                    <button class="btn secondary" type="button" id="adminLogoutBtn">退出管理</button>
+                </div>
+                <div class="status" id="accountStatus"></div>
+            </form>
+
+            <div id="accountsList"></div>
+            <div class="note">提示：账号数据保存在浏览器本地。若更换浏览器或电脑，需要重新设置。</div>
+        </section>
+    </main>
+</body>
+
+</html>
