@@ -31,21 +31,21 @@
                 <i class="fa-solid fa-chevron-down"></i> 第一阶段：10天从零到上线产品
             </div>
             <div class="outline-cards">
-                <div class="outline-card">
+                <a href="#day-1" class="outline-card">
                     <span class="outline-card-title">cursor中使用Codex5.2</span>
-                </div>
-                <div class="outline-card">
-                    <span class="outline-card-title">Google Antigravity 20分钟“嘴撸”Web应用</span>
-                </div>
-                <div class="outline-card">
+                </a>
+                <a href="#day-3" class="outline-card">
+                    <span class="outline-card-title">Google Antigravity 20分钟"嘴撸"Web应用</span>
+                </a>
+                <a href="#day-5" class="outline-card">
                     <span class="outline-card-title">Codex 5.2 + 国产大模型，手搓AI内容工具</span>
-                </div>
-                <div class="outline-card">
+                </a>
+                <a href="#day-7" class="outline-card">
                     <span class="outline-card-title">Git 和 GitHub 实战</span>
-                </div>
-                <div class="outline-card">
+                </a>
+                <a href="#day-9" class="outline-card">
                     <span class="outline-card-title">Cloudflare 上线到互联网</span>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -54,21 +54,21 @@
                 <i class="fa-solid fa-chevron-down"></i> 第二阶段：数字人分身
             </div>
             <div class="outline-cards">
-                <div class="outline-card">
+                <a href="#day-11" class="outline-card">
                     <span class="outline-card-title">抖音视频文字提取</span>
-                </div>
-                <div class="outline-card">
+                </a>
+                <a href="#day-12" class="outline-card">
                     <span class="outline-card-title">洗稿大师：原创文案生成</span>
-                </div>
-                <div class="outline-card">
+                </a>
+                <a href="#day-13" class="outline-card">
                     <span class="outline-card-title">声音克隆：复刻你的声音</span>
-                </div>
-                <div class="outline-card">
+                </a>
+                <a href="#day-16" class="outline-card">
                     <span class="outline-card-title">画皮：数字人视频生成</span>
-                </div>
-                <div class="outline-card">
+                </a>
+                <a href="#day-20" class="outline-card">
                     <span class="outline-card-title">全网分发：矩阵黑科技</span>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -77,18 +77,18 @@
                 <i class="fa-solid fa-chevron-down"></i> 第三阶段：英语闯关
             </div>
             <div class="outline-cards">
-                <div class="outline-card">
+                <a href="#day-21" class="outline-card">
                     <span class="outline-card-title">核心交互：MVP游戏化实战</span>
-                </div>
-                <div class="outline-card">
+                </a>
+                <a href="#day-26" class="outline-card">
                     <span class="outline-card-title">数据为王：梭哈 Supabase</span>
-                </div>
-                <div class="outline-card">
+                </a>
+                <a href="#day-28" class="outline-card">
                     <span class="outline-card-title">内容填充：教材就是印钞机</span>
-                </div>
-                <div class="outline-card">
+                </a>
+                <a href="#day-30" class="outline-card">
                     <span class="outline-card-title">智能服务：接入 AI 老师</span>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -97,9 +97,9 @@
                 <i class="fa-solid fa-chevron-down"></i> 第四阶段：变现毕业
             </div>
             <div class="outline-cards">
-                <div class="outline-card">
+                <a href="#day-30" class="outline-card">
                     <span class="outline-card-title">超级个体：变现与毕业</span>
-                </div>
+                </a>
             </div>
         </div>
     </nav>
@@ -620,17 +620,83 @@
         </div>
     </div>
 
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.15/dist/hls.min.js"></script>
     <script>
-        // Sidebar Toggle
+        // Sidebar Toggle - with mobile/desktop awareness
         const sidebarToggle = document.getElementById('sidebarToggle');
         const courseOutline = document.getElementById('courseOutline');
         const mainWrapper = document.querySelector('.course-main-wrapper');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
 
-        sidebarToggle.addEventListener('click', () => {
-            courseOutline.classList.toggle('collapsed');
-            mainWrapper.classList.toggle('sidebar-collapsed');
-            sidebarToggle.classList.toggle('active');
+        const isMobile = () => window.innerWidth <= 900;
+
+        const openSidebar = () => {
+            if (isMobile()) {
+                courseOutline.classList.add('mobile-open');
+                sidebarOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } else {
+                courseOutline.classList.remove('collapsed');
+                mainWrapper.classList.remove('sidebar-collapsed');
+                sidebarToggle.classList.remove('sidebar-hidden');
+            }
+        };
+
+        const closeSidebar = () => {
+            if (isMobile()) {
+                courseOutline.classList.remove('mobile-open');
+                sidebarOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            } else {
+                courseOutline.classList.add('collapsed');
+                mainWrapper.classList.add('sidebar-collapsed');
+                sidebarToggle.classList.add('sidebar-hidden');
+            }
+        };
+
+        const toggleSidebar = () => {
+            if (isMobile()) {
+                if (courseOutline.classList.contains('mobile-open')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            } else {
+                if (courseOutline.classList.contains('collapsed')) {
+                    openSidebar();
+                } else {
+                    closeSidebar();
+                }
+            }
+        };
+
+        sidebarToggle.addEventListener('click', toggleSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        // Handle window resize - reset states appropriately
+        let previousMobile = isMobile();
+        window.addEventListener('resize', () => {
+            const currentMobile = isMobile();
+            if (previousMobile !== currentMobile) {
+                // Reset all states when switching between mobile/desktop
+                courseOutline.classList.remove('mobile-open', 'collapsed');
+                mainWrapper.classList.remove('sidebar-collapsed');
+                sidebarOverlay.classList.remove('active');
+                sidebarToggle.classList.remove('sidebar-hidden');
+                document.body.style.overflow = '';
+                previousMobile = currentMobile;
+            }
+        });
+
+        // Auto-generate IDs for all course cards based on data-day attribute
+        document.querySelectorAll('.ticket[data-day]').forEach(ticket => {
+            const day = ticket.getAttribute('data-day');
+            if (day) {
+                ticket.id = `day-${day}`;
+            }
         });
 
         // Collapsible Phase Sections
@@ -638,19 +704,19 @@
             title.addEventListener('click', () => {
                 const section = title.parentElement;
                 section.classList.toggle('collapsed');
-                const icon = title.querySelector('i');
-                icon.classList.toggle('fa-chevron-down');
-                icon.classList.toggle('fa-chevron-right');
             });
         });
 
-        // Smooth scroll for sidebar links
+        // Smooth scroll for sidebar links (and close on mobile)
         document.querySelectorAll('.course-outline a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    if (isMobile()) {
+                        closeSidebar();
+                    }
                 }
             });
         });
@@ -659,13 +725,13 @@
         const courseLinks = {
             1: { doc: 'https://xx0iztlf4g6.feishu.cn/docx/JMCIdIfyfoA17MxhSpYcsLTYngg?from=from_copylink', video: 'https://video.hellojoy.top/%E5%9C%A8cursor%E4%BD%BF%E7%94%A8codex5.2.mp4-moren4.m3u8' },
             2: { doc: '', video: '' },
-            3: { doc: 'https://xx0iztlf4g6.feishu.cn/docx/JMCIdIfyfoA17MxhSpYcsLTYngg?from=from_copylink', video: '' },
+            3: { doc: 'https://xx0iztlf4g6.feishu.cn/docx/JMCIdIfyfoA17MxhSpYcsLTYngg?from=from_copylink', video: 'https://video.hellojoy.top/%E5%9C%A8antigravity%E4%BD%BF%E7%94%A8Claude%20Opus4.5.mp4-moren4.m3u8' },
             4: { doc: '', video: '' },
-            5: { doc: 'https://xx0iztlf4g6.feishu.cn/docx/ZN74dJ04Gocjbkx0PKXcKEdxnse?from=from_copylink', video: '' },
+            5: { doc: 'https://xx0iztlf4g6.feishu.cn/docx/ZN74dJ04Gocjbkx0PKXcKEdxnse?from=from_copylink', video: 'https://video.hellojoy.top/codex%E8%B0%83%E7%94%A8%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%81%9A%E4%B8%80%E4%B8%AA%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%88%86%E6%AC%BE%E6%99%BA%E8%83%BD%E4%BD%93.mp4-moren4.m3u8' },
             6: { doc: '', video: '' },
-            7: { doc: 'https://xx0iztlf4g6.feishu.cn/docx/ISfjdMea5oIncvxojUPcONbXnGc?from=from_copylink', video: 'https://pan.quark.cn/s/1ab3dc6bbdf5' },
+            7: { doc: 'https://xx0iztlf4g6.feishu.cn/docx/ISfjdMea5oIncvxojUPcONbXnGc?from=from_copylink', video: 'https://video.hellojoy.top/GitHub%E5%92%8Cgit%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA.mp4-moren4.m3u8' },
             8: { doc: '', video: '' },
-            9: { doc: 'https://xx0iztlf4g6.feishu.cn/docx/O8jJdMeTDoWUPkxtzRzcEAKsnlg?from=from_copylink', video: '' },
+            9: { doc: 'https://xx0iztlf4g6.feishu.cn/docx/O8jJdMeTDoWUPkxtzRzcEAKsnlg?from=from_copylink', video: 'https://video.hellojoy.top/cloudeflare%E4%B8%8A%E7%BA%BF%E5%88%B0%E4%BA%92%E8%81%94%E7%BD%91.mp4-moren4.m3u8' },
             10: { doc: '', video: '' },
             11: { doc: '', video: '' },
             12: { doc: '', video: '' },
@@ -721,6 +787,7 @@
                 const video = document.createElement('video');
                 video.controls = true;
                 video.playsInline = true;
+                video.autoplay = true;
                 if (isHlsStream(url) && window.Hls && Hls.isSupported()) {
                     currentHls = new Hls();
                     currentHls.loadSource(url);
