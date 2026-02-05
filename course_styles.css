@@ -34,6 +34,105 @@ body.course-page .header-badge {
     font-size: 0.75rem;
 }
 
+/* Announcement board */
+.announcement-board {
+    margin: 8px 0 32px;
+    padding: 18px 20px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.16) 0%, rgba(16, 185, 129, 0.12) 100%);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.announcement-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.announcement-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.announcement-title i {
+    color: #f59e0b;
+}
+
+.announcement-tag {
+    font-size: 0.7rem;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.announcement-list {
+    display: grid;
+    gap: 12px;
+}
+
+.announcement-item {
+    display: flex;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(6, 8, 14, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.announcement-date {
+    min-width: 72px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Orbitron', 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.announcement-item-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 4px;
+}
+
+.announcement-item-desc {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.5;
+}
+
+@media (max-width: 680px) {
+    .announcement-board {
+        padding: 16px;
+    }
+
+    .announcement-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .announcement-item {
+        flex-direction: column;
+    }
+
+    .announcement-date {
+        min-width: 0;
+    }
+}
+
 /* Glow effect background */
 body.course-page .bg-animation {
     position: fixed;
