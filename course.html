@@ -1140,7 +1140,7 @@
             button.addEventListener('click', (event) => event.preventDefault());
         };
 
-        document.querySelectorAll('.ticket').forEach((ticket) => {
+        document.querySelectorAll('.ticket[data-day]').forEach((ticket) => {
             const dayLabel = ticket.querySelector('.ticket-day');
             if (!dayLabel) {
                 return;
@@ -1186,6 +1186,19 @@
                     disableStubButton(videoButton);
                 }
             }
+        });
+
+        document.querySelectorAll('.stub-btn.btn-docs[href]').forEach((button) => {
+            const href = button.getAttribute('href');
+            if (!href || href === '#') {
+                return;
+            }
+            button.dataset.linkUrl = href;
+            button.addEventListener('click', (event) => {
+                if (!requireAuth()) {
+                    event.preventDefault();
+                }
+            });
         });
 
         document.querySelectorAll('[data-video-url]').forEach((button) => {
