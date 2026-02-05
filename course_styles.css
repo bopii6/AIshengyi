@@ -1116,8 +1116,8 @@ body.course-page div[style*="text-align: center"] p {
     font-size: 1rem;
     /* Larger font */
     font-weight: 600;
-    padding: 32px 28px 20px;
-    /* Generous padding */
+    padding: 64px 28px 24px;
+    /* Significantly increased top padding to 64px */
     background: transparent;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -1154,11 +1154,10 @@ body.course-page div[style*="text-align: center"] p {
     transform: translateX(-3px);
 }
 
-/* Outline Content Container */
 /* Outline Content Container - More top space */
 .outline-content {
-    padding: 32px 16px 16px;
-    /* Increased top padding from 16px to 32px */
+    padding: 40px 16px 16px;
+    /* Increased top padding further */
     display: flex;
     flex-direction: column;
     gap: 16px;
