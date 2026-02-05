@@ -1072,7 +1072,8 @@ body.course-page div[style*="text-align: center"] p {
     position: fixed;
     top: 0;
     left: 0;
-    width: 280px;
+    width: 300px;
+    /* Increased from 280px for better text fit */
     height: 100vh;
     height: 100dvh;
     /* Glassmorphism Background */
@@ -1115,10 +1116,10 @@ body.course-page div[style*="text-align: center"] p {
     /* Brighter default color */
     text-decoration: none;
     font-size: 1rem;
-    /* Larger font */
+    font-size: 1rem;
     font-weight: 600;
-    padding: 64px 28px 24px;
-    /* Significantly increased top padding to 64px */
+    padding: 32px 28px 20px;
+    /* Reduced from 64px to balanced 32px */
     background: transparent;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -1157,8 +1158,8 @@ body.course-page div[style*="text-align: center"] p {
 
 /* Outline Content Container - More top space */
 .outline-content {
-    padding: 40px 16px 16px;
-    /* Increased top padding further */
+    padding: 20px 16px 16px;
+    /* Reduced from 40px to balanced 20px */
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -1286,9 +1287,8 @@ body.course-page div[style*="text-align: center"] p {
     overflow: visible;
     counter-increment: outline-index;
     opacity: 0.8;
-    /* Higher visibility */
-    font-size: 1.05rem;
-    /* Larger text (was 0.95rem) */
+    font-size: 0.95rem;
+    /* Reduced from 1.05rem to prevent wrapping */
     line-height: 1.5;
 }
 
