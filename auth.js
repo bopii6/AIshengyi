@@ -2,10 +2,11 @@
     'use strict';
 
     const STORAGE_KEYS = {
-        accounts: 'ai_course_accounts',
         session: 'ai_course_session',
-        admin: 'ai_course_admin'
+        adminToken: 'ai_course_admin_token'
     };
+
+    const API_BASE = '/api';
 
     const readJson = (key, fallback) => {
         try {
@@ -60,20 +61,64 @@
         return btoa(unescape(encodeURIComponent(password)));
     };
 
-    const loadAccounts = () => readJson(STORAGE_KEYS.accounts, []);
+    const getAdminToken = () => sessionStorage.getItem(STORAGE_KEYS.adminToken);
 
-    const saveAccounts = (accounts) => {
-        writeJson(STORAGE_KEYS.accounts, accounts);
+    const clearAdminToken = () => {
+        sessionStorage.removeItem(STORAGE_KEYS.adminToken);
     };
 
-    const findAccount = (username, accounts) =>
-        (accounts || loadAccounts()).find((item) => item.username === username);
+    const requestJson = async (path, options = {}) => {
+        const headers = new Headers(options.headers || {});
+        if (!headers.has('Content-Type')) {
+            headers.set('Content-Type', 'application/json');
+        }
+        const body =
+            options.body && typeof options.body !== 'string'
+                ? JSON.stringify(options.body)
+                : options.body;
 
-    const listAccounts = () => {
-        const accounts = loadAccounts();
-        return accounts
-            .slice()
-            .sort((a, b) => (a.username || '').localeCompare(b.username || ''));
+        const response = await fetch(`${API_BASE}${path}`, {
+            ...options,
+            headers,
+            body
+        });
+
+        const text = await response.text();
+        let payload = null;
+        if (text) {
+            try {
+                payload = JSON.parse(text);
+            } catch (error) {
+                payload = null;
+            }
+        }
+
+        if (!response.ok) {
+            const message =
+                (payload && payload.error) || '请求失败，请稍后再试';
+            const error = new Error(message);
+            error.status = response.status;
+            throw error;
+        }
+
+        return payload;
+    };
+
+    const adminRequest = async (path, options = {}) => {
+        const token = getAdminToken();
+        if (!token) {
+            const error = new Error('请先登录管理员');
+            error.status = 401;
+            throw error;
+        }
+        const headers = new Headers(options.headers || {});
+        headers.set('Authorization', `Bearer ${token}`);
+        return requestJson(path, { ...options, headers });
+    };
+
+    const listAccounts = async () => {
+        const data = await adminRequest('/admin/accounts', { method: 'GET' });
+        return (data && data.accounts) || [];
     };
 
     const upsertAccount = async (username, password) => {
@@ -86,48 +131,53 @@
             throw new Error(passwordCheck.message);
         }
 
-        const accounts = loadAccounts();
-        const existing = findAccount(nameCheck.value, accounts);
-        const passwordHash = await hashPassword(passwordCheck.value);
-        if (existing) {
-            existing.passwordHash = passwordHash;
-            existing.updatedAt = Date.now();
-        } else {
-            accounts.push({
-                username: nameCheck.value,
-                passwordHash,
-                createdAt: Date.now()
-            });
-        }
-        saveAccounts(accounts);
-        return accounts;
-    };
-
-    const deleteAccount = (username) => {
-        const name = normalizeUsername(username);
-        if (!name) {
-            return false;
-        }
-        const accounts = loadAccounts();
-        const next = accounts.filter((item) => item.username !== name);
-        if (next.length === accounts.length) {
-            return false;
-        }
-        saveAccounts(next);
+        await adminRequest('/admin/accounts', {
+            method: 'POST',
+            body: { username: nameCheck.value, password: passwordCheck.value }
+        });
         return true;
     };
 
-    const verifyUserPassword = async (username, password) => {
+    const deleteAccount = async (username) => {
         const name = normalizeUsername(username);
         if (!name) {
             return false;
         }
-        const account = findAccount(name);
-        if (!account) {
+        try {
+            await adminRequest(`/admin/accounts/${encodeURIComponent(name)}`, {
+                method: 'DELETE'
+            });
+            return true;
+        } catch (error) {
+            if (error && error.status === 404) {
+                return false;
+            }
+            throw error;
+        }
+    };
+
+    const verifyUserPassword = async (username, password) => {
+        const nameCheck = validateUsername(username);
+        if (!nameCheck.ok) {
             return false;
         }
-        const passwordHash = await hashPassword(password);
-        return passwordHash === account.passwordHash;
+        const passwordCheck = validatePassword(password);
+        if (!passwordCheck.ok) {
+            return false;
+        }
+        try {
+            const data = await requestJson('/auth/login', {
+                method: 'POST',
+                body: { username: nameCheck.value, password: passwordCheck.value }
+            });
+            return !!(data && data.ok);
+        } catch (error) {
+            if (error && error.status === 401) {
+                return false;
+            }
+            console.error(error);
+            return false;
+        }
     };
 
     const setSession = (username) => {
@@ -143,17 +193,12 @@
         if (!session || !session.username) {
             return null;
         }
-        const account = findAccount(session.username);
-        if (!account) {
-            clearSession();
-            return null;
-        }
         return session;
     };
 
-    const isAdminInitialized = () => {
-        const admin = readJson(STORAGE_KEYS.admin, null);
-        return !!(admin && admin.passwordHash);
+    const isAdminInitialized = async () => {
+        const data = await requestJson('/admin/status', { method: 'GET' });
+        return !!(data && data.initialized);
     };
 
     const setAdminPassword = async (password) => {
@@ -161,18 +206,40 @@
         if (!passwordCheck.ok) {
             throw new Error(passwordCheck.message);
         }
-        const passwordHash = await hashPassword(passwordCheck.value);
-        writeJson(STORAGE_KEYS.admin, { passwordHash, setAt: Date.now() });
+        await requestJson('/admin/setup', {
+            method: 'POST',
+            body: { password: passwordCheck.value }
+        });
         return true;
     };
 
     const verifyAdminPassword = async (password) => {
-        const admin = readJson(STORAGE_KEYS.admin, null);
-        if (!admin || !admin.passwordHash) {
-            return false;
+        const passwordCheck = validatePassword(password);
+        if (!passwordCheck.ok) {
+            throw new Error(passwordCheck.message);
         }
-        const passwordHash = await hashPassword(password);
-        return passwordHash === admin.passwordHash;
+        const data = await requestJson('/admin/login', {
+            method: 'POST',
+            body: { password: passwordCheck.value }
+        });
+        if (!data || !data.token) {
+            return null;
+        }
+        sessionStorage.setItem(STORAGE_KEYS.adminToken, data.token);
+        return data.token;
+    };
+
+    const verifyAdminSession = async () => {
+        try {
+            await adminRequest('/admin/session', { method: 'GET' });
+            return true;
+        } catch (error) {
+            if (error && (error.status === 401 || error.status === 403)) {
+                clearAdminToken();
+                return false;
+            }
+            throw error;
+        }
     };
 
     window.courseAuth = {
@@ -189,6 +256,7 @@
         clearSession,
         isAdminInitialized,
         setAdminPassword,
-        verifyAdminPassword
+        verifyAdminPassword,
+        verifyAdminSession
     };
 })();
