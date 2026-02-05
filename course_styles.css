@@ -38,7 +38,15 @@ body.course-page .phase-section {
     padding: 32px 0 24px;
 }
 
-/* Announcement board */
+/* 简洁公告栏 */
+.announcement-simple {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 8px 0;
+    margin-bottom: 8px;
+}
+
+/* Announcement board (旧版保留) */
 .announcement-board {
     margin: 8px 0 18px;
     padding: 10px 14px;
