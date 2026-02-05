@@ -1104,62 +1104,12 @@ body.course-page div[style*="text-align: center"] p {
     pointer-events: none;
 }
 
-/* Header Section with Gradient */
-/* Redesigned Back Home Button - Minimalist */
-/* Redesigned Back Home Button - Bold & Generous */
-.course-outline .back-home-btn {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    /* Wider gap */
-    color: rgba(255, 255, 255, 0.85);
-    /* Brighter default color */
-    text-decoration: none;
-    font-size: 1rem;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 32px 28px 20px;
-    /* Reduced from 64px to balanced 32px */
-    background: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-    margin: 0;
-    letter-spacing: 0.5px;
-}
-
-.course-outline .back-home-btn:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.03);
-    padding-left: 36px;
-    /* Enhanced slide effect */
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-}
-
-.course-outline .outline-top-links {
-    display: flex;
-    flex-direction: column;
-}
 
 
-.course-outline .back-home-btn:hover {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(139, 92, 246, 0.15) 100%);
-    color: #ffffff;
-    padding-left: 16px;
-}
-
-.course-outline .back-home-btn i {
-    font-size: 0.85rem;
-    transition: transform 0.2s ease;
-}
-
-.course-outline .back-home-btn:hover i {
-    transform: translateX(-3px);
-}
-
-/* Outline Content Container - More top space */
+/* Outline Content Container - More top space since header is gone */
 .outline-content {
-    padding: 20px 16px 16px;
-    /* Reduced from 40px to balanced 20px */
+    padding: 60px 16px 16px;
+    /* Increased to 60px for generous top spacing */
     display: flex;
     flex-direction: column;
     gap: 16px;
