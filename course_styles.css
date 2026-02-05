@@ -119,12 +119,31 @@ body.course-page .phase-section {
 }
 
 @media (max-width: 680px) {
+
+    /* 移动端页头优化 - 避免与菜单按钮重叠 */
+    body.course-page .header {
+        padding: 60px 0 20px;
+        text-align: center;
+    }
+
+    body.course-page .header h1 {
+        font-size: 1.6rem;
+        line-height: 1.4;
+        padding: 0 16px;
+    }
+
+    body.course-page .subtitle {
+        font-size: 0.95rem;
+        padding: 0 16px;
+    }
+
     body.course-page .phase-section {
         padding: 24px 0 18px;
     }
 
     .announcement-board {
         padding: 12px;
+        margin: 8px 0 24px;
     }
 
     .announcement-header {
@@ -212,6 +231,25 @@ body.course-page .bg-animation {
     border-radius: 6px;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+/* Mobile Phase Header - 垂直布局更协调 */
+@media (max-width: 680px) {
+    .phase-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin: 24px 0 16px;
+    }
+
+    .phase-badge {
+        font-size: 0.75rem;
+        padding: 6px 16px;
+    }
+
+    .phase-title {
+        font-size: 1.25rem;
+    }
 }
 
 /* ===== Ticket Card ===== */
