@@ -1045,6 +1045,7 @@ body.modal-open {
 .outline-section-hotspot .outline-phase-title {
     background: linear-gradient(to right, #ff6b35, #f72585);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
     opacity: 0.9;
