@@ -1036,12 +1036,26 @@ body.modal-open {
 
 /* Left sidebar hotspot section special styling */
 .outline-section-hotspot {
-    border-color: rgba(247, 37, 133, 0.15);
-    background: rgba(247, 37, 133, 0.03);
+    background: transparent;
+    border: none;
+    margin-top: 32px;
+    /* Extra separation */
+}
+
+.outline-section-hotspot .outline-phase-title {
+    background: linear-gradient(to right, #ff6b35, #f72585);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    opacity: 0.9;
+}
+
+.outline-section-hotspot .outline-phase-title i {
+    color: #f72585 !important;
 }
 
 .outline-section-hotspot:hover {
-    border-color: rgba(247, 37, 133, 0.3);
+    border-color: transparent;
 }
 
 /* Footer styling for course page */
@@ -1052,7 +1066,7 @@ body.course-page div[style*="text-align: center"] p {
     font-size: 0.9rem;
 }
 
-/* ===== Course Sidebar Outline ===== */
+/* ===== Premium Sidebar Redesign ===== */
 .course-outline {
     position: fixed;
     top: 0;
@@ -1060,9 +1074,9 @@ body.course-page div[style*="text-align: center"] p {
     width: 280px;
     height: 100vh;
     height: 100dvh;
-    /* Dynamic viewport height for mobile */
-    background: linear-gradient(180deg, rgba(20, 20, 30, 0.98) 0%, rgba(12, 12, 18, 0.98) 100%);
-    backdrop-filter: blur(20px);
+    /* Glassmorphism Background */
+    background: rgba(5, 5, 8, 0.75);
+    backdrop-filter: blur(24px) saturate(180%);
     border-right: 1px solid rgba(255, 255, 255, 0.06);
     padding: 0;
     z-index: 100;
@@ -1071,12 +1085,11 @@ body.course-page div[style*="text-align: center"] p {
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    /* Smooth scrolling on iOS */
     overscroll-behavior: contain;
-    /* Prevent scroll chaining to background */
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.35s ease;
     scrollbar-width: none;
-    box-shadow: 4px 0 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.4);
+    /* Deeper shadow */
 }
 
 .course-outline::-webkit-scrollbar {
@@ -1090,21 +1103,30 @@ body.course-page div[style*="text-align: center"] p {
 }
 
 /* Header Section with Gradient */
+/* Redesigned Back Home Button - Minimalist */
 .course-outline .back-home-btn {
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: rgba(255, 255, 255, 0.9);
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    padding: 20px 20px;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.1) 100%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    transition: all 0.25s ease;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 24px 24px 16px;
+    /* More top padding */
+    background: transparent;
+    /* Remove gradient */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    transition: all 0.2s ease;
     margin: 0;
-    border-radius: 0;
-    border: none;
+    letter-spacing: 0.5px;
+}
+
+.course-outline .back-home-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.02);
+    padding-left: 28px;
+    /* Subtle slide */
 }
 
 .course-outline .outline-top-links {
@@ -1137,56 +1159,67 @@ body.course-page div[style*="text-align: center"] p {
 }
 
 /* Collapsible Phase Sections */
+/* Clean Section Design (No Box) */
 .outline-section {
     display: flex;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    transition: border-color 0.2s ease;
-    margin: 8px 12px;
+    background: transparent;
+    /* Remove box background */
+    border: none;
+    /* Remove box border */
+    margin: 0 0 16px 0;
+    /* Vertical spacing only */
+    padding: 0 16px;
+    /* Horizontal padding */
 }
 
 .outline-section:first-of-type {
-    margin-top: 16px;
+    margin-top: 24px;
 }
 
 .outline-section:last-of-type {
-    margin-bottom: 24px;
-    /* Extra space at bottom for easier scrolling */
+    margin-bottom: 40px;
 }
 
 .outline-section:hover {
-    border-color: rgba(255, 255, 255, 0.08);
+    border-color: transparent;
 }
 
+/* Clean Phase Title */
 .outline-phase-title {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 14px 16px;
-    color: rgba(255, 255, 255, 0.95);
-    font-size: 0.8rem;
+    gap: 12px;
+    padding: 8px 12px;
+    color: rgba(255, 255, 255, 0.4);
+    /* Muted by default */
+    font-size: 0.75rem;
     font-weight: 700;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-radius: 0;
+    letter-spacing: 1px;
+    border-radius: 6px;
 }
 
 .outline-phase-title:hover {
-    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .outline-phase-title i {
-    font-size: 0.6rem;
-    color: rgba(255, 255, 255, 0.5);
-    transition: transform 0.3s ease, color 0.2s ease;
+    font-size: 0.7rem;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.outline-section:not(.collapsed) .outline-phase-title {
+    color: #ffffff;
+    /* Active section title is white */
 }
 
 .outline-section:not(.collapsed) .outline-phase-title i {
     color: #3b82f6;
+    transform: rotate(0deg);
 }
 
 .outline-section.collapsed .outline-phase-title i {
@@ -1214,46 +1247,56 @@ body.course-page div[style*="text-align: center"] p {
     margin-top: 4px;
 }
 
+/* Minimalist Outline Card */
 .outline-cards {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    padding: 0 12px 12px 12px;
+    gap: 2px;
+    /* Tighter list */
+    padding: 4px 0 0 16px;
+    /* Indent */
     counter-reset: outline-index;
 }
 
 .outline-card {
     position: relative;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 12px 14px;
+    background: transparent;
+    /* No background by default */
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px 10px 16px;
     cursor: pointer;
-    transition: all 0.25s ease;
-    overflow: hidden;
+    transition: all 0.2s ease;
+    overflow: visible;
     counter-increment: outline-index;
+    opacity: 0.7;
 }
 
+/* Hover Effect: Left Bar + Glow */
 .outline-card::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 0;
-    bottom: 0;
+    top: 50%;
+    transform: translateY(-50%) scaleY(0);
     width: 3px;
-    background: linear-gradient(180deg, #3b82f6 0%, #8b5cf6 100%);
+    height: 16px;
+    /* Small pill indicator */
+    background: #3b82f6;
+    border-radius: 4px;
+    transition: all 0.2s ease;
     opacity: 0;
-    transition: opacity 0.25s ease;
 }
 
 .outline-card:hover {
-    background: rgba(59, 130, 246, 0.08);
-    border-color: rgba(59, 130, 246, 0.2);
+    background: rgba(255, 255, 255, 0.04);
     transform: translateX(4px);
+    opacity: 1;
 }
 
 .outline-card:hover::before {
     opacity: 1;
+    transform: translateY(-50%) scaleY(1);
 }
 
 /* Make outline-card links look proper */
