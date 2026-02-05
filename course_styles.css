@@ -1155,11 +1155,14 @@ body.course-page div[style*="text-align: center"] p {
 }
 
 /* Outline Content Container */
+/* Outline Content Container - More top space */
 .outline-content {
-    padding: 16px;
+    padding: 32px 16px 16px;
+    /* Increased top padding from 16px to 32px */
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
+    /* Increased gap */
 }
 
 /* Collapsible Phase Sections */
@@ -1276,17 +1279,17 @@ body.course-page div[style*="text-align: center"] p {
     background: transparent;
     border: none;
     border-radius: 8px;
-    /* Slightly rounder */
-    padding: 14px 20px 14px 20px;
-    /* Generous padding */
+    padding: 16px 20px;
+    /* Even more vertical padding */
     cursor: pointer;
     transition: all 0.2s ease;
     overflow: visible;
     counter-increment: outline-index;
-    opacity: 0.75;
-    /* Slightly more visible by default */
-    font-size: 0.95rem;
-    /* Larger text */
+    opacity: 0.8;
+    /* Higher visibility */
+    font-size: 1.05rem;
+    /* Larger text (was 0.95rem) */
+    line-height: 1.5;
 }
 
 /* Hover Effect: Left Bar + Glow */
