@@ -1219,10 +1219,7 @@ body.course-page div[style*="text-align: center"] p {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    /* Tighter list */
     padding: 4px 0 0 16px;
-    /* Indent */
-    counter-reset: outline-index;
 }
 
 .outline-card {
@@ -1235,7 +1232,7 @@ body.course-page div[style*="text-align: center"] p {
     cursor: pointer;
     transition: all 0.2s ease;
     overflow: visible;
-    counter-increment: outline-index;
+    /* counter-increment removed */
     opacity: 0.8;
     font-size: 0.95rem;
     /* Reduced from 1.05rem to prevent wrapping */
@@ -1289,24 +1286,19 @@ a.outline-card {
     margin-bottom: 4px;
 }
 
+/* Title styling without numbers */
 .outline-card-title {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.4;
+    display: block;
+    font-size: 0.9rem;
+    /* Slightly larger for readability */
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    transition: color 0.2s ease;
 }
 
-.outline-card-title::before {
-    content: counter(outline-index) ".";
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.55);
-    min-width: 20px;
-    text-align: right;
+.outline-card:hover .outline-card-title {
+    color: #ffffff;
 }
 
 .outline-days:empty {
