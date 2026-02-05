@@ -1,12 +1,9 @@
 /* ===== Chunxiang-Inspired Course Schedule Styles v2 ===== */
 /* Dark mode base for course page */
 body.course-page {
-    background: #020204;
-    /* Deeper black for premium feel */
+    background: #050508;
     color: #ffffff;
     min-height: 100vh;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    /* Ensure premium font stack */
 }
 
 body.course-page .container {
@@ -20,14 +17,9 @@ body.course-page .header {
 
 body.course-page .header h1 {
     color: #ffffff;
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-    /* Fluid typography */
+    font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 12px;
-    letter-spacing: -0.02em;
-    /* Tighten for modern feel */
-    text-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
-    /* Subtle glow */
 }
 
 body.course-page .subtitle {
@@ -46,19 +38,12 @@ body.course-page .phase-section {
     padding: 32px 0 24px;
 }
 
-/* 简洁公告栏 - Premium */
+/* 简洁公告栏 */
 .announcement-simple {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.85);
-    padding: 12px 16px;
-    margin-bottom: 24px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    backdrop-filter: blur(5px);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 8px 0;
+    margin-bottom: 8px;
 }
 
 /* Announcement board (旧版保留) */
@@ -254,21 +239,16 @@ body.course-page .bg-animation {
     gap: 12px;
 }
 
-/* Premium Neon Phase Badge */
 .phase-badge {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-family: 'JetBrains Mono', monospace;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.8);
-    padding: 6px 12px;
-    border-radius: 99px;
-    /* Pill shape */
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 5px 14px;
+    border-radius: 6px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-    /* Subtle glow */
-    backdrop-filter: blur(4px);
 }
 
 /* Mobile Phase Header - 垂直布局更协调 */
@@ -290,33 +270,22 @@ body.course-page .bg-animation {
     }
 }
 
-/* ===== Ticket Card Redesign (Premium Glassmorphism) ===== */
+/* ===== Ticket Card ===== */
 .ticket {
     position: relative;
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
-    /* Softer corners */
+    border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow:
-        0 4px 24px -1px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.08) inset;
-    /* Inner subtle border */
-    background: rgba(18, 18, 26, 0.6);
-    /* Semi-transparent */
-    backdrop-filter: blur(12px);
-    /* Glass effect */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    background: #12121a;
 }
 
 .ticket:hover {
-    transform: translateY(-8px) scale(1.01);
-    box-shadow:
-        0 20px 48px -12px rgba(0, 0, 0, 0.7),
-        0 0 0 1px rgba(255, 255, 255, 0.15) inset;
-    /* Brighter border on hover */
-    background: rgba(18, 18, 26, 0.8);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
 }
 
 /* Ticket Main Content */
@@ -330,7 +299,7 @@ body.course-page .bg-animation {
     overflow: hidden;
 }
 
-/* BIGGER Sawtooth torn paper effect - Matches Body BG */
+/* BIGGER Sawtooth torn paper effect */
 .ticket-main::after {
     content: '';
     position: absolute;
@@ -338,26 +307,26 @@ body.course-page .bg-animation {
     left: 0;
     right: 0;
     height: 16px;
-    background: linear-gradient(135deg, transparent 50%, #020204 50%) 0 0 / 16px 16px,
-        linear-gradient(-135deg, transparent 50%, #020204 50%) 0 0 / 16px 16px;
+    background: linear-gradient(135deg, transparent 50%, #12121a 50%) 0 0 / 16px 16px,
+        linear-gradient(-135deg, transparent 50%, #12121a 50%) 0 0 / 16px 16px;
     background-position: left bottom;
 }
 
-/* Phase Color Schemes with gradient - Transparent for Glassmorphism */
+/* Phase Color Schemes with gradient */
 .phase-1 .ticket-main {
-    background: linear-gradient(145deg, rgba(59, 130, 246, 0.15) 0%, rgba(30, 64, 175, 0.3) 100%);
+    background: linear-gradient(145deg, #3b82f6 0%, #1e40af 100%);
 }
 
 .phase-2 .ticket-main {
-    background: linear-gradient(145deg, rgba(168, 85, 247, 0.15) 0%, rgba(107, 33, 168, 0.3) 100%);
+    background: linear-gradient(145deg, #a855f7 0%, #6b21a8 100%);
 }
 
 .phase-3 .ticket-main {
-    background: linear-gradient(145deg, rgba(249, 115, 22, 0.15) 0%, rgba(194, 65, 12, 0.3) 100%);
+    background: linear-gradient(145deg, #f97316 0%, #c2410c 100%);
 }
 
 .phase-4 .ticket-main {
-    background: linear-gradient(145deg, rgba(34, 197, 94, 0.15) 0%, rgba(21, 128, 61, 0.3) 100%);
+    background: linear-gradient(145deg, #22c55e 0%, #15803d 100%);
 }
 
 /* RIBBON Day Badge - corner ribbon style */
@@ -519,61 +488,52 @@ body.course-page .bg-animation {
     color: inherit;
 }
 
-/* Phase-specific stub colors - Glassy */
+/* Phase-specific stub colors */
 .phase-1 .ticket-stub {
-    background: linear-gradient(145deg, rgba(37, 99, 235, 0.2) 0%, rgba(30, 64, 175, 0.4) 100%);
+    background: linear-gradient(145deg, #2563eb 0%, #1e40af 100%);
 }
 
 .phase-1 .ticket-stub::before {
     color: #2563eb;
-    display: none;
-    /* Hide sawtooth between main and stub for cleaner glass look */
 }
 
 .phase-2 .ticket-stub {
-    background: linear-gradient(145deg, rgba(147, 51, 234, 0.2) 0%, rgba(107, 33, 168, 0.4) 100%);
+    background: linear-gradient(145deg, #9333ea 0%, #6b21a8 100%);
 }
 
 .phase-2 .ticket-stub::before {
     color: #9333ea;
-    display: none;
 }
 
 .phase-3 .ticket-stub {
-    background: linear-gradient(145deg, rgba(234, 88, 12, 0.2) 0%, rgba(194, 65, 12, 0.4) 100%);
+    background: linear-gradient(145deg, #ea580c 0%, #c2410c 100%);
 }
 
 .phase-3 .ticket-stub::before {
     color: #ea580c;
-    display: none;
 }
 
 .phase-4 .ticket-stub {
-    background: linear-gradient(145deg, rgba(22, 163, 74, 0.2) 0%, rgba(21, 128, 61, 0.4) 100%);
+    background: linear-gradient(145deg, #16a34a 0%, #15803d 100%);
 }
 
 .phase-4 .ticket-stub::before {
     color: #16a34a;
-    display: none;
 }
 
-/* Premium Buttons */
+/* Footer Buttons */
 .stub-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
-    /* Larger touch target */
-    border-radius: 99px;
-    /* Pill shape */
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 8px;
     font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    border: 1px solid transparent;
-    /* Prepare for border transition */
+    transition: all 0.2s ease;
+    border: none;
     text-decoration: none;
-    letter-spacing: 0.5px;
 }
 
 .stub-btn.btn-docs {
@@ -884,33 +844,24 @@ body.modal-open {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* Hotspot Glassmorphism Update */
 .hotspot-content {
     display: grid;
     grid-template-columns: minmax(200px, 34%) 1fr;
     gap: 16px;
     align-items: center;
-    background: rgba(18, 18, 26, 0.6);
-    /* Semi-transparent */
-    backdrop-filter: blur(12px);
-    /* Glass effect */
+    background: linear-gradient(135deg, rgba(12, 14, 24, 0.92) 0%, rgba(8, 9, 16, 0.92) 100%);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
+    border-radius: 18px;
     padding: 16px;
     overflow: hidden;
-    box-shadow:
-        0 16px 34px rgba(0, 0, 0, 0.35),
-        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.35);
     transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .hotspot-content:hover {
-    background: rgba(18, 18, 26, 0.8);
     border-color: rgba(255, 255, 255, 0.18);
     transform: translateY(-4px);
-    box-shadow:
-        0 22px 44px rgba(0, 0, 0, 0.45),
-        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.45);
 }
 
 .hotspot-item:nth-child(odd) .hotspot-content {
