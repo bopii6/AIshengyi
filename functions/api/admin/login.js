@@ -11,7 +11,7 @@ const SESSION_TTL_MS = 1000 * 60 * 60 * 24;
 
 export async function onRequestPost({ request, env }) {
     const admin = await env.DB
-        .prepare('SELECT password_hash FROM admin_settings WHERE id = 1')
+        .prepare('SELECT password_hash FROM admin_settings ORDER BY id ASC LIMIT 1')
         .first();
     if (!admin) {
         return errorResponse('Admin password is not set.', 400);

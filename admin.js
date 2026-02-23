@@ -152,6 +152,11 @@
             setStatus(setupStatus, '管理员密码已保存，请登录。', 'success');
             showLoginPanel();
         } catch (error) {
+            if (error && error.status === 409) {
+                setStatus(setupStatus, '管理员密码已存在，请直接登录。', 'success');
+                showLoginPanel();
+                return;
+            }
             setStatus(setupStatus, error.message || '保存失败', 'error');
         }
     });

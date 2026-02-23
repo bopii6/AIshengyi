@@ -68,6 +68,7 @@
     };
 
     const requestJson = async (path, options = {}) => {
+        const method = (options.method || 'GET').toUpperCase();
         const headers = new Headers(options.headers || {});
         if (!headers.has('Content-Type')) {
             headers.set('Content-Type', 'application/json');
@@ -77,11 +78,16 @@
                 ? JSON.stringify(options.body)
                 : options.body;
 
-        const response = await fetch(`${API_BASE}${path}`, {
+        const requestOptions = {
             ...options,
             headers,
             body
-        });
+        };
+        if (method === 'GET' && !Object.prototype.hasOwnProperty.call(requestOptions, 'cache')) {
+            requestOptions.cache = 'no-store';
+        }
+
+        const response = await fetch(`${API_BASE}${path}`, requestOptions);
 
         const text = await response.text();
         let payload = null;
@@ -197,7 +203,7 @@
     };
 
     const isAdminInitialized = async () => {
-        const data = await requestJson('/admin/status', { method: 'GET' });
+        const data = await requestJson(`/admin/status?t=${Date.now()}`, { method: 'GET' });
         return !!(data && data.initialized);
     };
 

@@ -2,7 +2,7 @@ import { errorResponse, jsonResponse, readJson, validatePassword, hashPassword }
 
 export async function onRequestPost({ request, env }) {
     const existing = await env.DB
-        .prepare('SELECT password_hash FROM admin_settings WHERE id = 1')
+        .prepare('SELECT id FROM admin_settings LIMIT 1')
         .first();
     if (existing) {
         return errorResponse('Admin already initialized.', 409);

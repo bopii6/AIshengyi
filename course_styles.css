@@ -412,6 +412,74 @@ body.course-page .bg-animation {
     background: linear-gradient(to top, var(--ticket-bg, #3b82f6), transparent);
 }
 
+.ticket-illustration.lobster-placeholder {
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 18% 24%, rgba(248, 113, 113, 0.26) 0, rgba(248, 113, 113, 0) 22%),
+        radial-gradient(circle at 78% 18%, rgba(251, 146, 60, 0.28) 0, rgba(251, 146, 60, 0) 24%),
+        linear-gradient(140deg, #1d4ed8 0%, #1e3a8a 52%, #0f172a 100%);
+}
+
+.ticket-illustration.lobster-placeholder::before {
+    content: 'OPENCLAW';
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    font-family: 'Orbitron', monospace;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: rgba(255, 245, 235, 0.95);
+    text-shadow: 0 4px 12px rgba(15, 23, 42, 0.45);
+    z-index: 2;
+}
+
+.lobster-accent {
+    position: absolute;
+    line-height: 1;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
+    z-index: 2;
+}
+
+.lobster-accent--a {
+    right: 28px;
+    top: 30px;
+    font-size: 4.8rem;
+    transform: rotate(-10deg);
+}
+
+.lobster-accent--b {
+    left: 20px;
+    bottom: 14px;
+    font-size: 3rem;
+    transform: rotate(14deg);
+    opacity: 0.95;
+}
+
+.lobster-wave {
+    position: absolute;
+    border: 2px solid rgba(186, 230, 253, 0.62);
+    border-left: 0;
+    border-right: 0;
+    border-radius: 999px;
+    z-index: 1;
+}
+
+.lobster-wave--a {
+    width: 120px;
+    height: 18px;
+    right: 18px;
+    bottom: 22px;
+}
+
+.lobster-wave--b {
+    width: 92px;
+    height: 14px;
+    left: 95px;
+    bottom: 38px;
+    opacity: 0.85;
+}
+
 .phase-1 .ticket-main {
     --ticket-bg: #1e40af;
 }
