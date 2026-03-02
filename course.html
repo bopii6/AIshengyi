@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh">
 
 <head>
@@ -47,8 +47,22 @@
                     <a href="#day-9" class="outline-card">
                         <span class="outline-card-title">Cloudflare 上线到互联网</span>
                     </a>
+                </div>
+            </div>
+
+            <div class="outline-section">
+                <div class="outline-phase-title" data-target="phase-openclaw">
+                    <i class="fa-solid fa-chevron-down"></i> openclaw从零到实战
+                </div>
+                <div class="outline-cards">
                     <a href="#day-10" class="outline-card">
                         <span class="outline-card-title">40分钟掌握 OpenClaw：小白也能独立安装和修复故障</span>
+                    </a>
+                    <a href="#day-110" class="outline-card">
+                        <span class="outline-card-title">阿里云服务器安装openclaw，接入钉钉app（上）</span>
+                    </a>
+                    <a href="#day-111" class="outline-card">
+                        <span class="outline-card-title">openclaw两个场景：充当知识库和客服系统（下）</span>
                     </a>
                 </div>
             </div>
@@ -137,9 +151,14 @@
                 <p class="subtitle">零基础到独立变现，每一天都有成果</p>
             </header>
 
-            <div class="announcement-simple">
-                <div>📢 公告栏：40分钟掌握 OpenClaw：小白也能独立安装和修复故障 (2026/2/23)</div>
-                <div>📌 自行配置科学上网，课程不探讨翻墙/梯子，只研讨AI技术和商业应用（2026/2/23）</div>
+            <div class="announcement-simple" id="announcementTicker" aria-live="polite">
+                <div class="announcement-ticker-viewport">
+                    <div class="announcement-ticker-track">
+                        <div class="announcement-ticker-item">📢 公告栏：40分钟掌握 OpenClaw：小白也能独立安装和修复故障 (2026/2/27)</div>
+                        <div class="announcement-ticker-item">📌 自行配置科学上网，课程不探讨翻墙/梯子，只研讨AI技术和商业应用（2026/2/23）</div>
+                        <div class="announcement-ticker-item">🧪 openclaw2个实战应用场景（2026/3/2）</div>
+                    </div>
+                </div>
             </div>
 
             <!-- Phase 1: 基础实战 -->
@@ -239,20 +258,69 @@
                         </div>
                     </div>
 
+                </div>
+            </section>
+
+            <!-- OpenClaw Phase -->
+            <section class="phase-section phase-4" id="phase-openclaw">
+                <div class="phase-header">
+                    <span class="phase-badge">实战专题</span>
+                    <span class="phase-title">openclaw从零到实战</span>
+                </div>
+
+                <div class="ticket-grid">
                     <!-- Day 10 -->
-                    <div class="ticket phase-1" data-day="10">
+                    <div class="ticket phase-4" data-day="10">
                         <div class="ticket-day">DAY 10</div>
                         <div class="ticket-main has-illustration">
-                            <div class="ticket-illustration lobster-placeholder">
-                                <span class="lobster-accent lobster-accent--a">🦞</span>
-                                <span class="lobster-accent lobster-accent--b">🦞</span>
-                                <span class="lobster-wave lobster-wave--a"></span>
-                                <span class="lobster-wave lobster-wave--b"></span>
+                            <div class="ticket-illustration"
+                                style="background-image: url('images/openclaw_flat_vector.png');">
+                                <span class="ticket-badge-float badge-openclaw">OPENCLAW</span>
                             </div>
                             <div class="ticket-tag-row">
                                 <span class="ticket-tag">实战部署</span>
                             </div>
                             <h3 class="ticket-title">40分钟掌握 OpenClaw：小白也能独立安装和修复故障</h3>
+                        </div>
+                        <div class="ticket-stub">
+                            <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                        </div>
+                    </div>
+
+                    <!-- Day 10 Extension A -->
+                    <div class="ticket phase-4" data-day="110">
+                        <div class="ticket-day">DAY 10-11</div>
+                        <div class="ticket-main has-illustration">
+                            <div class="ticket-illustration"
+                                style="background-image: url('images/openclaw_flat_vector.png');">
+                                <span class="ticket-badge-float badge-openclaw">OPENCLAW</span>
+                                <span class="ticket-badge-float badge-ding">钉钉 APP</span>
+                                <span class="ticket-badge-float badge-aliyun">阿里云 ECS</span>
+                            </div>
+                            <div class="ticket-tag-row">
+                                <span class="ticket-tag">实战部署</span>
+                            </div>
+                            <h3 class="ticket-title">阿里云服务器安装openclaw，接入钉钉app（上）</h3>
+                        </div>
+                        <div class="ticket-stub">
+                            <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                        </div>
+                    </div>
+
+                    <!-- Day 10 Extension B -->
+                    <div class="ticket phase-4" data-day="111">
+                        <div class="ticket-day">DAY 10-12</div>
+                        <div class="ticket-main has-illustration">
+                            <div class="ticket-illustration"
+                                style="background-image: url('images/openclaw_flat_vector.png');">
+                                <span class="ticket-badge-float badge-openclaw">OPENCLAW</span>
+                                <span class="ticket-badge-float badge-ding">钉钉 APP</span>
+                                <span class="ticket-badge-float badge-aliyun">阿里云 ECS</span>
+                            </div>
+                            <div class="ticket-tag-row">
+                                <span class="ticket-tag">实战部署</span>
+                            </div>
+                            <h3 class="ticket-title">openclaw两个场景：充当知识库和客服系统（下）</h3>
                         </div>
                         <div class="ticket-stub">
                             <a href="#" class="stub-btn btn-faq"><i class="fa-solid fa-circle-question"></i> FAQ</a>
@@ -884,6 +952,121 @@
             }
         });
 
+        const initAnnouncementTicker = () => {
+            const ticker = document.getElementById('announcementTicker');
+            const viewport = ticker?.querySelector('.announcement-ticker-viewport');
+            const track = ticker?.querySelector('.announcement-ticker-track');
+            if (!ticker || !viewport || !track) {
+                return;
+            }
+
+            const getItems = () => Array.from(track.querySelectorAll('.announcement-ticker-item'));
+            const getGap = () => {
+                const styles = window.getComputedStyle(track);
+                const rawGap = styles.rowGap || styles.gap || '0';
+                const gap = parseFloat(rawGap);
+                return Number.isFinite(gap) ? gap : 0;
+            };
+
+            const updateViewportHeight = () => {
+                const items = getItems();
+                if (items.length <= 2) {
+                    viewport.style.height = 'auto';
+                    return;
+                }
+                const gap = getGap();
+                const heights = items.map(item => item.getBoundingClientRect().height);
+                let maxPairHeight = 0;
+
+                for (let i = 0; i < heights.length; i += 1) {
+                    const nextIndex = (i + 1) % heights.length;
+                    const pairHeight = heights[i] + heights[nextIndex] + gap;
+                    if (pairHeight > maxPairHeight) {
+                        maxPairHeight = pairHeight;
+                    }
+                }
+                viewport.style.height = `${Math.ceil(maxPairHeight)}px`;
+            };
+
+            updateViewportHeight();
+            if (getItems().length <= 2) {
+                return;
+            }
+
+            let rotateTimer = null;
+            let reorderTimer = null;
+            let isAnimating = false;
+
+            const advance = () => {
+                if (isAnimating) {
+                    return;
+                }
+                const firstItem = track.firstElementChild;
+                if (!firstItem) {
+                    return;
+                }
+                const distance = firstItem.getBoundingClientRect().height + getGap();
+                isAnimating = true;
+                track.style.transition = 'transform 420ms ease';
+                track.style.transform = `translateY(-${distance}px)`;
+
+                reorderTimer = window.setTimeout(() => {
+                    track.style.transition = 'none';
+                    track.appendChild(firstItem);
+                    track.style.transform = 'translateY(0)';
+                    void track.offsetWidth;
+                    isAnimating = false;
+                }, 460);
+            };
+
+            const stop = () => {
+                if (rotateTimer) {
+                    window.clearInterval(rotateTimer);
+                    rotateTimer = null;
+                }
+                if (reorderTimer) {
+                    window.clearTimeout(reorderTimer);
+                    reorderTimer = null;
+                }
+                if (isAnimating) {
+                    track.style.transition = 'none';
+                    track.style.transform = 'translateY(0)';
+                    isAnimating = false;
+                }
+            };
+
+            const start = () => {
+                if (rotateTimer) {
+                    return;
+                }
+                rotateTimer = window.setInterval(advance, 3600);
+            };
+
+            ticker.addEventListener('mouseenter', stop);
+            ticker.addEventListener('mouseleave', () => {
+                updateViewportHeight();
+                start();
+            });
+
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    stop();
+                    return;
+                }
+                updateViewportHeight();
+                start();
+            });
+
+            window.addEventListener('resize', updateViewportHeight);
+            window.addEventListener('load', updateViewportHeight);
+            if (document.fonts?.ready) {
+                document.fonts.ready.then(updateViewportHeight);
+            }
+            start();
+        };
+
+        initAnnouncementTicker();
+
         authCloseBtn?.addEventListener('click', closeAuthModal);
         authBackdrop?.addEventListener('click', closeAuthModal);
         document.addEventListener('keydown', (event) => {
@@ -955,6 +1138,8 @@
             8: { doc: '', video: '' },
             9: { doc: 'https://xx0iztlf4g6.feishu.cn/docx/O8jJdMeTDoWUPkxtzRzcEAKsnlg?from=from_copylink', video: 'https://video.hellojoy.top/cloudeflare%E4%B8%8A%E7%BA%BF%E5%88%B0%E4%BA%92%E8%81%94%E7%BD%91.mp4-moren4.m3u8' },
             10: { doc: '', video: 'https://video.hellojoy.top/%E9%BE%99%E8%99%BEopenclaw%E6%8E%A5%E5%85%A5telegram.mp4-moren4.m3u8' },
+            110: { doc: '', video: 'https://video.hellojoy.top/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85openclaw_400M.mp4-moren4.m3u8' },
+            111: { doc: '', video: 'https://video.hellojoy.top/openclaw%E4%B8%A4%E4%B8%AA%E5%9C%BA%E6%99%AF%EF%BC%9A%E5%85%85%E5%BD%93%E7%9F%A5%E8%AF%86%E5%BA%93%EF%BC%8C%E5%AE%A2%E6%9C%8D%E7%B3%BB%E7%BB%9F_400M.mp4-moren4.m3u8' },
             11: { doc: '', video: '' },
             12: { doc: '', video: '' },
             13: { doc: '', video: '' },

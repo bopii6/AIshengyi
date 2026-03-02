@@ -48,6 +48,8 @@ body.course-page .phase-section {
 
 /* 简洁公告栏 - Premium */
 .announcement-simple {
+    --announcement-row-height: 42px;
+    --announcement-gap: 8px;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.85);
     padding: 12px 16px;
@@ -55,11 +57,29 @@ body.course-page .phase-section {
     background: rgba(255, 255, 255, 0.03);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(5px);
+}
+
+.announcement-ticker-viewport {
+    overflow: hidden;
+    min-height: calc(var(--announcement-row-height) * 2 + var(--announcement-gap));
+}
+
+.announcement-ticker-track {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    backdrop-filter: blur(5px);
+    gap: var(--announcement-gap);
+    transform: translateY(0);
+}
+
+.announcement-ticker-item {
+    display: flex;
+    align-items: center;
+    min-height: var(--announcement-row-height);
+    line-height: 1.55;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Announcement board (旧版保留) */
@@ -363,6 +383,7 @@ body.course-page .bg-animation {
 
 /* RIBBON Day Badge - corner ribbon style */
 .ticket-day {
+    display: none;
     position: absolute;
     top: 16px;
     left: -40px;
@@ -479,6 +500,88 @@ body.course-page .bg-animation {
     left: 95px;
     bottom: 38px;
     opacity: 0.85;
+}
+
+.ticket-illustration.aliyun-openclaw-placeholder {
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 18% 30%, rgba(59, 130, 246, 0.35) 0, rgba(59, 130, 246, 0) 35%),
+        radial-gradient(circle at 78% 16%, rgba(56, 189, 248, 0.42) 0, rgba(56, 189, 248, 0) 30%),
+        linear-gradient(140deg, #1e40af 0%, #1d4ed8 50%, #0f172a 100%);
+}
+
+.aliyun-openclaw-mark {
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: rgba(239, 246, 255, 0.95);
+    text-shadow: 0 4px 10px rgba(15, 23, 42, 0.5);
+    z-index: 2;
+}
+
+.aliyun-openclaw-lobster {
+    position: absolute;
+    right: 18px;
+    top: 24px;
+    font-size: 4.6rem;
+    line-height: 1;
+    transform: rotate(-10deg);
+    filter: drop-shadow(0 8px 14px rgba(15, 23, 42, 0.35));
+    z-index: 2;
+}
+
+.aliyun-openclaw-chip {
+    position: absolute;
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.2px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.35);
+    z-index: 3;
+}
+
+.aliyun-openclaw-chip--ding {
+    left: 18px;
+    bottom: 58px;
+    background: linear-gradient(135deg, #0891b2 0%, #0ea5e9 100%);
+}
+
+.aliyun-openclaw-chip--aliyun {
+    left: 118px;
+    bottom: 24px;
+    background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+}
+
+.aliyun-openclaw-orbit {
+    position: absolute;
+    border: 2px solid rgba(191, 219, 254, 0.7);
+    border-left: 0;
+    border-right: 0;
+    border-radius: 999px;
+    z-index: 1;
+}
+
+.aliyun-openclaw-orbit--a {
+    width: 110px;
+    height: 20px;
+    right: 84px;
+    top: 40px;
+}
+
+.aliyun-openclaw-orbit--b {
+    width: 92px;
+    height: 16px;
+    right: 92px;
+    top: 84px;
+    opacity: 0.88;
 }
 
 .phase-1 .ticket-main {
