@@ -358,6 +358,7 @@ body.course-page .bg-animation {
     position: relative;
     display: flex;
     flex-direction: column;
+    height: 100%;
     border-radius: 20px;
     /* Softer corners */
     overflow: hidden;
@@ -391,6 +392,7 @@ body.course-page .bg-animation {
     flex-direction: column;
     justify-content: flex-end;
     overflow: hidden;
+    flex-grow: 1;
 }
 
 /* BIGGER Sawtooth torn paper effect - Matches Body BG */
@@ -689,6 +691,8 @@ body.course-page .bg-animation {
 .ticket-title {
     font-size: 1.3rem;
     font-weight: 800;
+    line-height: 1.4;
+    min-height: 2.8em; /* Exactly 2 lines of text */
     color: #ffffff;
     margin-bottom: 6px;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -698,7 +702,7 @@ body.course-page .bg-animation {
 
 .ticket-desc {
     font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.8);
+    display: none !important;
     line-height: 1.5;
     position: relative;
     z-index: 2;
@@ -1779,4 +1783,29 @@ a.outline-card {
 
 .is-hidden {
     display: none !important;
+}
+
+/* AI Media / Design Phase Styles */
+.phase-ai-ads .ticket-main {
+    background: linear-gradient(145deg, rgba(236, 72, 153, 0.15) 0%, rgba(190, 24, 93, 0.3) 100%);
+}
+
+.phase-ai-ads .ticket-stub {
+    background: linear-gradient(145deg, rgba(236, 72, 153, 0.2) 0%, rgba(190, 24, 93, 0.4) 100%);
+}
+
+.phase-ai-ads .ticket-stub::before {
+    display: none;
+}
+
+.phase-ai-design .ticket-main {
+    background: linear-gradient(145deg, rgba(14, 165, 233, 0.15) 0%, rgba(3, 105, 161, 0.3) 100%);
+}
+
+.phase-ai-design .ticket-stub {
+    background: linear-gradient(145deg, rgba(14, 165, 233, 0.2) 0%, rgba(3, 105, 161, 0.4) 100%);
+}
+
+.phase-ai-design .ticket-stub::before {
+    display: none;
 }
