@@ -1,0 +1,41 @@
+﻿company,type,status,url,title,emails,phones
+Walmart,CEO,200,https://corporate.walmart.com/news/2025/11/14/walmart-announces-john-furner-as-president-and-chief-executive-o0,Walmart Announces John Furner as President and Chief Executive Officer,,0 0 515.29 580.86 | 0-11.04-11.05-128.34-14.95-140.07-4.46-13.44-16.76-22.43-30.69-22.43 | 0-25.2-20.43-45.64-45.64-45.64
+Walmart,Contact,200,https://stock.walmart.com/company-information/contacts,Contacts :: Walmart Inc. (WMT),IR@walmart.com,1-800-438-6278 | 20250127 | 31536000
+Amazon,CEO,200,https://www.aboutamazon.com/news/workplace/amazon-s-team-members,Amazon’s S-team: Meet the 28 members who make up our senior leadership team,,0 0 1.147-11.116 11.793-11.621 | 0 0 4734 594 | 0 0 512 512
+Amazon,Contact,403,https://ir.aboutamazon.com/contact-us-and-request-documents/default.aspx,Just a moment...,,1772597832 | 1772597832-1.0.1.1 | 1772597832-1.2.1.1
+State Grid,Leader,200,https://zh.wikipedia.org/wiki/%E5%9B%BD%E5%AE%B6%E7%94%B5%E7%BD%91,国家电网 - 维基百科，自由的百科全书,,108.105 4 | 115804294 | 124.280 1
+State Grid,Contact,EXC,https://www.sgcc.com.cn/,"HTTPSConnectionPool(host='www.sgcc.com.cn', port=443): Read timed out. (read timeout=8)",,
+Saudi Aramco,Leadership,EXC,https://www.aramco.com/en/who-we-are/leadership,"HTTPSConnectionPool(host='www.aramco.com', port=443): Read timed out. (read timeout=8)",,
+Saudi Aramco,Contact,EXC,https://www.aramco.com/en/contact-us,"HTTPSConnectionPool(host='www.aramco.com', port=443): Read timed out. (read timeout=8)",,
+Sinopec Group,Leadership,EXC,https://www.sinopecgroup.com/group/en/about_sinopec/leadership/,"HTTPSConnectionPool(host='www.sinopecgroup.com', port=443): Read timed out. (read timeout=8)",,
+Sinopec Group,Contact,EXC,https://www.sinopecgroup.com/group/en/contact_us/,"HTTPSConnectionPool(host='www.sinopecgroup.com', port=443): Read timed out. (read timeout=8)",,
+CNPC,Leadership,412,https://www.cnpc.com.cn/en/boardofdirectors/boardofdirectors.shtml,,,
+CNPC,Contact,412,https://www.cnpc.com.cn/en/contactus/contactus.shtml,,,
+Apple,Leadership,200,https://www.apple.com/leadership/tim-cook/,Apple Leadership - Tim Cook - Apple,,+1-800-275-2273 | +1-800-692-7753 | 0 .386-.316.703-.703.703
+Apple,Contact,200,https://www.apple.com/contact/,Contact - How to Contact Us - Apple,,+1-800-275-2273 | +1-800-692-7753 | 0 .386-.316.703-.703.703
+UnitedHealth,Leadership News,200,https://www.unitedhealthgroup.com/newsroom/2025/2025-05-13-leadership-transition.html,Page Not Found - UnitedHealth Group,,0 0 576 252 | 0 32.21 17.81 40.86 38.96 40.86 28.02 0 38.97-14.27 38.97-40.86 | 0 5.33-4.21 9.51-9.58 9.51
+UnitedHealth,Contact,200,https://www.unitedhealthgroup.com/contact-us.html,Contact Us - UnitedHealth Group,,0 0 576 252 | 0 32.21 17.81 40.86 38.96 40.86 28.02 0 38.97-14.27 38.97-40.86 | 0 5.33-4.21 9.51-9.58 9.51
+Berkshire Hathaway,CEO News,404,https://apnews.com/article/warren-buffett-ceo-berkshire-hathaway-greg-abel-a6f719853f5bc84ce7cbe25f1f3b8d39,Page unavailable | AP News,,0 .552-.448 1-1 1 | 0 .727.257 1.348.773 1.863 | 0 .746.672 0 1.5 0
+Berkshire Hathaway,Contact (SEC),403,https://www.sec.gov/Archives/edgar/data/1067983/000095017025087149/brka-20250630.htm,SEC.gov | Your Request Originates from an Undeclared Automated Tool,opendata@sec.gov,17.1772597879
+CVS Health,Leadership,200,https://www.cvshealth.com/about/leadership.html,Our Leadership & Executive Team | CVS Health,,+1-401-765-1500 | +1-800-746-7287 | 0 12.4 3.6 16 8 16
+CVS Health,Contact,404,https://investors.cvshealth.com/contacts/default.aspx,Page Not Found,investorinfo@cvshealth.com | support@q4inc.com,21-4821-9447-534 | 638901346312636832 | 752775519
+Alphabet,Leadership,404,https://about.google/intl/en/our-leadership/,Error 404 (Not Found)!!1,,
+Alphabet,Contact,403,https://abc.xyz/investor/other/,Just a moment...,,0-1772597881-1.2.1.1 | 1772597881 | 1772597881-1.0.1.1
+ExxonMobil,Leadership,404,https://corporate.exxonmobil.com/who-we-are/leadership,Page not found,,0 0 100 100 | 0-12.7-10.3-23-23-23 | 00664423
+ExxonMobil,Contact,404,https://corporate.exxonmobil.com/contact-us,Page not found,,0 0 100 100 | 0-12.7-10.3-23-23-23 | 00664423
+McKesson,Leadership,404,https://www.mckesson.com/About-McKesson/Leadership/,404,,1.1726315789 | 102885211 | 20180204
+McKesson,Contact,403,https://investor.mckesson.com/investor-resources/contact-information/default.aspx,Just a moment...,,1772597885 | 1772597885-1.0.1.1-303 | 1772597885-1.2.1.1
+Cencora,Leadership,403,https://investor.cencora.com/corporate-governance/management-team,Just a moment...,,1772597885 | 1772597885-1.0.1.1 | 1772597885-1.2.1.1
+Cencora,Contact,403,https://investor.cencora.com/investor-resources/contact-investor-relations,Just a moment...,,1772597886 | 1772597886-1.0.1.1 | 1772597886-1.2.1.1
+Shell,Leadership,404,https://www.shell.com/who-we-are/our-leadership.html,Error page | Shell Global,,546892837
+Shell,Contact,200,https://www.shell.com/contact-us.html,Contact us | Shell Global,,162.141.131.0 | 1772597887 | 2025-11-26
+Toyota,Leadership,404,https://global.toyota/en/newsroom/corporate/42653239.html,Toyota Motor Corporation Official Global Website,,
+Toyota,Contact,200,https://global.toyota/en/company/profile/,Profile | Company | Toyota Motor Corporation Official Global Website,,20201013 | 2026030413 | 26586263
+Volkswagen Group,Leadership,404,https://www.volkswagen-group.com/en/management-board-15768,Page not found | Volkswagen Group,,15552000 | 1685537789 | 1685537789 1160
+Volkswagen Group,Contact,404,https://www.volkswagen-group.com/en/contact-15731,Page not found | Volkswagen Group,,15552000 | 1685537789 | 1685537789 1160
+Trafigura,Leadership,404,https://www.trafigura.com/news-and-insights/news/2023/trafigura-announces-appointment-of-richard-holtum-as-chief-executive-officer/,Not found | Trafigura,,0.522545 | 17.6992 17.7 | 17.6992 30.3
+Trafigura,Contact,404,https://www.trafigura.com/contact-us/,Not found | Trafigura,,0.522545 | 17.6992 17.7 | 17.6992 30.3
+JPMorgan Chase,Leadership,200,https://www.jpmorganchase.com/about/leadership,Leadership | JPMorganChase,,049044246 | 06667248 | 162.141.131.0
+JPMorgan Chase,Contact,404,https://www.jpmorganchase.com/ir/contact-us,PAGE NOT FOUND | JPMorganChase,,2329-4408
+Costco,Leadership,403,https://investor.costco.com/corporate-governance/executive-officers-and-directors,Just a moment...,,0-1772597895-1.0.1.1 | 1772597895 | 1772597895-1.2.1.1
+Costco,Contact,403,https://investor.costco.com/contacts-and-requests/default.aspx,Just a moment...,,1772597895 | 1772597895-1.0.1.1 | 1772597895-1.2.1.1
