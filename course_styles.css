@@ -1799,6 +1799,18 @@ a.outline-card {
     display: none;
 }
 
+.phase-coze-dev .ticket-main {
+    background: linear-gradient(145deg, rgba(245, 158, 11, 0.16) 0%, rgba(180, 83, 9, 0.3) 100%);
+}
+
+.phase-coze-dev .ticket-stub {
+    background: linear-gradient(145deg, rgba(245, 158, 11, 0.22) 0%, rgba(180, 83, 9, 0.4) 100%);
+}
+
+.phase-coze-dev .ticket-stub::before {
+    display: none;
+}
+
 .phase-ai-design .ticket-main {
     background: linear-gradient(145deg, rgba(14, 165, 233, 0.15) 0%, rgba(3, 105, 161, 0.3) 100%);
 }
